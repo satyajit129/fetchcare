@@ -7,8 +7,12 @@ use Illuminate\View\View;
 
 class AuthorityController extends Controller
 {
-    public function index(): View
+    public function operationalManagement(): View
     {
-        return view('pages.index');
+        return view('pages.operational_management');
+    }
+    public function financeManagement(): View
+    {
+        return view('pages.financial_management');
     }
 }

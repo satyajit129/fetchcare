@@ -212,6 +212,7 @@ a {
 }
 .card_1__header {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     gap: 12px;
 }
@@ -219,6 +220,8 @@ a {
 .card_1__header p {
     margin: 0;
     align-self: center;
+    font-size: 13px;
+    letter-spacing: -0.02em;
 }
 
 .card_1__header img {
@@ -229,15 +232,7 @@ a {
     background: #0076ce;
     color: #ffffff;
 }
-.completed_visits p,
-.providers_utilizitions p,
-.technician_unilizition p,
-.stuff_to_patient_ratio p,
-.avg_app_dur p {
-    font-size: 14px;
-    letter-spacing: -0.02em;
-}
-.card_1__content{
+.card_1__content {
     display: flex;
     justify-content: space-between;
     margin-top: 12px;
@@ -265,10 +260,10 @@ a {
     width: 12px;
     height: 12px;
 }
-.visit_trends{
-width: 711px;
-height: 378px;
+.visit_trends {
+    width: 711px;
+    height: 378px;
 
-background: #FFFFFF;
-border-radius: 8px;
+    background: #ffffff;
+    border-radius: 8px;
 }
