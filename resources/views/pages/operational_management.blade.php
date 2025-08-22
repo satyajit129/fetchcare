@@ -96,20 +96,78 @@
             </div>
         </div>
     </div>
-    {{-- <div class="visit_trends">
-        <div class="visit_trends__header">
-            <h2>Visit Trends</h2>
+    <div class="content__charts">
+        <!-- Line Chart -->
+        <!-- Line Chart -->
+        <div class="visit_trends_chart">
+            <div class="visit_trends__header">
+                <h2>Visit Trends</h2>
+            </div>
+
+            <div class="visit_trends__body">
+                <div class="visit_trends__grid">
+                    <!-- Horizontal grid lines with aligned Y labels -->
+                    <div class="visit_trends__y-label">2000</div>
+                    <div class="visit_trends__grid-line"></div>
+                </div>
+
+                <div class="visit_trends__grid">
+                    <!-- Horizontal grid lines with aligned Y labels -->
+                    <div class="visit_trends__y-label">1500</div>
+                    <div class="visit_trends__grid-line"></div>
+                </div>
+                <div class="visit_trends__grid">
+                    <!-- Horizontal grid lines with aligned Y labels -->
+                    <div class="visit_trends__y-label">1000</div>
+                    <div class="visit_trends__grid-line"></div>
+                </div>
+                <div class="visit_trends__grid">
+                    <!-- Horizontal grid lines with aligned Y labels -->
+                    <div class="visit_trends__y-label">500</div>
+                    <div class="visit_trends__grid-line"></div>
+                </div>
+                <div class="visit_trends__grid">
+                    <!-- Horizontal grid lines with aligned Y labels -->
+                    <div class="visit_trends__y-label">0</div>
+                    <div class="visit_trends__grid-line"></div>
+                </div>
+            </div>
+            <div class="visit_trends__x-labels">
+                <div class="visit_trends__x-label-left"></div>
+                <div class="visit_trends__x-label-right">
+                    <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+                    <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
+                    <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+                </div>
+            </div>
+
         </div>
-        <canvas id="mountainChart"></canvas>
-    </div> --}}
+
+
+        <!-- Pie Chart -->
+        <div class="pet_distribution_chart">
+            <div class="pet_distribution__header">
+                <h2>Pet Distribution</h2>
+            </div>
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+
 @endsection
 
 
 @section('scripts')
     <script>
-        $(document).ready(function() {
-            const ctx = $('#mountainChart')[0].getContext('2d');
-            const mountainChart = new Chart(ctx, {
+        $(function() {
+            const $canvas = $('#lineChart');
+            const ctx = $canvas[0].getContext('2d');
+
+            // Gradient for fill below the line
+            const gradient = ctx.createLinearGradient(0, 0, 0, $canvas.height());
+            gradient.addColorStop(0, 'rgba(0,118,206,0.2)');
+            gradient.addColorStop(1, 'rgba(0,118,206,0)');
+
+            new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov',
@@ -117,19 +175,13 @@
                     ],
                     datasets: [{
                         label: 'Visits',
-                        data: [
-                            600, 1200, 800, 1500, 700, 1600, 900, 1400, 1000, 1700,
-                            1100, 1300, 1200, 1500, 900, 1600, 800, 1400, 1000, 1500,
-                            700, 1200, 950, 1350, 850, 1400, 900, 1300, 1000, 1450,
-                            1100, 1200, 1050, 1300, 1250
-                        ],
-                        fill: true,
-                        backgroundColor: 'rgba(0, 118, 206, 0.2)',
+                        data: [750, 950, 1400, 1050, 1150, 1650, 1100, 1400, 900, 1250, 1300, 1150],
                         borderColor: '#0076CE',
-                        borderWidth: 6,
-                        tension: 0.4,
-                        pointRadius: 0,
-
+                        borderWidth: 3,
+                        backgroundColor: gradient,
+                        fill: true,
+                        tension: 0.4, // smooth mountain curve
+                        pointRadius: 0 // remove dots
                     }]
                 },
                 options: {
@@ -140,55 +192,61 @@
                         }
                     },
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                            suggestedMin: 0,
-                            suggestedMax: 2000,
-                            ticks: {
-                                stepSize: 500,
-                                color: '#646464'
-                            },
-                            grid: {
-                                color: '#E7E7E7',
-                                borderDash: [5, 5],
-                                drawTicks: false
-                            }
-                        },
                         x: {
-                            ticks: {
-                                color: '#646464'
-                            },
                             grid: {
                                 display: false
+                            },
+                            ticks: {
+                                font: {
+                                    family: 'Inter',
+                                    size: 12
+                                },
+                                color: '#646464'
                             }
-                        }
-                    },
-                    scales: {
+                        },
                         y: {
-                            beginAtZero: true,
-                            suggestedMin: 0,
-                            suggestedMax: 2000,
+                            min: 0,
+                            max: 2000,
                             ticks: {
                                 stepSize: 500,
+                                font: {
+                                    family: 'Inter',
+                                    size: 12
+                                },
                                 color: '#646464'
                             },
                             grid: {
-                                color: '#E7E7E7',
                                 drawTicks: false,
-
-                            },
-                        },
-                        x: {
-                            ticks: {
-                                color: '#646464'
-                            },
-                            grid: {
-                                display: false
+                                color: '#E7E7E7',
+                                borderDash: [4, 4], // all horizontal lines dotted
+                                drawBorder: false // removes vertical line on left
                             }
                         }
                     }
                 }
             });
+        });
+    </script>
+    <script>
+        // Pie Chart
+        const ctxPie = document.getElementById('pieChart').getContext('2d');
+        const pieChart = new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: ['Dogs', 'Cats', 'Birds', 'Others'],
+                datasets: [{
+                    data: [45, 30, 15, 10],
+                    backgroundColor: ['#198754', '#0d6efd', '#ffc107', '#dc3545']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
         });
     </script>
 @endsection

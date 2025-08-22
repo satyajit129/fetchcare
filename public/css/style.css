@@ -35,12 +35,12 @@ a {
     position: fixed;
     top: 0;
     left: 0;
-    width: 260px;
+    width: 230px;
     height: 100vh;
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    padding: 22px 0;
+    padding: 16px 0;
     border-radius: 0px 12px 12px 0px;
 }
 
@@ -50,11 +50,11 @@ a {
     align-items: center;
     padding: 0 0 0 16px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 42px;
 }
 .app-logo__image {
-    width: 198px;
-    height: 56px;
+    width: 167px;
+    height: 48px;
 }
 .side-menu {
     list-style: none;
@@ -67,12 +67,12 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px 30px 20px 32px;
+    padding: 18px 30px 18px 30px;
     gap: 24px;
 }
 .side-menu__item img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
 }
 .side-menu__item .side-menu__label {
     font-style: normal;
@@ -102,21 +102,19 @@ a {
     align-items: center;
     padding: 12px 30px 12px 32px;
     gap: 12px;
-    width: 176px;
-    height: 54px;
     background: #ffffff;
     border: 2px solid #0076ce;
     border-radius: 26px;
 }
 .side-menu__item-content .side-menu__label {
-    font-weight: 600;
+    font-weight: 700;
     color: #0076ce;
 }
 
 /* Main content area */
 .content {
-    margin-left: 260px;
-    padding: 0 40px;
+    margin-left: 230px;
+    padding: 0 24px;
     flex: 1;
 }
 .content__header {
@@ -126,7 +124,7 @@ a {
     margin-top: 24px;
 }
 .content__title {
-    font-size: 32px;
+    font-size: 28px;
     letter-spacing: -0.03em;
     font-style: normal;
     font-weight: 500;
@@ -201,11 +199,11 @@ a {
 .content__overview {
     display: flex;
     gap: 12px;
-    margin-top: 42px;
+    margin-top: 37px;
 }
 .card_1 {
     width: 207px;
-    padding: 16px;
+    padding: 14px;
     background: #ffffff;
     border-bottom: 2px solid #198754;
     border-radius: 8px;
@@ -260,10 +258,93 @@ a {
     width: 12px;
     height: 12px;
 }
-.visit_trends {
+/* chart */
+
+.content__charts{
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+}
+.visit_trends_chart {
     width: 711px;
     height: 378px;
-
     background: #ffffff;
+    border-radius: 8px;
+}
+.visit_trends__header h2{
+    padding: 16px;
+    font-size: 24px;
+    color: #292929;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+.visit_trends_chart {
+    width: 711px;
+    height: 378px;
+    background: #ffffff;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+.visit_trends__header h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+.visit_trends__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 16px;
+}
+
+.visit_trends__grid {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.visit_trends__y-label {
+    width: 30px;
+    text-align: right;
+    font-size: 12px;
+    color: #646464;
+}
+
+.visit_trends__grid-line {
+    flex: 1;
+    border-bottom: 1px dotted #646464;
+}
+.visit_trends__x-labels {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #646464;
+    gap: 16px;
+    padding: 0 16px;
+}
+
+.visit_trends__x-label-left {
+    width: 30px;
+}
+
+.visit_trends__x-label-right {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.visit_trends__x-label-right span {
+    display: inline-block;
+    flex: 1;
+}
+
+.pet_distribution_chart{
+    background: #FFFFFF;
+    width: 369px;
+    height: 378px;
     border-radius: 8px;
 }

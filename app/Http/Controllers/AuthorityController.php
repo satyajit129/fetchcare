@@ -15,4 +15,16 @@ class AuthorityController extends Controller
     {
         return view('pages.financial_management');
     }
+    public function clientManagement(): View
+    {
+        return view('pages.client_management');
+    }
+    public function scheduleManagement(): View
+    {
+        return view('pages.schedule_management');
+    }
+    public function marketingManagement(): View
+    {
+        return view('pages.marketing_management');
+    }
 }

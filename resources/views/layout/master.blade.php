@@ -7,6 +7,10 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
     <div class="container-fluid">
         @include('layout.sidebar')
 

@@ -1,12 +1,12 @@
 @extends('layout.master')
-@section('title', 'Financial Management')
+@section('title', 'Schedule Management')
 
 @section('styles')
 @endsection
 
 @section('content')
     <div class="content__header">
-        <h2 class="content__title">Financial Management</h2>
+        <h2 class="content__title">Schedule Management</h2>
         <div class="dropdown__container">
             <!-- Dropdown 1 -->
             <div class="dropdown">

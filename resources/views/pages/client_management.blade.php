@@ -1,12 +1,12 @@
 @extends('layout.master')
-@section('title', 'Financial Management')
+@section('title', 'Client Management')
 
 @section('styles')
 @endsection
 
 @section('content')
-    <div class="content__header">
-        <h2 class="content__title">Financial Management</h2>
+<div class="content__header">
+        <h2 class="content__title">Client Management</h2>
         <div class="dropdown__container">
             <!-- Dropdown 1 -->
             <div class="dropdown">
@@ -36,11 +36,11 @@
     <div class="content__overview">
         <div class="card_1 active">
             <div class="card_1__header">
-                <p>Total Revenue</p>
-                <img src="{{ asset('svg/Frame_83.svg') }}" alt="">
+                <p>Client Retention</p>
+                <img src="{{ asset('svg/Frame_86.svg') }}" alt="">
             </div>
             <div class="card_1__content">
-                <h6>$17,365.00</h6>
+                <h6>47.5%</h6>
                 <p>
                     <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
                     2.7%
@@ -49,11 +49,11 @@
         </div>
         <div class="card_1">
             <div class="card_1__header">
-                <p>Avg Transaction</p>
+                <p>New Client Acquisition</p>
                 <img src="{{ asset('svg/Frame_84.svg') }}" alt="">
             </div>
             <div class="card_1__content">
-                <h6>$370.00</h6>
+                <h6>24.6%</h6>
                 <p>
                     <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
                     2.7%
@@ -62,11 +62,11 @@
         </div>
         <div class="card_1">
             <div class="card_1__header">
-                <p>Revenue per Vet</p>
+                <p>Client Satisfy Score</p>
                 <img src="{{ asset('svg/Frame_85.svg') }}" alt="">
             </div>
             <div class="card_1__content">
-                <h6>$370.00</h6>
+                <h6>4.8</h6>
                 <p>
                     <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
                     2.7%
@@ -75,24 +75,11 @@
         </div>
         <div class="card_1">
             <div class="card_1__header">
-                <p>Invoice Collection</p>
+                <p>Active Clients</p>
                 <img src="{{ asset('svg/Frame_82.svg') }}" alt="">
             </div>
             <div class="card_1__content">
                 <h6>87</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-bottom.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
-            </div>
-        </div>
-        <div class="avg_app_dur card_1">
-            <div class="card_1__header">
-                <p>Avg. Appoint Duration</p>
-                <img src="{{ asset('svg/Frame_81.svg') }}" alt="">
-            </div>
-            <div class="card_1__content">
-                <h6>41.7 min</h6>
                 <p>
                     <img src="{{ asset('svg/arrow-bottom.svg') }}" alt="up arrow" class="arrow-icon">
                     2.7%
@@ -104,3 +91,5 @@
 
 @section('scripts')
 @endsection
+
+
