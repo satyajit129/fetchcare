@@ -1,5 +1,7 @@
 @extends('layout.master')
 @section('title', 'Operational Management')
+
+@section('styles')
 @section('content')
     <div class="content__header">
         <h2 class="content__title">Operational Management</h2>
@@ -98,39 +100,57 @@
     </div>
     <div class="content__charts">
         <!-- Line Chart -->
-        <!-- Line Chart -->
         <div class="visit_trends_chart">
             <div class="visit_trends__header">
                 <h2>Visit Trends</h2>
             </div>
 
             <div class="visit_trends__body">
+                <!-- Horizontal grid with y-labels -->
                 <div class="visit_trends__grid">
-                    <!-- Horizontal grid lines with aligned Y labels -->
                     <div class="visit_trends__y-label">2000</div>
                     <div class="visit_trends__grid-line"></div>
                 </div>
-
                 <div class="visit_trends__grid">
-                    <!-- Horizontal grid lines with aligned Y labels -->
                     <div class="visit_trends__y-label">1500</div>
                     <div class="visit_trends__grid-line"></div>
                 </div>
                 <div class="visit_trends__grid">
-                    <!-- Horizontal grid lines with aligned Y labels -->
                     <div class="visit_trends__y-label">1000</div>
                     <div class="visit_trends__grid-line"></div>
                 </div>
                 <div class="visit_trends__grid">
-                    <!-- Horizontal grid lines with aligned Y labels -->
                     <div class="visit_trends__y-label">500</div>
                     <div class="visit_trends__grid-line"></div>
                 </div>
                 <div class="visit_trends__grid">
-                    <!-- Horizontal grid lines with aligned Y labels -->
                     <div class="visit_trends__y-label">0</div>
                     <div class="visit_trends__grid-line"></div>
                 </div>
+
+                <!-- Area chart -->
+                <!-- Mountain line with shaded area -->
+                <svg class="visit_trends__line-chart" viewBox="0 0 711 378" preserveAspectRatio="none">
+                    <!-- Fill area under curve -->
+                    <path d="
+                                        M0,320
+                                        C60,250 120,300 180,200
+                                        C240,100 300,150 360,180
+                                        C420,220 480,120 540,150
+                                        C600,250 660,180 711,50
+                                        L711,350
+                                        L0,350
+                                        Z
+                                        " fill="rgba(25,135,84,0.2)" stroke="none" />
+                    <!-- Stroke line only -->
+                    <path d="
+                                        M0,320
+                                        C60,250 120,300 180,200
+                                        C240,100 300,150 360,180
+                                        C420,220 480,120 540,150
+                                        C600,250 660,180 711,50
+                                        " fill="none" stroke="#0076CE" stroke-width="8" />
+                </svg>
             </div>
             <div class="visit_trends__x-labels">
                 <div class="visit_trends__x-label-left"></div>
@@ -140,113 +160,178 @@
                     <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
                 </div>
             </div>
+            <!-- Line Chart Overlay -->
 
         </div>
-
-
-        <!-- Pie Chart -->
-        <div class="pet_distribution_chart">
+        <div class="chart-container">
             <div class="pet_distribution__header">
-                <h2>Pet Distribution</h2>
+                <h2>Pets Distributions</h2>
             </div>
-            <canvas id="pieChart"></canvas>
+            <div class="chart-container_body">
+                <canvas id="petChart"></canvas>
+            </div>
+            <div class="chart-container_footer">
+                <div class="chart-container_footer-left">
+                    <span>Cat</span>
+                    <span>Dog</span>
+                    <span>Bird</span>
+                </div>
+                <div class="chart-container_footer-right">
+                    <span>Cow</span>
+                    <span>Horse</span>
+                    <span>Others</span>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="appointment">
+        <div class="appointment_list">
+            <div class="appointment_header">
+                <h2>Appointments</h2>
+            </div>
+            <div class="appointment_body">
+                <div class="a__header_row">
+                    <div class="a__header_col">Pet Name</div>
+                    <div class="a__header_col">Time</div>
+                    <div class="a__header_col">Vet Name</div>
+                    <div class="a__header_col">Service</div>
+                    <div class="a__header_col">Duration</div>
+                    <div class="a__header_col">Status</div>
+                </div>
 
-@endsection
+                <div class="a__body">
+                    <div class="a__body_row">
+                        <div class="a__body_col">Max</div>
+                        <div class="a__body_col">10:00 AM</div>
+                        <div class="a__body_col">Dr. Smith</div>
+                        <div class="a__body_col">Checkup</div>
+                        <div class="a__body_col">30 mins</div>
+                        <div class="a__body_col">
+                            <span class="status-indicator completed"></span>
+                            Completed
+                        </div>
+                    </div>
+                    <div class="a__body_row">
+                        <div class="a__body_col">Bella</div>
+                        <div class="a__body_col">11:00 AM</div>
+                        <div class="a__body_col">Dr. Jones</div>
+                        <div class="a__body_col">Vaccination</div>
+                        <div class="a__body_col">20 mins</div>
+                        <div class="a__body_col">
+                            <span class="status-indicator pending"></span>
+                            Pending
+                        </div>
+                    </div>
+                    <div class="a__body_row">
+                        <div class="a__body_col">Charlie</div>
+                        <div class="a__body_col">01:00 PM</div>
+                        <div class="a__body_col">Dr. Brown</div>
+                        <div class="a__body_col">Dental Cleaning</div>
+                        <div class="a__body_col">45 mins</div>
+                        <div class="a__body_col">
+                            <span class="status-indicator cancelled"></span>
+                            Cancelled
+                        </div>
+                    </div>
+                    <div class="a__body_row">
+                        <div class="a__body_col">Max</div>
+                        <div class="a__body_col">10:00 AM</div>
+                        <div class="a__body_col">Dr. Smith</div>
+                        <div class="a__body_col">Checkup</div>
+                        <div class="a__body_col">30 mins</div>
+                        <div class="a__body_col">
+                            <span class="status-indicator completed"></span>
+                            Completed
+                        </div>
+                    </div>
+                    <div class="a__body_row">
+                        <div class="a__body_col">Bella</div>
+                        <div class="a__body_col">11:00 AM</div>
+                        <div class="a__body_col">Dr. Jones</div>
+                        <div class="a__body_col">Vaccination</div>
+                        <div class="a__body_col">20 mins</div>
+                        <div class="a__body_col">
+                            <span class="status-indicator pending"></span>
+                            Pending
+                        </div>
+                    </div>
+                    <div class="a__body_row">
+                        <div class="a__body_col">Charlie</div>
+                        <div class="a__body_col">01:00 PM</div>
+                        <div class="a__body_col">Dr. Brown</div>
+                        <div class="a__body_col">Dental Cleaning</div>
+                        <div class="a__body_col">45 mins</div>
+                        <div class="a__body_col">
+                            <span class="status-indicator cancelled"></span>
+                            Cancelled
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="upcoming_appointment">
+            <div class="upcoming_appointment_header">
+                <h2>Upcoming Appointments</h2>
+            </div>
+            <div class="upcoming_follow_up">
+                <p>Pending Follow-Ups</p>
+            </div>
+        </div>
+    @endsection
 
 
-@section('scripts')
-    <script>
-        $(function() {
-            const $canvas = $('#lineChart');
-            const ctx = $canvas[0].getContext('2d');
-
-            // Gradient for fill below the line
-            const gradient = ctx.createLinearGradient(0, 0, 0, $canvas.height());
-            gradient.addColorStop(0, 'rgba(0,118,206,0.2)');
-            gradient.addColorStop(1, 'rgba(0,118,206,0)');
+    @section('scripts')
+        <script src="{{ asset('js/chartjs-plugin-datalabels.js') }}"></script>
+        <script>
+            const ctx = document.getElementById('petChart').getContext('2d');
 
             new Chart(ctx, {
-                type: 'line',
+                type: 'doughnut',
                 data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov',
-                        'Dec'
-                    ],
                     datasets: [{
-                        label: 'Visits',
-                        data: [750, 950, 1400, 1050, 1150, 1650, 1100, 1400, 900, 1250, 1300, 1150],
-                        borderColor: '#0076CE',
-                        borderWidth: 3,
-                        backgroundColor: gradient,
-                        fill: true,
-                        tension: 0.4, // smooth mountain curve
-                        pointRadius: 0 // remove dots
+                        data: [12, 13, 24, 20, 21, 10], // your 6 slice values
+                        backgroundColor: [
+                            '#FF6384',
+                            '#36A2EB',
+                            '#FFCE56',
+                            '#4BC0C0',
+                            '#9966FF',
+                            '#FF9F40'
+                        ],
+                        borderRadius: 7,
+                        borderWidth: 0,
+                        borderColor: '#fff'
                     }]
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        x: {
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                font: {
-                                    family: 'Inter',
-                                    size: 12
-                                },
-                                color: '#646464'
+                            position: 'bottom',
+                            labels: {
+                                usePointStyle: true,
+                                pointStyle: 'circle'
                             }
                         },
-                        y: {
-                            min: 0,
-                            max: 2000,
-                            ticks: {
-                                stepSize: 500,
-                                font: {
-                                    family: 'Inter',
-                                    size: 12
-                                },
-                                color: '#646464'
+                        datalabels: {
+                            color: '#fff',
+                            font: {
+                                size: 12,
+                                weight: 'bold'
                             },
-                            grid: {
-                                drawTicks: false,
-                                color: '#E7E7E7',
-                                borderDash: [4, 4], // all horizontal lines dotted
-                                drawBorder: false // removes vertical line on left
+                            anchor: 'end',
+                            align: 'start',
+                            offset: 10,
+                            formatter: (value, ctx) => {
+                                let sum = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                return (value * 100 / sum).toFixed(0) + "%";
                             }
                         }
-                    }
-                }
+                    },
+                    cutout: '0%'
+                },
+                plugins: [ChartDataLabels]
             });
-        });
-    </script>
-    <script>
-        // Pie Chart
-        const ctxPie = document.getElementById('pieChart').getContext('2d');
-        const pieChart = new Chart(ctxPie, {
-            type: 'pie',
-            data: {
-                labels: ['Dogs', 'Cats', 'Birds', 'Others'],
-                datasets: [{
-                    data: [45, 30, 15, 10],
-                    backgroundColor: ['#198754', '#0d6efd', '#ffc107', '#dc3545']
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
-                    }
-                }
-            }
-        });
-    </script>
-@endsection
+        </script>
+    @endsection
