@@ -17,3 +17,9 @@
         });
     });
 </script>
+
+<script>
+    $('#toggleSidebar').on('click', function() {
+        $('#sidebar').toggleClass('collapsed');
+    });
+</script>

@@ -1,7 +1,7 @@
-<div class="sticky">
+<div class="sticky"  id="sidebar">
     <div class="app-logo">
         <img class="app-logo__image" src="{{ asset('images/Logo.png') }}" alt="Logo">
-        <img class="app-logo__icon" src="{{ asset('svg/arrow-circle-left.svg') }}" alt="">
+        <img class="app-logo__icon" id="toggleSidebar" src="{{ asset('svg/arrow-circle-left.svg') }}" alt="">
     </div>
     <ul class="side-menu">
         <li class="slide">

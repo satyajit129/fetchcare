@@ -100,7 +100,7 @@
     </div>
     <div class="content__charts">
         <!-- Line Chart -->
-        <div class="visit_trends_chart">
+        {{-- <div class="visit_trends_chart">
             <div class="visit_trends__header">
                 <h2>Visit Trends</h2>
             </div>
@@ -133,23 +133,23 @@
                 <svg class="visit_trends__line-chart" viewBox="0 0 711 378" preserveAspectRatio="none">
                     <!-- Fill area under curve -->
                     <path d="
-                                        M0,320
-                                        C60,250 120,300 180,200
-                                        C240,100 300,150 360,180
-                                        C420,220 480,120 540,150
-                                        C600,250 660,180 711,50
-                                        L711,350
-                                        L0,350
-                                        Z
-                                        " fill="rgba(25,135,84,0.2)" stroke="none" />
+                                            M0,320
+                                            C60,250 120,300 180,200
+                                            C240,100 300,150 360,180
+                                            C420,220 480,120 540,150
+                                            C600,250 660,180 711,50
+                                            L711,350
+                                            L0,350
+                                            Z
+                                            " fill="rgba(25,135,84,0.2)" stroke="none" />
                     <!-- Stroke line only -->
                     <path d="
-                                        M0,320
-                                        C60,250 120,300 180,200
-                                        C240,100 300,150 360,180
-                                        C420,220 480,120 540,150
-                                        C600,250 660,180 711,50
-                                        " fill="none" stroke="#0076CE" stroke-width="8" />
+                                            M0,320
+                                            C60,250 120,300 180,200
+                                            C240,100 300,150 360,180
+                                            C420,220 480,120 540,150
+                                            C600,250 660,180 711,50
+                                            " fill="none" stroke="#0076CE" stroke-width="8" />
                 </svg>
             </div>
             <div class="visit_trends__x-labels">
@@ -162,6 +162,26 @@
             </div>
             <!-- Line Chart Overlay -->
 
+        </div> --}}
+        <div class="visit_trends_chart">
+            <div class="visit_trends__header">
+                <h2>Visit Trends</h2>
+            </div>
+
+            <div class="visit_trends__body" style="position: relative; height: 264px;">
+                <!-- This will be the canvas for Chart.js -->
+                <canvas id="visitTrendsChart"
+                    style="position: absolute; top:0; left:50%; transform: translateX(-50%); width: 100%; height: 100%;"></canvas>
+            </div>
+
+            <div class="visit_trends__x-labels">
+                <div class="visit_trends__x-label-left"></div>
+                <div class="visit_trends__x-label-right">
+                    <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+                    <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
+                    <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+                </div>
+            </div>
         </div>
         <div class="chart-container">
             <div class="pet_distribution__header">
@@ -276,62 +296,169 @@
             <div class="upcoming_follow_up">
                 <p>Pending Follow-Ups</p>
             </div>
+            <div class="upcoming_follow_up_body">
+                <div class="u__f__row">
+                    <div class="u__f__row_col">Max</div>
+                    <div class="u__f__row_col">Dr. Lee</div>
+                    <div class="u__f__row_col">Ear Infection</div>
+                </div>
+                <div class="u__f__row">
+                    <div class="u__f__row_col">Pussy</div>
+                    <div class="u__f__row_col">Dr. Smith</div>
+                    <div class="u__f__row_col">Vaccine booster</div>
+                </div>
+                <div class="u__f__row">
+                    <div class="u__f__row_col">Bella</div>
+                    <div class="u__f__row_col">Dr. Doe</div>
+                    <div class="u__f__row_col">Surgery checkup</div>
+                </div>
+                <div class="u__f__row">
+                    <div class="u__f__row_col">Max</div>
+                    <div class="u__f__row_col">Dr. Lee</div>
+                    <div class="u__f__row_col">Ear Infection</div>
+                </div>
+                <div class="u__f__row">
+                    <div class="u__f__row_col">Max</div>
+                    <div class="u__f__row_col">Dr. Lee</div>
+                    <div class="u__f__row_col">Ear Infection</div>
+                </div>
+                <div class="u__f__row">
+                    <div class="u__f__row_col">Max</div>
+                    <div class="u__f__row_col">Dr. Lee</div>
+                    <div class="u__f__row_col">Ear Infection</div>
+                </div>
+                <div class="u__f__row">
+                    <div class="u__f__row_col">Max</div>
+                    <div class="u__f__row_col">Dr. Lee</div>
+                    <div class="u__f__row_col">Ear Infection</div>
+                </div>
+            </div>
         </div>
-    @endsection
+    </div>
+@endsection
 
 
-    @section('scripts')
-        <script src="{{ asset('js/chartjs-plugin-datalabels.js') }}"></script>
-        <script>
-            const ctx = document.getElementById('petChart').getContext('2d');
+@section('scripts')
+    <script src="{{ asset('js/chartjs-plugin-datalabels.js') }}"></script>
+    <script>
+        const ctx = document.getElementById('petChart').getContext('2d');
 
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    datasets: [{
-                        data: [12, 13, 24, 20, 21, 10], // your 6 slice values
-                        backgroundColor: [
-                            '#FF6384',
-                            '#36A2EB',
-                            '#FFCE56',
-                            '#4BC0C0',
-                            '#9966FF',
-                            '#FF9F40'
-                        ],
-                        borderRadius: 7,
-                        borderWidth: 0,
-                        borderColor: '#fff'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                usePointStyle: true,
-                                pointStyle: 'circle'
-                            }
-                        },
-                        datalabels: {
-                            color: '#fff',
-                            font: {
-                                size: 12,
-                                weight: 'bold'
-                            },
-                            anchor: 'end',
-                            align: 'start',
-                            offset: 10,
-                            formatter: (value, ctx) => {
-                                let sum = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
-                                return (value * 100 / sum).toFixed(0) + "%";
-                            }
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [12, 13, 24, 20, 21, 10], // your 6 slice values
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        '#4BC0C0',
+                        '#9966FF',
+                        '#FF9F40'
+                    ],
+                    borderRadius: 7,
+                    borderWidth: 0,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true,
+                            pointStyle: 'circle'
                         }
                     },
-                    cutout: '0%'
+                    datalabels: {
+                        color: '#fff',
+                        font: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        anchor: 'end',
+                        align: 'start',
+                        offset: 10,
+                        formatter: (value, ctx) => {
+                            let sum = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                            return (value * 100 / sum).toFixed(0) + "%";
+                        }
+                    }
                 },
-                plugins: [ChartDataLabels]
-            });
-        </script>
-    @endsection
+                cutout: '0%'
+            },
+            plugins: [ChartDataLabels]
+        });
+    </script>
+
+    <script>
+        const ctx_1 = document.getElementById('visitTrendsChart').getContext('2d');
+
+        // Gradient for area under the line
+        const gradient = ctx_1.createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, 'rgba(25,135,84,0.2)');
+        gradient.addColorStop(1, 'rgba(25,135,84,0)');
+
+        new Chart(ctx_1, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Visitors',
+                    data: [300, 800, 1200, 900, 1500, 1100, 1600, 1400, 1800, 1700, 1900, 2000],
+                    borderColor: '#0076CE',
+                    borderWidth: 5,
+                    pointRadius: 0,
+                    pointHoverRadius: 50,
+                    fill: true,
+                    backgroundColor: gradient,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: true,
+                        mode: 'nearest',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        }, // remove vertical lines
+                        ticks: {
+                            display: false
+                        } // hide x ticks because you already have custom labels
+                    },
+                    y: {
+                        min: 0,
+                        max: 2000,
+                        ticks: {
+                            stepSize: 500
+                        },
+                        grid: {
+                            drawTicks: false,
+                            drawOnChartArea: true,
+                            drawBorder: false,
+                            color: '#E7E7E7',
+                            borderDash: [5, 5] // dashed horizontal lines
+                        }
+                    }
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                }
+            }
+        });
+    </script>
+@endsection
