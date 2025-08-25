@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+html {
+    overflow-y: hidden; /* completely hide scrollbars */
+}
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
@@ -10,8 +13,12 @@ body {
     display: flex;
 }
 .container-fluid {
-    width: 100%;
+    width: 103%;
     height: 100vh;
+}
+/* Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+    display: none;
 }
 :root {
     --primary: #0076ce;
@@ -62,7 +69,7 @@ a {
     margin-bottom: 40px;
     transition: all 0.6s ease;
 }
-.app-logo__image{
+.app-logo__image {
     width: 198px;
     height: 56px;
 }
@@ -94,7 +101,6 @@ a {
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-
 
 .side-menu__item {
     display: flex;
@@ -151,7 +157,7 @@ a {
 
 /* Main content area */
 .content {
-    margin-left: 260px;
+    margin-left: 254px;
     padding: 0 40px 13px 40px;
     flex: 1;
     transition: margin-left 0.7s ease;
@@ -241,7 +247,7 @@ a {
 }
 .content__overview {
     display: flex;
-    gap: 12px;
+    gap: 17px;
     margin-top: 37px;
     justify-content: space-between;
 }
@@ -304,9 +310,8 @@ a {
 
 .content__charts {
     display: flex;
-    gap: 24px;
+    gap: 20px;
     margin-top: 20px;
-    justify-content: space-between;
 }
 .visit_trends_chart {
     width: 711px;
@@ -316,7 +321,7 @@ a {
     font-family: "Inter", sans-serif;
     position: relative;
 }
-.revenue_trends_chart{
+.revenue_trends_chart {
     width: 639px;
     height: 378px;
     background: #ffffff;
@@ -326,7 +331,7 @@ a {
 }
 
 .visit_trends__header h2,
-.pet_distribution__header h2 ,
+.pet_distribution__header h2,
 .revenue_trends__header h2 {
     padding: 16px;
     font-weight: 600;
@@ -339,7 +344,8 @@ a {
 }
 
 .visit_trends__body,
-.revenue_trends__body {
+.revenue_trends__body,
+.client_trands__body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -372,7 +378,8 @@ a {
     );
 }
 
-.visit_trends__x-labels {
+.visit_trends__x-labels,
+.client_trands__x-labels {
     display: flex;
     align-items: center;
     /* margin-top: 8px; */
@@ -385,6 +392,9 @@ a {
 .visit_trends__x-label-left {
     width: 30px;
 }
+.client_trands__x-label-left {
+    width: 16px;
+}
 
 .visit_trends__x-label-right {
     flex: 1;
@@ -392,8 +402,15 @@ a {
     justify-content: space-between;
     gap: 24px;
 }
+.client_trands__x-label-right {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
 
-.visit_trends__x-label-right span {
+.visit_trends__x-label-right span,
+.client_trands__x-label-right span {
     display: inline-block;
     flex: 1;
 }
@@ -419,7 +436,7 @@ a {
     width: 369px;
     border-radius: 8px;
 }
-.revenue-chart-container{
+.revenue-chart-container {
     width: 441px;
     background: #ffffff;
     border-radius: 8px;
@@ -444,7 +461,6 @@ a {
     padding: 16px;
     justify-content: flex-start;
 }
-/* Container styling */
 .chart-container_footer-left,
 .chart-container_footer-right,
 .revenue-chart-container_footer-left,
@@ -470,7 +486,6 @@ a {
     font-size: 14px;
 }
 
-/* Small dot before each span */
 .chart-container_footer-left span::before,
 .chart-container_footer-right span::before,
 .revenue-chart-container_footer-left span::before,
@@ -485,7 +500,6 @@ a {
     border-radius: 50%;
 }
 
-/* Dot colors */
 .chart-container_footer-left span:nth-child(1)::before,
 .revenue-chart-container_footer-left span:nth-child(1)::before {
     background-color: #ff6384;
@@ -512,7 +526,6 @@ a {
     background-color: #ff9f40;
 }
 
-
 /* Appointment */
 .appointment {
     display: flex;
@@ -520,7 +533,7 @@ a {
     margin-top: 20px;
     justify-content: space-between;
 }
-.appointment_list{
+.appointment_list {
     padding: 16px;
 }
 .appointment_list,
@@ -530,7 +543,7 @@ a {
 
     width: 711px;
 }
-.appointment_header h2 ,
+.appointment_header h2,
 .upcoming_appointment_header h2 {
     font-weight: 600;
     font-size: 24px;
@@ -614,12 +627,12 @@ a {
 .upcoming_appointment {
     width: 369px;
 }
-.upcoming_appointment h2{
+.upcoming_appointment h2 {
     padding: 16px;
 }
 
 .upcoming_follow_up {
-    background: #E0F0FF;
+    background: #e0f0ff;
     padding: 4px 16px;
 }
 .upcoming_follow_up p {
@@ -627,7 +640,7 @@ a {
     font-size: 14px;
     line-height: 140%;
     letter-spacing: -0.02em;
-    color: #00477C;
+    color: #00477c;
 }
 .upcoming_follow_up_body {
     display: flex;
@@ -639,22 +652,22 @@ a {
     display: flex;
     justify-content: space-between; /* pushes left & right */
     padding: 2px 8px;
-    border-bottom: 0.5px solid #0076CE;
+    border-bottom: 0.5px solid #0076ce;
     margin-bottom: 7px;
 }
 
 .u__f__row_col {
-    flex: 1;                       /* each column takes available space */
+    flex: 1; /* each column takes available space */
     font-weight: 500;
 
     line-height: 140%;
     letter-spacing: -0.02em;
-    color: #0076CE;
+    color: #0076ce;
 }
 
 .u__f__row_col:first-child {
     text-align: left;
-     font-size: 14px;
+    font-size: 14px;
 }
 
 .u__f__row_col:last-child {
@@ -663,7 +676,7 @@ a {
 }
 
 /* recent transactions */
-.recent-transactions{
+.recent-transactions {
     padding: 16px;
     background: #ffffff;
     border-radius: 8px;
@@ -675,4 +688,98 @@ a {
     line-height: 34px;
     letter-spacing: -0.02em;
     color: #292929;
+}
+
+/* Client Management */
+.client__management_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 17px;
+}
+.client_trands_chart {
+    width: 465px;
+    background: #ffffff;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    position: relative;
+}
+.retention_trends_chart {
+    width: 349px;
+    background: #ffffff;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    position: relative;
+}
+.client_trands__header h2 {
+    padding: 16px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: -0.02em;
+
+    color: #292929;
+}
+.client_trands__body canvas {
+    width: 433px;
+    height: 260px !important;
+}
+.client_trands__footer {
+    display: flex;
+    gap: 16px;
+}
+.client_trands__footer {
+    display: flex;
+    gap: 20px; /* space between "New Clients" and "Old Client" */
+    padding: 16px;
+}
+
+.client_trands__footer span {
+    position: relative;
+    padding-left: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #292929;
+}
+
+.client_trands__footer span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.client_trands__footer span:nth-child(1)::before {
+    background-color: #ef69de; /* pink */
+}
+
+.client_trands__footer span:nth-child(2)::before {
+    background-color: #0076ce; /* blue */
+}
+.retention_trends__header h2 {
+    padding: 16px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: -0.02em;
+    color: #292929;
+}
+.retention_trends__body{
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px 0 16px;
+}
+.filters__container {
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 8px;
+    margin-top: 37px;
+    width: 246px;
 }
