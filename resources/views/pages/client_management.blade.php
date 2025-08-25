@@ -128,7 +128,10 @@
             <div class="filter__header">
                 <h2>Filters</h2>
             </div>
-            <hr>
+            <div style="padding: 0 12px">
+
+            <div class="filter__straight_line"></div>
+            </div>
         </div>
     </div>
 
