@@ -2,6 +2,7 @@
 @section('title', 'Client Management')
 
 @section('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 @endsection
 
 @section('content')
@@ -129,16 +130,288 @@
                 <h2>Filters</h2>
             </div>
             <div style="padding: 0 12px">
+                <div class="filter__straight_line"></div>
+            </div>
+            <div class="filter_body">
+                <span class="filter__label">Clinic Branch</span>
+                <div class="filter__branches">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <p>All Branches</p>
+                </div>
+                <div class="filter__branches">
+                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                    <p>Newtown Clinic</p>
+                </div>
+                <div class="filter__branches">
+                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                    <p>Uptown Clinic</p>
+                </div>
+                <div class="filter__branches">
+                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                    <p>Oldtown Clinic</p>
+                </div>
+                <div class="filter__branches">
+                    <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                    <p>Downtown Clinic</p>
+                </div>
+            </div>
+            <div class="client_status">
+                <span class="client_status__label">Client Status</span>
+                <div class="filter_checkboxes">
+                    <label class="filter_checkbox-container">
+                        <input type="checkbox" id="btncheck6" checked>
+                        <i class="bi bi-check-lg"></i>
+                        <p>Active</p>
+                    </label>
 
-            <div class="filter__straight_line"></div>
+                    <label class="filter_checkbox-container">
+                        <input type="checkbox" id="btncheck7">
+                        <i class="bi bi-check-lg"></i>
+                        <p>New</p>
+                    </label>
+
+                    <label class="filter_checkbox-container">
+                        <input type="checkbox" id="btncheck8">
+                        <i class="bi bi-check-lg"></i>
+                        <p>At Risk</p>
+                    </label>
+                </div>
+            </div>
+            <div class="feedback__score">
+                <span class="feedback__score__label">Feedback Score</span>
+                <div class="feedback__score__value">
+                    <label class="star-option">
+                        <input type="checkbox" name="feedback_score[]" value="1">
+                        <div class="stars"><i class="bi bi-star-fill"></i></div>
+                    </label>
+
+                    <label class="star-option">
+                        <input type="checkbox" name="feedback_score[]" value="2">
+                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    </label>
+
+                    <label class="star-option">
+                        <input type="checkbox" name="feedback_score[]" value="3">
+                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i></div>
+                    </label>
+
+                    <label class="star-option">
+                        <input type="checkbox" name="feedback_score[]" value="4">
+                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    </label>
+
+                    <label class="star-option">
+                        <input type="checkbox" name="feedback_score[]" value="5">
+                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i></div>
+                    </label>
+                </div>
+            </div>
+            <div class="filter__buttons">
+                <p class="filter__reset__button">Reset all Filters</button>
             </div>
         </div>
     </div>
+
+    <div class="recent-transactions">
+    <div class="client-history">
+        <div class="client__history_header">
+            <h2>Client History</h2>
+        </div>
+        <div class="client__history_body">
+            <table class="client-history_table">
+                <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Pet Name</th>
+                        <th>Vet Name</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Clinic Name</th>
+                        <th>Client Type</th>
+                        <th>Rating</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Buddy</td>
+                        <td>Dr. Smith</td>
+                        <td>$100</td>
+                        <td>2023-01-01</td>
+                        <td>Newtown Clinic</td>
+                        <td class="client-type">Regular</td>
+                        <td class="rating">
+                            <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point"> 1.2</span>
+                        </td>
+                        <td class="action_btn">
+                            <button class="btn btn-primary view_btn">View</button>
+                            <a href="">
+                                <img src="{{ asset('svg/edit.svg') }}" alt="">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Roe</td>
+                        <td>Charlie</td>
+                        <td>Dr. Brown</td>
+                        <td>$150</td>
+                        <td>2023-02-15</td>
+                        <td>Happy Pets Clinic</td>
+                        <td class="client-type">New</td>
+                        <td class="rating">
+                            <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point"> 1.2</span>
+                        </td>
+                        <td class="action_btn">
+                            <button class="btn btn-primary view_btn">View</button>
+                            <a href="">
+                                <img src="{{ asset('svg/edit.svg') }}" alt="">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mark Twain</td>
+                        <td>Max</td>
+                        <td>Dr. Green</td>
+                        <td>$200</td>
+                        <td>2023-03-10</td>
+                        <td>City Vet Clinic</td>
+                        <td class="client-type">Regular</td>
+                        <td class="rating">
+                            <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point"> 1.2</span>
+                        </td>
+                        <td class="action_btn">
+                            <button class="btn btn-primary view_btn">View</button>
+                            <a href="">
+                                <img src="{{ asset('svg/edit.svg') }}" alt="">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Emily Davis</td>
+                        <td>Rocky</td>
+                        <td>Dr. Wilson</td>
+                        <td>$250</td>
+                        <td>2023-04-05</td>
+                        <td>Greenfield Clinic</td>
+                        <td class="client-type">Regular</td>
+                        <td class="rating">
+                            <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point"> 1.2</span>
+                        </td>
+                        <td class="action_btn">
+                            <button class="btn btn-primary view_btn">View</button>
+                            <a href="">
+                                <img src="{{ asset('svg/edit.svg') }}" alt="">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Michael Johnson</td>
+                        <td>Buddy</td>
+                        <td>Dr. Smith</td>
+                        <td>$100</td>
+                        <td>2023-01-01</td>
+                        <td>Newtown Clinic</td>
+                        <td class="client-type">Regular</td>
+                        <td class="rating">
+                            <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point"> 1.2</span>
+                        </td>
+                        <td class="action_btn">
+                            <button class="btn btn-primary view_btn">View</button>
+                            <a href="">
+                                <img src="{{ asset('svg/edit.svg') }}" alt="">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 
 @endsection
 
 @section('scripts')
     <script src="{{ asset('js/chartjs-plugin-datalabels.js') }}"></script>
+    <!-- Retention Trends Bar Chart -->
+    <script>
+        const ctxRetention = document.getElementById('retentionTrendsChart').getContext('2d');
+
+        new Chart(ctxRetention, {
+            type: 'bar',
+            data: {
+                labels: ['1st Visit', '2nd Visit', '3rd Visit', 'Loyal'],
+                datasets: [{
+                    label: 'Clients',
+                    data: [600, 540, 150, 70],
+                    backgroundColor: '#0076CE',
+                    borderRadius: 6,
+                    barThickness: 40,
+                    maxBarThickness: 50
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        left: 15,
+                        right: 15
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        offset: true, // keep bars fully visible
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#646464',
+                            font: {
+                                family: 'Inter',
+                                size: 12
+                            }
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 800,
+                        ticks: {
+                            stepSize: 200,
+                            color: '#646464',
+                            font: {
+                                family: 'Inter',
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            drawTicks: false,
+                            drawOnChartArea: true,
+                            drawBorder: true,
+                            color: function(context) {
+                                return context.tick.value === 0 ? '#E7E7E7' : '#E7E7E7';
+                            },
+                            borderDash: []
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+
+    <!-- Client Trends Line Chart -->
     <script>
         const ctx_1 = document.getElementById('clientTrendsChart').getContext('2d');
         const gradient1 = ctx_1.createLinearGradient(0, 0, 0, 300);
@@ -147,10 +420,12 @@
         const gradient2 = ctx_1.createLinearGradient(0, 0, 0, 300);
         gradient2.addColorStop(0, 'rgba(0,118,206,0.7)');
         gradient2.addColorStop(1, 'rgba(0,118,206,0)');
+
         new Chart(ctx_1, {
             type: 'line',
             data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov',
+                'Dec'], // required for chart.js
                 datasets: [{
                         label: 'Revenue',
                         data: [230, 190, 165, 310, 540, 600, 469, 580, 546, 492, 610, 690],
@@ -190,14 +465,19 @@
                             display: false
                         },
                         ticks: {
-                            display: false
+                            display: false // hides the month labels
                         }
                     },
                     y: {
                         min: 0,
                         max: 800,
                         ticks: {
-                            stepSize: 200
+                            stepSize: 200,
+                            color: '#646464',
+                            font: {
+                                family: 'Inter',
+                                size: 12
+                            }
                         },
                         grid: {
                             drawTicks: false,
@@ -211,66 +491,6 @@
             }
         });
     </script>
-    <script>
-        const ctxRetention = document.getElementById('retentionTrendsChart').getContext('2d');
 
-        new Chart(ctxRetention, {
-            type: 'bar',
-            data: {
-                labels: ['1st Visit', '2nd Visit', '3rd Visit', 'Loyal'],
-                datasets: [{
-                    label: 'Clients',
-                    data: [600, 540, 150, 70], // sample values (replace with real data)
-                    backgroundColor: '#0076CE',
-                    borderRadius: 6, // rounded top corners
-                    barThickness: 40
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        ticks: {
-                            color: '#646464',
-                            font: {
-                                family: 'Inter',
-                                size: 12
-                            }
-                        }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        min: 0,
-                        max: 800,
-                        ticks: {
-                            stepSize: 200,
-                            color: '#646464',
-                            font: {
-                                family: 'Inter',
-                                size: 12
-                            }
-                        },
-                        grid: {
-                            color: function(context) {
-                                return context.tick.value === 0 ? '#E7E7E7' : '#E7E7E7AA';
-                            },
-                            borderDash: function(context) {
-                                return context.tick.value === 0 ? [] : [5, 5];
-                            },
-                            drawBorder: false
-                        }
-                    }
-                }
-            }
-        });
-    </script>
+
 @endsection
