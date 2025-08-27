@@ -217,121 +217,126 @@
     </div>
 
     <div class="recent-transactions">
-    <div class="client-history">
-        <div class="client__history_header">
-            <h2>Client History</h2>
-        </div>
-        <div class="client__history_body">
-            <table class="client-history_table">
-                <thead>
-                    <tr>
-                        <th>Client</th>
-                        <th>Pet Name</th>
-                        <th>Vet Name</th>
-                        <th>Amount</th>
-                        <th>Date</th>
-                        <th>Clinic Name</th>
-                        <th>Client Type</th>
-                        <th>Rating</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>John Doe</td>
-                        <td>Buddy</td>
-                        <td>Dr. Smith</td>
-                        <td>$100</td>
-                        <td>2023-01-01</td>
-                        <td>Newtown Clinic</td>
-                        <td class="client-type">Regular</td>
-                        <td class="rating">
-                            <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point"> 1.2</span>
-                        </td>
-                        <td class="action_btn">
-                            <button class="btn btn-primary view_btn">View</button>
-                            <a href="">
-                                <img src="{{ asset('svg/edit.svg') }}" alt="">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Jane Roe</td>
-                        <td>Charlie</td>
-                        <td>Dr. Brown</td>
-                        <td>$150</td>
-                        <td>2023-02-15</td>
-                        <td>Happy Pets Clinic</td>
-                        <td class="client-type">New</td>
-                        <td class="rating">
-                            <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point"> 1.2</span>
-                        </td>
-                        <td class="action_btn">
-                            <button class="btn btn-primary view_btn">View</button>
-                            <a href="">
-                                <img src="{{ asset('svg/edit.svg') }}" alt="">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Mark Twain</td>
-                        <td>Max</td>
-                        <td>Dr. Green</td>
-                        <td>$200</td>
-                        <td>2023-03-10</td>
-                        <td>City Vet Clinic</td>
-                        <td class="client-type">Regular</td>
-                        <td class="rating">
-                            <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point"> 1.2</span>
-                        </td>
-                        <td class="action_btn">
-                            <button class="btn btn-primary view_btn">View</button>
-                            <a href="">
-                                <img src="{{ asset('svg/edit.svg') }}" alt="">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Emily Davis</td>
-                        <td>Rocky</td>
-                        <td>Dr. Wilson</td>
-                        <td>$250</td>
-                        <td>2023-04-05</td>
-                        <td>Greenfield Clinic</td>
-                        <td class="client-type">Regular</td>
-                        <td class="rating">
-                            <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point"> 1.2</span>
-                        </td>
-                        <td class="action_btn">
-                            <button class="btn btn-primary view_btn">View</button>
-                            <a href="">
-                                <img src="{{ asset('svg/edit.svg') }}" alt="">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Michael Johnson</td>
-                        <td>Buddy</td>
-                        <td>Dr. Smith</td>
-                        <td>$100</td>
-                        <td>2023-01-01</td>
-                        <td>Newtown Clinic</td>
-                        <td class="client-type">Regular</td>
-                        <td class="rating">
-                            <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point"> 1.2</span>
-                        </td>
-                        <td class="action_btn">
-                            <button class="btn btn-primary view_btn">View</button>
-                            <a href="">
-                                <img src="{{ asset('svg/edit.svg') }}" alt="">
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="client-history">
+            <div class="client__history_header">
+                <h2>Client History</h2>
+            </div>
+            <div class="client__history_body">
+                <table class="client-history_table">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Pet Name</th>
+                            <th>Vet Name</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Clinic Name</th>
+                            <th>Client Type</th>
+                            <th>Rating</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Buddy</td>
+                            <td>Dr. Smith</td>
+                            <td>$100</td>
+                            <td>2023-01-01</td>
+                            <td>Newtown Clinic</td>
+                            <td><p class="status-pill">Regular</p></td>
+                            <td class="rating">
+                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
+                                    1.2</span>
+                            </td>
+                            <td class="action_btn">
+                                <button class="btn btn-primary view_btn">View</button>
+                                <a href="">
+                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jane Roe</td>
+                            <td>Charlie</td>
+                            <td>Dr. Brown</td>
+                            <td>$150</td>
+                            <td>2023-02-15</td>
+                            <td>Happy Pets Clinic</td>
+                             <td><p class="status-pill">Regular</p></td>
+                            <td class="rating">
+                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
+                                    1.2</span>
+                            </td>
+                            <td class="action_btn">
+                                <button class="btn btn-primary view_btn">View</button>
+                                <a href="">
+                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mark Twain</td>
+                            <td>Max</td>
+                            <td>Dr. Green</td>
+                            <td>$200</td>
+                            <td>2023-03-10</td>
+                            <td>City Vet Clinic</td>
+                             <td><p class="status-pill">Regular</p></td>
+                            <td class="rating">
+                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
+                                    1.2</span>
+                            </td>
+                            <td class="action_btn">
+                                <button class="btn btn-primary view_btn">View</button>
+                                <a href="">
+                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Emily Davis</td>
+                            <td>Rocky</td>
+                            <td>Dr. Wilson</td>
+                            <td>$250</td>
+                            <td>2023-04-05</td>
+                            <td>Greenfield Clinic</td>
+                             <td><p class="status-pill">Regular</p></td>
+                            <td class="rating">
+                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
+                                    1.2</span>
+                            </td>
+                            <td class="action_btn">
+                                <button class="btn btn-primary view_btn">View</button>
+                                <a href="">
+                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Michael Johnson</td>
+                            <td>Buddy</td>
+                            <td>Dr. Smith</td>
+                            <td>$100</td>
+                            <td>2023-01-01</td>
+                            <td>Newtown Clinic</td>
+                            <td><p class="status-pill">Regular</p></td>
+                            <td class="rating">
+                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
+                                    1.2</span>
+                            </td>
+                            <td class="action_btn">
+                                <button class="btn btn-primary view_btn">View</button>
+                                <a href="">
+                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
 
 @endsection
@@ -425,7 +430,8 @@
             type: 'line',
             data: {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov',
-                'Dec'], // required for chart.js
+                    'Dec'
+                ], // required for chart.js
                 datasets: [{
                         label: 'Revenue',
                         data: [230, 190, 165, 310, 540, 600, 469, 580, 546, 492, 610, 690],
