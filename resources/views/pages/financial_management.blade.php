@@ -2,6 +2,16 @@
 @section('title', 'Financial Management')
 
 @section('styles')
+    <style>
+        .revenue_trends__body canvas {
+            width: 100% !important;
+            /* canvas takes full container width */
+            height: 100% !important;
+            /* canvas takes full container height */
+            display: block;
+            /* remove inline spacing */
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -101,26 +111,16 @@
         </div>
     </div>
     <div class="content__charts">
-        <div class="revenue_trends_chart">
+        <div class="revenue_trends_chart" style="width: 100%;">
             <div class="revenue_trends__header">
                 <h2>Revenue Trends</h2>
             </div>
 
-            <div class="revenue_trends__body" style="position: relative; height: 264px;">
-                <!-- This will be the canvas for Chart.js -->
-                <canvas id="revenueTrendsChart"
-                    style="position: absolute; top:0; left:50%; transform: translateX(-50%); width: 100%; height: 100%;"></canvas>
-            </div>
-
-            <div class="visit_trends__x-labels">
-                <div class="visit_trends__x-label-left"></div>
-                <div class="visit_trends__x-label-right">
-                    <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
-                    <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
-                    <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
-                </div>
+            <div class="revenue_trends__body" style="position: relative; width: 100%; height: 290px;">
+                <canvas id="revenueTrendsChart"></canvas>
             </div>
         </div>
+
         <div class="revenue-chart-container">
             <div class="pet_distribution__header">
                 <h2>Revenue By Services</h2>
@@ -289,14 +289,13 @@
     </script>
 
     <script>
-        const ctx_1 = document.getElementById('revenueTrendsChart').getContext('2d');
+        const revenueCtx = document.getElementById('revenueTrendsChart').getContext('2d');
 
-        // Gradient under line
-        const gradient = ctx_1.createLinearGradient(0, 0, 0, 300);
+        const gradient = revenueCtx.createLinearGradient(0, 0, 0, 400);
         gradient.addColorStop(0, 'rgba(25,135,84,0.2)');
         gradient.addColorStop(1, 'rgba(25,135,84,0)');
 
-        new Chart(ctx_1, {
+        new Chart(revenueCtx, {
             type: 'line',
             data: {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -322,7 +321,7 @@
                         display: false
                     },
                     tooltip: {
-                        enabled: false, // disable default tooltip
+                        enabled: false,
                         external: function(context) {
                             let tooltipEl = document.getElementById('chartjs-tooltip');
                             if (!tooltipEl) {
@@ -343,22 +342,16 @@
                                 tooltipEl.style.fontWeight = '600';
                                 tooltipEl.style.fontSize = '14px';
                                 tooltipEl.style.color = '#fff';
-
                                 document.body.appendChild(tooltipEl);
 
                                 const dot = document.createElement('div');
                                 dot.style.width = '8px';
                                 dot.style.height = '8px';
-                                dot.style.minWidth = '8px';
-                                dot.style.minHeight = '8px';
-                                dot.style.maxWidth = '8px';
-                                dot.style.maxHeight = '8px';
                                 dot.style.borderRadius = '50%';
                                 dot.style.backgroundColor = '#0076CE';
-                                dot.style.flexShrink = '0'; // prevent shrinking
-                                dot.style.flexGrow = '0'; // prevent growing
                                 dot.id = 'tooltip-dot';
                                 tooltipEl.appendChild(dot);
+
                                 const value = document.createElement('span');
                                 value.id = 'tooltip-value';
                                 tooltipEl.appendChild(value);
@@ -394,8 +387,16 @@
                         grid: {
                             display: false
                         },
+                        offset: false, // line touches edges
                         ticks: {
-                            display: false
+                            display: true,
+                            padding: 10, // push labels a bit from edges
+                            font: {
+                                family: 'Inter',
+                                size: 12,
+                                weight: '500'
+                            },
+                            color: '#646464'
                         }
                     },
                     y: {
@@ -403,9 +404,7 @@
                         max: 40000,
                         ticks: {
                             stepSize: 10000,
-                            callback: function(value) {
-                                return value / 1000 + 'k';
-                            }
+                            callback: value => value / 1000 + 'k'
                         },
                         grid: {
                             drawTicks: false,
@@ -415,10 +414,6 @@
                             borderDash: [5, 5]
                         }
                     }
-                },
-                hover: {
-                    mode: 'nearest',
-                    intersect: true
                 }
             }
         });

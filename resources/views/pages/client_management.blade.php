@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="client__management_container">
-        <div>
+        <div class="client__management_left">
             <div class="content__overview">
                 <div class="card_1 active">
                     <div class="card_1__header">
@@ -76,7 +76,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="card_1" style="width: 164px">
+                <div class="card_1">
                     <div class="card_1__header">
                         <p>Active Clients</p>
                         <img src="{{ asset('svg/Frame_82.svg') }}" alt="">
@@ -95,20 +95,8 @@
                     <div class="client_trands__header">
                         <h2>Revenue Trends</h2>
                     </div>
-
-                    <div class="client_trands__body" style="position: relative; height: 264px;">
-                        <!-- This will be the canvas for Chart.js -->
-                        <canvas id="clientTrendsChart"
-                            style="position: absolute; top:0; left:50%; transform: translateX(-50%); width: 100%; height: 260px;"></canvas>
-                    </div>
-
-                    <div class="client_trands__x-labels">
-                        <div class="client_trands__x-label-left" style="width: 18px;"></div>
-                        <div class="client_trands__x-label-right">
-                            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
-                            <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
-                            <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
-                        </div>
+                    <div class="client_trands__body">
+                        <canvas id="revenueTrendsChart"></canvas>
                     </div>
                     <div class="client_trands__footer">
                         <span>New Clients</span>
@@ -244,7 +232,9 @@
                             <td>$100</td>
                             <td>2023-01-01</td>
                             <td>Newtown Clinic</td>
-                            <td><p class="status-pill">Regular</p></td>
+                            <td>
+                                <p class="status-pill">Regular</p>
+                            </td>
                             <td class="rating">
                                 <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
                                     1.2</span>
@@ -263,7 +253,9 @@
                             <td>$150</td>
                             <td>2023-02-15</td>
                             <td>Happy Pets Clinic</td>
-                             <td><p class="status-pill">Regular</p></td>
+                            <td>
+                                <p class="status-pill">Regular</p>
+                            </td>
                             <td class="rating">
                                 <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
                                     1.2</span>
@@ -282,7 +274,9 @@
                             <td>$200</td>
                             <td>2023-03-10</td>
                             <td>City Vet Clinic</td>
-                             <td><p class="status-pill">Regular</p></td>
+                            <td>
+                                <p class="status-pill">Regular</p>
+                            </td>
                             <td class="rating">
                                 <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
                                     1.2</span>
@@ -301,7 +295,9 @@
                             <td>$250</td>
                             <td>2023-04-05</td>
                             <td>Greenfield Clinic</td>
-                             <td><p class="status-pill">Regular</p></td>
+                            <td>
+                                <p class="status-pill">Regular</p>
+                            </td>
                             <td class="rating">
                                 <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
                                     1.2</span>
@@ -320,7 +316,9 @@
                             <td>$100</td>
                             <td>2023-01-01</td>
                             <td>Newtown Clinic</td>
-                            <td><p class="status-pill">Regular</p></td>
+                            <td>
+                                <p class="status-pill">Regular</p>
+                            </td>
                             <td class="rating">
                                 <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
                                     1.2</span>
@@ -376,7 +374,7 @@
                 },
                 scales: {
                     x: {
-                        offset: true, // keep bars fully visible
+                        offset: true,
                         grid: {
                             display: false
                         },
@@ -416,40 +414,42 @@
     </script>
 
 
-    <!-- Client Trends Line Chart -->
     <script>
-        const ctx_1 = document.getElementById('clientTrendsChart').getContext('2d');
-        const gradient1 = ctx_1.createLinearGradient(0, 0, 0, 300);
-        gradient1.addColorStop(0, 'rgba(239,105,222,0.7)');
-        gradient1.addColorStop(1, 'rgba(239,105,222,0)');
-        const gradient2 = ctx_1.createLinearGradient(0, 0, 0, 300);
-        gradient2.addColorStop(0, 'rgba(0,118,206,0.7)');
-        gradient2.addColorStop(1, 'rgba(0,118,206,0)');
+        const ctxRevenue = document.getElementById('revenueTrendsChart').getContext('2d');
 
-        new Chart(ctx_1, {
+        // Gradient fills with stronger colors
+        const gradientRevenue = ctxRevenue.createLinearGradient(0, 0, 0, 300);
+        gradientRevenue.addColorStop(0, 'rgba(0,118,206,0.7)'); // top stronger blue
+        gradientRevenue.addColorStop(1, 'rgba(0,118,206,0)'); // bottom transparent
+
+        const gradientExpenses = ctxRevenue.createLinearGradient(0, 0, 0, 300);
+        gradientExpenses.addColorStop(0, 'rgba(239,105,222,0.7)'); // top stronger pink
+        gradientExpenses.addColorStop(1, 'rgba(239,105,222,0)'); // bottom transparent
+
+        new Chart(ctxRevenue, {
             type: 'line',
             data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov',
-                    'Dec'
-                ], // required for chart.js
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [{
                         label: 'Revenue',
                         data: [230, 190, 165, 310, 540, 600, 469, 580, 546, 492, 610, 690],
-                        borderColor: '#EF69DE',
+                        borderColor: '#0076CE',
                         borderWidth: 5,
-                        pointRadius: 0,
+                        pointRadius: false,
+                        pointHoverRadius: false,
                         fill: true,
-                        backgroundColor: gradient1,
+                        backgroundColor: gradientRevenue,
                         tension: 0.4
                     },
                     {
                         label: 'Expenses',
                         data: [260, 150, 200, 280, 400, 500, 390, 480, 490, 650, 500, 550],
-                        borderColor: '#0076CE',
+                        borderColor: '#EF69DE',
                         borderWidth: 5,
-                        pointRadius: 0,
+                        pointRadius: false,
+                        pointHoverRadius: false,
                         fill: true,
-                        backgroundColor: gradient2,
+                        backgroundColor: gradientExpenses,
                         tension: 0.4
                     }
                 ]
@@ -457,9 +457,10 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+
                 plugins: {
                     legend: {
-                        display: false,
+                        display: false
                     },
                     tooltip: {
                         enabled: true
@@ -471,7 +472,13 @@
                             display: false
                         },
                         ticks: {
-                            display: false // hides the month labels
+                            font: {
+                                family: 'Inter',
+                                size: 12,
+                                weight: '500'
+                            },
+                            color: '#646464',
+
                         }
                     },
                     y: {
@@ -479,24 +486,26 @@
                         max: 800,
                         ticks: {
                             stepSize: 200,
-                            color: '#646464',
                             font: {
                                 family: 'Inter',
-                                size: 12
-                            }
+                                size: 12,
+                                weight: '500'
+                            },
+                            color: '#646464'
                         },
                         grid: {
+                            color: '#E7E7E7',
                             drawTicks: false,
                             drawOnChartArea: true,
-                            drawBorder: false,
-                            color: '#E7E7E7',
-                            borderDash: [5, 5]
+                            drawBorder: false
                         }
                     }
                 }
             }
         });
     </script>
+
+
 
 
 @endsection
