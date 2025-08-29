@@ -100,43 +100,58 @@
             </div>
         </div>
     </div>
-<div class="peak_hour_chart">
-    <div class="peak_schedule_header">
-        <h2 class="schedule__title">Peak Schedule Hours</h2>
-    </div>
 
-    <div class="heatmap-container">
-        <!-- Y-axis -->
-        <div class="peak_y_axis" id="yAxis">
-            <div>Sun</div>
-            <div>Mon</div>
-            <div>Tue</div>
-            <div>Wed</div>
-            <div>Thu</div>
-            <div>Fri</div>
-            <div>Sat</div>
+        <div class="schedule_chart">
+        <div class="appointment__completed_chart">
+            <div class="appointment__header">
+                <h2>Appointment Completeds</h2>
+            </div>
+            <div class="appointment__body">
+                <canvas id="appointmentsChart"></canvas>
+            </div>
         </div>
+        <div class="peak_hour_chart">
+            <div class="peak_schedule_header">
+                <h2 class="schedule__title">Peak Schedule Hours</h2>
+            </div>
+            
+            <div class="heatmap-container">
+                <!-- Y-axis -->
+                <div class="peak_y_axis" id="yAxis">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
 
-        <!-- Heatmap -->
-        <div class="peak_schedule__body" id="peakBody"></div>
-    </div>
+                <!-- Heatmap -->
+                <div class="peak_schedule__body" id="peakBody"></div>
+            </div>
 
-    <!-- X-axis -->
-    <div class="peak_x_axis" id="xAxis">
-        <div>9 AM</div>
-        <div>10 AM</div>
-        <div>11 AM</div>
-        <div>12 PM</div>
-        <div>1 PM</div>
-        <div>2 PM</div>
-        <div>3 PM</div>
-        <div>4 PM</div>
-    </div>
-</div>
+            <!-- X-axis -->
+            <div class="peak_x_axis" id="xAxis">
+                <div>9 AM</div>
+                <div>10 AM</div>
+                <div>11 AM</div>
+                <div>12 PM</div>
+                <div>1 PM</div>
+                <div>2 PM</div>
+                <div>3 PM</div>
+                <div>4 PM</div>
+            </div>
+        </div>
+        </div>
     <div class="recent-transactions">
         <div class="client-history">
             <div class="client__history_header">
                 <h2>Client History</h2>
+                <div class="add-appointment">
+                    <img src="{{ asset('images/add-circle.png') }}" alt="">
+                    <a href="">Add Appointment</a>
+                </div>
             </div>
             <div class="client__history_body">
                 <table class="client-history_table">
@@ -166,12 +181,13 @@
                                 <p class="status-pill">Regular</p>
                             </td>
                             <td class="rating">online</td>
-                            <td class="action_btn">
-                                <button class="btn btn-primary view_btn">View</button>
-                                <a href="">
-                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
-                                </a>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <button class="btn btn-primary view_btn">View</button>
+                                    <i class="fas fa-edit" style="font-size: 20px; cursor: pointer;"></i>
+                                </div>
                             </td>
+
                         </tr>
                         <tr>
                             <td>Jane Roe</td>
@@ -185,11 +201,11 @@
                                 <p class="status-pill">Regular</p>
                             </td>
                             <td class="rating">phone</td>
-                            <td class="action_btn">
-                                <button class="btn btn-primary view_btn">View</button>
-                                <a href="">
-                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
-                                </a>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <button class="btn btn-primary view_btn">View</button>
+                                    <i class="fas fa-edit" style="font-size: 20px; cursor: pointer;"></i>
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -204,11 +220,11 @@
                                 <p class="status-pill">Regular</p>
                             </td>
                             <td class="rating">online</td>
-                            <td class="action_btn">
-                                <button class="btn btn-primary view_btn">View</button>
-                                <a href="">
-                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
-                                </a>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <button class="btn btn-primary view_btn">View</button>
+                                    <i class="fas fa-edit" style="font-size: 20px; cursor: pointer;"></i>
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -223,11 +239,11 @@
                                 <p class="status-pill">Regular</p>
                             </td>
                             <td class="rating">phone</td>
-                            <td class="action_btn">
-                                <button class="btn btn-primary view_btn">View</button>
-                                <a href="">
-                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
-                                </a>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <button class="btn btn-primary view_btn">View</button>
+                                    <i class="fas fa-edit" style="font-size: 20px; cursor: pointer;"></i>
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -242,11 +258,11 @@
                                 <p class="status-pill">Regular</p>
                             </td>
                             <td class="rating">online</td>
-                            <td class="action_btn">
-                                <button class="btn btn-primary view_btn">View</button>
-                                <a href="">
-                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
-                                </a>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <button class="btn btn-primary view_btn">View</button>
+                                    <i class="fas fa-edit" style="font-size: 20px; cursor: pointer;"></i>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -337,45 +353,47 @@
         });
     </script>
 
-<script>
-// DOM elements
-const peakBody = document.getElementById('peakBody');
-const xAxis = document.getElementById('xAxis');
-const yAxis = document.getElementById('yAxis');
+    <script>
+        // DOM elements
+        const peakBody = document.getElementById('peakBody');
+        const xAxis = document.getElementById('xAxis');
+        const yAxis = document.getElementById('yAxis');
 
-const rows = 7; // weekdays
-const cols = 8; // hours
+        const rows = 7; // weekdays
+        const cols = 8; // hours
 
-// Generate demo values
-const heatValues = Array.from({length: rows*cols}, () => Math.floor(Math.random()*100));
+        // Generate demo values
+        const heatValues = Array.from({
+            length: rows * cols
+        }, () => Math.floor(Math.random() * 100));
 
-// Function to convert value to color
-function getColor(value) {
-    if(value > 70) return '#FF4C4C'; // high
-    if(value > 40) return '#FFB74D'; // medium
-    return '#4CAF50';               // low
-}
+        // Function to convert value to color
+        function getColor(value) {
+            if (value > 70) return '#FF4C4C'; // high
+            if (value > 40) return '#FFB74D'; // medium
+            return '#4CAF50'; // low
+        }
 
-// Generate boxes
-heatValues.forEach(value => {
-    const box = document.createElement('div');
-    box.classList.add('box');
-    box.style.backgroundColor = getColor(value);
-    peakBody.appendChild(box);
-});
+        // Generate boxes
+        heatValues.forEach(value => {
+            const box = document.createElement('div');
+            box.classList.add('box');
+            box.style.backgroundColor = getColor(value);
+            peakBody.appendChild(box);
+        });
 
-// Align X-axis under the grid considering Y-axis width
-function alignXAxis() {
-    const yAxisWidth = yAxis.offsetWidth;
-    xAxis.style.marginLeft = yAxisWidth + 4 + 'px'; // 4px gap
-}
+        // Align X-axis under the grid considering Y-axis width
+        function alignXAxis() {
+            const yAxisWidth = yAxis.offsetWidth;
+            xAxis.style.marginLeft = yAxisWidth + 4 + 'px'; // 4px gap
+        }
 
-// Initial alignment
-alignXAxis();
+        // Initial alignment
+        alignXAxis();
 
-// Adjust on window resize
-window.addEventListener('resize', alignXAxis);
-</script>
+        // Adjust on window resize
+        window.addEventListener('resize', alignXAxis);
+    </script>
 
 
 @endsection

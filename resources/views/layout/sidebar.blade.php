@@ -59,8 +59,8 @@
             </a>
         </li>
         <li class="slide">
-            <a class="side-menu__item has-link" href="#">
-                <div class="side-menu__item-content">
+            <a class="side-menu__item has-link" href="{{ route('fetchAI') }}">
+                <div class="side-menu__item-content {{ Route::is('fetchAI') ? 'active' : '' }}">
                     <img src="{{ asset('images/fetch-ai-icon.png') }}" alt="">
                     <span class="side-menu__label">FetchAI</span>
                 </div>

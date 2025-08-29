@@ -207,7 +207,8 @@
     <div class="recent-transactions">
         <div class="client-history">
             <div class="client__history_header">
-                <h2>Client History</h2>
+                <h2>Appointment Breakdown</h2>
+                
             </div>
             <div class="client__history_body">
                 <table class="client-history_table">

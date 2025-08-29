@@ -27,4 +27,8 @@ class AuthorityController extends Controller
     {
         return view('pages.marketing_management');
     }
+    public function fetchAI(): View
+    {
+        return view('pages.fetch_ai');
+    }
 }
