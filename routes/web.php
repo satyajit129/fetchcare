@@ -13,3 +13,4 @@ Route::get('/client-management',[AuthorityController::class,'clientManagement'])
 Route::get('/schedule-management',[AuthorityController::class,'scheduleManagement'])->name('scheduleManagement');
 Route::get('/marketing-management',[AuthorityController::class,'marketingManagement'])->name('marketingManagement');
 Route::get('fetch-al',[AuthorityController::class,'fetchAI'])->name('fetchAI');
+Route::get('/settings', [AuthorityController::class,'settings'])->name('settings');

@@ -31,4 +31,9 @@ class AuthorityController extends Controller
     {
         return view('pages.fetch_ai');
     }
+    public function settings(Request $request): View
+    {
+        $form_type = $request->query('form', 'profile'); // default to 'profile'
+        return view('pages.settings', compact('form_type'));
+    }
 }

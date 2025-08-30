@@ -69,8 +69,13 @@
             </a>
         </li>
         <li class="slide">
-            <a class="side-menu__item has-link" href="#">
-                <img src="{{ asset('images/setting.png') }}" alt="">
+            <a class="side-menu__item has-link {{ Route::is('settings') ? 'active' : '' }} " href="{{ route('settings') }}">
+                @if (Route::is('settings'))
+                    <img src="{{ asset('svg/settings_active.svg') }}" alt="">
+                @else
+                    <img src="{{ asset('images/setting.png') }}" alt="">
+                    
+                @endif
                 <span class="side-menu__label">Settings</span>
             </a>
         </li>
