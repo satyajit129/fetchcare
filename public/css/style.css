@@ -24,8 +24,6 @@ html body {
     width: 103%;
     height: 100vh;
 }
-
-/* Chrome, Edge, Safari */
 body::-webkit-scrollbar {
     display: none;
 }
@@ -47,9 +45,6 @@ a {
     --webkit-text-decoration-skip: objects;
     color: #000000;
 }
-
-/* sidebar */
-/* Sidebar default */
 .sticky {
     position: fixed;
     top: 0;
@@ -63,56 +58,70 @@ a {
     border-radius: 0px 12px 12px 0px;
     transition: width 0.6s ease;
 }
-
-/* Collapsed sidebar */
 .sticky.collapsed {
     width: 100px;
 }
-
-/* Sidebar logo */
+/* Expanded logo visible by default */
 .app-logo {
     display: flex;
     gap: 22px;
-    /* justify-content: space-between; */
     align-items: center;
-    padding: 0 0 0 16px;
-    text-align: center;
+    padding-left: 16px;
     margin-bottom: 40px;
     transition: all 0.6s ease;
 }
 
+.app-logo_collapsed {
+    display: none;
+    gap: 22px;
+    align-items: center;
+    padding-left: 16px;
+    margin-bottom: 40px;
+    transition: all 0.6s ease;
+}
+
+/* Sidebar collapsed state */
+.sticky.collapsed .app-logo {
+    display: none;
+}
+
+.sticky.collapsed .app-logo_collapsed {
+    display: flex;
+}
+
+/* Logo sizes */
 .app-logo__image {
     width: 198px;
     height: 56px;
+    transition: width 0.6s ease;
 }
 
-/* Shrink main logo when collapsed */
-.sticky.collapsed .app-logo__image {
+.app-logo__image_collapsed {
     width: 48px;
     height: auto;
 }
 
-/* Hide the text labels in collapsed mode */
+/* Toggle icon rotation */
+.app-logo__icon {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.sticky.collapsed .app-logo__icon {
+    transform: rotate(180deg);
+}
+
 .sticky.collapsed .side-menu__label {
     display: none;
 }
-
-/* Center icons in collapsed mode */
+.sticky.collapsed .side-menu__item .icon-active{
+    display: none !important;
+}
 .sticky.collapsed .side-menu__item img {
     margin: 0 auto;
     display: block;
 }
 
-/* Rotate the arrow icon when collapsed */
-.sticky.collapsed .app-logo__icon {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-}
-
-.app-logo__icon {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
 
 .side-menu__item {
     display: flex;
@@ -137,11 +146,20 @@ a {
     height: 30px;
 }
 
+/* Labels with smooth fade */
 .side-menu__item .side-menu__label {
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     letter-spacing: -0.02em;
+    flex: 1;
+    opacity: 1;
+    transition: opacity 0.3s ease 0.6s; /* fade in after expand delay */
+}
+
+.sticky.collapsed .side-menu__item .side-menu__label {
+    opacity: 0;
+    transition: opacity 0.3s ease 0s; /* fade out immediately on collapse */
 }
 
 .side-menu__item.active {
@@ -155,10 +173,6 @@ a {
     font-size: 18px;
     width: 20px;
     text-align: center;
-}
-
-.side-menu__label {
-    flex: 1;
 }
 
 .side-menu__item-content {
@@ -438,7 +452,6 @@ a {
 }
 
 .visit_trends__body,
-.revenue_trends__body,
 .client_trands__body {
     display: flex;
     flex-direction: column;
@@ -446,6 +459,9 @@ a {
     gap: 40px;
     padding: 16px 16px 0 16px;
     position: relative;
+}
+.revenue_trends__body{
+    padding: 0 8px 16px 16px;
 }
 
 .visit_trends__grid {
@@ -863,7 +879,7 @@ a {
     /* takes less space */
     background: #ffffff;
     border-radius: 8px;
-    margin-top: 37px;
+    margin-top: 42px;
     width: 246px;
 }
 
@@ -1299,7 +1315,7 @@ a {
 .appointment__body {
     /* width: 607px; */
     background: #fff;
-    padding: 16px;
+    padding: 0 8px 16px 16px;
     border-radius: 8px;
 }
 
@@ -1354,21 +1370,14 @@ a {
     padding-right: 4px;
 }
 
-/* Heatmap grid */
 .peak_schedule__body {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    /* 8 hours */
     grid-template-rows: repeat(7, 1fr);
-    /* 7 weekdays */
     gap: 8px;
-    /* border-radius: 8px; */
     overflow: hidden;
-    /* background: #f0f0f0; */
     flex-grow: 1;
-    /* fill remaining space */
     width: auto;
-    /* allow flex to control width */
     padding: 4px;
 }
 
@@ -1410,6 +1419,7 @@ a {
 .campaign_lead_content {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap; 
     margin-top: 20px;
     justify-content: space-between;
 }
@@ -1485,10 +1495,9 @@ a {
 .lead_content {
     flex: 3;
     min-width: 250px;
+        height: 100%;
     background: #ffffff;
     border-radius: 8px;
-    font-family: "Inter", sans-serif;
-    position: relative;
     display: flex;
     flex-direction: column;
     padding: 16px 16px 16px 16px;
@@ -2533,83 +2542,105 @@ input:checked+.slider::before {
 /* Billing Item */
 .billing_item {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     gap: 8px;
 }
 
 /* Labels */
-.billing_label {
+.billing_content_label {
+    flex: 1;
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
     color: #292929;
     margin: 0;
 }
+.billing_content_body{
+    flex: 2;
+    width: 100%;
+}
+.billing_content_body select {
+    appearance: none;       /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
 
-/* Plan Select */
-.billing_select {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 16px;
-    background: #F2F2F2;
+    padding: 8px 20px 8px 24px;
+    width: 100%;
+    height: 36px;
+    background: #F2F2F2 url('./../svg/Vector.svg') no-repeat right 12px center; /* Custom arrow */
+    background-size: 10px;  /* Adjust arrow size */
     border-radius: 6px;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: #292929;
     cursor: pointer;
 }
-
-.billing_select span {
-    font-size: 14px;
-    color: #292929;
-}
-
-.arrow_icon {
-    width: 16px;
-    height: 16px;
-}
-
-/* Payment Method */
-.billing_input {
-    display: flex;
-    align-items: center;
-    padding: 8px 16px;
-    background: #F2F2F2;
+.billing_content_body input {
+    width: 100%;
+    height: 36px;
+    padding: 8px 12px 8px 40px; /* left padding for icon */
+    border: none;
     border-radius: 6px;
-    gap: 8px;
-}
-
-.card_icon {
-    width: 16px;
-    height: 16px;
-}
-
-.billing_input span {
+    background: #F2F2F2 url('./../svg/card.svg') no-repeat 12px center;
+    background-size: 16px; /* icon size */
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
+    font-weight: 500;
     color: #292929;
+}
+
+.billing_content_body input::placeholder {
+    color: #999999;
+    opacity: 1;
 }
 
 /* Billing Cycle Buttons */
-.billing_cycle {
+.billing_buttons {
     display: flex;
-    gap: 8px;
     width: 202px;
-}
-
-.cycle_btn {
-    flex: 1;
-    padding: 8px 24px;
+    height: 36px;
     border-radius: 6px;
-    border: none;
-    background: #F2F2F2;
-    color: #ACACAC;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s;
+    overflow: hidden; /* round corners for each button */
 }
 
-.cycle_btn.active {
-    background: #CCE4F5;
-    color: #0076CE;
+.billing_btn {
+    flex: 1; /* equal width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
+
+.billing_btn.active {
+    background: #CCE4F5; /* active background */
+    color: #0076CE;      /* active text color */
+    border-radius: 6px 0 0 6px; /* left round for first button */
+}
+
+.billing_btn:not(.active) {
+    background: #F2F2F2; /* inactive background */
+    color: #ACACAC;      /* inactive text color */
+    border-radius: 0 6px 6px 0; /* right round for second button */
+}
+
+/* Optional: hover effect */
+.billing_btn:hover:not(.active) {
+    background: #E0E0E0;
+}
+
 
 /* Download Button */
 .download_btn {
@@ -2663,3 +2694,132 @@ input:checked+.slider::before {
     flex-direction: column;
     gap: 24px;
 }
+.billing_item {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.authentication {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.login_history {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin-top: 24px;
+    gap: 12px;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid #E7E7E7;
+}
+
+/* Heading */
+.login_history h4 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    color: #292929;
+    
+}
+
+/* Button */
+.login_history .history_remove_btn {
+
+    padding: 12px 16px;
+    background: #0076CE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: right;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
+/* authentication */
+
+.authentication_content {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 12px 16px; */
+    height: 80px;
+    gap: 24px;
+}
+
+/* Avatar */
+.app_icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Info Section */
+.app_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    flex: 1;
+    /* take remaining space */
+}
+
+.app_details h6 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #292929;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.app_details .ip {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: -0.01em;
+
+    color: #292929;
+}
+
+.app_details .last_login {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 12px;
+    letter-spacing: -0.01em;
+
+    color: #292929;
+}
+
+/* Remove Button */
+.app_remove {
+    padding: 12px 16px;
+
+    border-radius: 6px;
+    background-color: #0076CE;
+    color: #fff;
+    border: none;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.3s;
+}
+
+.app_remove:hover {
+    background-color: #005fa3;
+}
+
+

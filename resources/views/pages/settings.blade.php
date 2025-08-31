@@ -175,7 +175,8 @@
                         <div class="member_section">
                             <h6>Existing Members</h6>
                             <div class="member_profile">
-                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}" alt="Dr. Emily Ross" class="member_avatar">
+                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}"
+                                    alt="Dr. Emily Ross" class="member_avatar">
                                 <div class="member_info">
                                     <h5 class="name">Dr. Emily Ross</h5>
                                     <p class="profession">Veterinarian</p>
@@ -184,7 +185,8 @@
                                 <button class="btn_remove">Remove</button>
                             </div>
                             <div class="member_profile">
-                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}" alt="Dr. Emily Ross" class="member_avatar">
+                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}"
+                                    alt="Dr. Emily Ross" class="member_avatar">
                                 <div class="member_info">
                                     <h5 class="name">Dr. Emily Ross</h5>
                                     <p class="profession">Veterinarian</p>
@@ -193,7 +195,8 @@
                                 <button class="btn_remove">Remove</button>
                             </div>
                             <div class="member_profile">
-                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}" alt="Dr. Emily Ross" class="member_avatar">
+                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}"
+                                    alt="Dr. Emily Ross" class="member_avatar">
                                 <div class="member_info">
                                     <h5 class="name">Dr. Emily Ross</h5>
                                     <p class="profession">Veterinarian</p>
@@ -202,7 +205,8 @@
                                 <button class="btn_remove">Remove</button>
                             </div>
                             <div class="member_profile">
-                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}" alt="Dr. Emily Ross" class="member_avatar">
+                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}"
+                                    alt="Dr. Emily Ross" class="member_avatar">
                                 <div class="member_info">
                                     <h5 class="name">Dr. Emily Ross</h5>
                                     <p class="profession">Veterinarian</p>
@@ -211,7 +215,8 @@
                                 <button class="btn_remove">Remove</button>
                             </div>
                             <div class="member_profile">
-                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}" alt="Dr. Emily Ross" class="member_avatar">
+                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}"
+                                    alt="Dr. Emily Ross" class="member_avatar">
                                 <div class="member_info">
                                     <h5 class="name">Dr. Emily Ross</h5>
                                     <p class="profession">Veterinarian</p>
@@ -220,7 +225,8 @@
                                 <button class="btn_remove">Remove</button>
                             </div>
                             <div class="member_profile">
-                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}" alt="Dr. Emily Ross" class="member_avatar">
+                                <img src="{{ asset('images/01376a01f8898b4d066033af55f17b0f52d39b46.jpg') }}"
+                                    alt="Dr. Emily Ross" class="member_avatar">
                                 <div class="member_info">
                                     <h5 class="name">Dr. Emily Ross</h5>
                                     <p class="profession">Veterinarian</p>
@@ -230,43 +236,111 @@
                             </div>
                         </div>
                         <div class="form_actions">
-                                <button type="submit" class="btn_update">Update</button>
-                                <button type="button" class="btn_cancel">Cancel</button>
-                            </div>
+                            <button type="submit" class="btn_update">Update</button>
+                            <button type="button" class="btn_cancel">Cancel</button>
+                        </div>
                     @endif
                     @if ($form_type == 'billing')
                         <div class="settings_content_header">
                             <h3 class="settings_content_title">Subscription & Billing</h3>
                             <img src="{{ asset('svg/edit_settings.svg') }}" alt="">
                         </div>
+
                         <div class="billing_content">
                             <div class="billing_item">
                                 <p class="billing_content_label">Plan Type</p>
-                                <select name="" id="">
-                                    <option value="">Enterprise</option>
-                                </select>
-                            </div>
-
-                            <div class="billing_item">
-                                <p class="billing_content_label">Payment Method</p>
-                                <input type="text" placeholder="Enter Payment Method">
-                            </div>
-
-                            <div class="billing_item">
-                                <p class="billing_content_label">Billing Cycle</p>
-                                <div class="billing_buttons">
-                                    <button class="billing_btn active">Monthly</button>
-                                    <button class="billing_btn">Yearly</button>
+                                <div class="billing_content_body">
+                                    <select>
+                                        <option value="">Enterprise</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="billing_item">
-                                <p class="billing_content_label">Invoices</p>
-                                <button class="download_btn">
-                                    <img src="{{ asset('svg/document-download.svg') }}" alt="">
-                                    <span>Download invoices</span>
-                                </button>
+                                <p class="billing_content_label">Payment Method</p>
+                                <div class="billing_content_body">
+                                    <input type="text" placeholder="•••• 2345">
+                                </div>
                             </div>
+
+                            <div class="billing_item">
+                                <p class="billing_content_label">Billing Cycle</p>
+                                <div class="billing_content_body">
+                                    <div class="billing_buttons">
+                                        <button class="billing_btn active">Monthly</button>
+                                        <button class="billing_btn">Yearly</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="billing_item">
+                                <p class="billing_content_label">Invoice History</p>
+                                <div class="billing_content_body">
+                                    <button class="download_btn">
+                                        <img src="{{ asset('svg/document-download.svg') }}" alt="">
+                                        <span>Download Invoices</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form_actions">
+                                <button type="submit" class="btn_update">Update</button>
+                                <button type="button" class="btn_cancel">Cancel</button>
+                            </div>
+                        </div>
+                    @endif
+                    @if ($form_type == 'security')
+                        <div class="settings_content_header">
+                            <h3 class="settings_content_title">Security</h3>
+                            <img src="{{ asset('svg/edit_settings.svg') }}" alt="">
+                        </div>
+                        <div class="authentication_container">
+
+                            <div class="authentication">
+                                <p>Two-Factor Authentication</p>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="login_history">
+                                <h4>Last Login History</h4>
+                                <button class="history_remove_btn">Remove From All Devices</button>
+                            </div>
+
+                        </div>
+                        <div class="authentication_content">
+                            
+                            <img class="app_icon" src="{{ asset('images/chrome.png') }}" alt="Google Chrome">
+                            
+                            <div class="app_details">
+                                <h6 class="">Google Chrome</h6>
+                                <p class="ip">IP: 105.173.134.161</p>
+                                <p class="last_login">Last Login: July 18, 2025 09:12 AM</p>
+                            </div>
+                            <button class="app_remove">Remove</button>
+                        </div>
+                        <div class="authentication_content">
+                            
+                            <img class="app_icon" src="{{ asset('images/chrome.png') }}" alt="Google Chrome">
+                            
+                            <div class="app_details">
+                                <h6 class="">Google Chrome</h6>
+                                <p class="ip">IP: 105.173.134.161</p>
+                                <p class="last_login">Last Login: July 18, 2025 09:12 AM</p>
+                            </div>
+                            <button class="app_remove">Remove</button>
+                        </div>
+                        <div class="authentication_content">
+                            
+                            <img class="app_icon" src="{{ asset('images/chrome.png') }}" alt="Google Chrome">
+                            
+                            <div class="app_details">
+                                <h6 class="">Google Chrome</h6>
+                                <p class="ip">IP: 105.173.134.161</p>
+                                <p class="last_login">Last Login: July 18, 2025 09:12 AM</p>
+                            </div>
+                            <button class="app_remove">Remove</button>
                         </div>
 
                     @endif

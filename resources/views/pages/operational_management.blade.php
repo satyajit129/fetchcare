@@ -103,20 +103,9 @@
             <div class="visit_trends__header">
                 <h2>Visit Trends</h2>
             </div>
-
-            <div class="visit_trends__body" style="position: relative; height: 264px;">
-                <!-- This will be the canvas for Chart.js -->
-                <canvas id="visitTrendsChart"
-                    style="position: absolute; top:0; left:50%; transform: translateX(-50%); width: 100%; height: 100%;"></canvas>
-            </div>
-
-            <div class="visit_trends__x-labels">
-                <div class="visit_trends__x-label-left"></div>
-                <div class="visit_trends__x-label-right">
-                    <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
-                    <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
-                    <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
-                </div>
+            <div style="padding: 0 8px 16px 16px;">
+                
+                <div id="chart"></div>
             </div>
         </div>
         <div class="chart-container">
@@ -276,6 +265,7 @@
 
 @section('scripts')
     <script src="{{ asset('js/chartjs-plugin-datalabels.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
         const ctx = document.getElementById('petChart').getContext('2d');
 
@@ -329,72 +319,67 @@
         });
     </script>
 
+
     <script>
-        const ctx_1 = document.getElementById('visitTrendsChart').getContext('2d');
-
-        // Gradient for area under the line
-        const gradient = ctx_1.createLinearGradient(0, 0, 0, 300);
-        gradient.addColorStop(0, 'rgba(25,135,84,0.2)');
-        gradient.addColorStop(1, 'rgba(25,135,84,0)');
-
-        new Chart(ctx_1, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                datasets: [{
-                    label: 'Visitors',
-                    data: [300, 800, 1200, 900, 1500, 1100, 1600, 1400, 1800, 1700, 1900, 2000],
-                    borderColor: '#0076CE',
-                    borderWidth: 5,
-                    pointRadius: 0,
-                    pointHoverRadius: 50,
-                    fill: true,
-                    backgroundColor: gradient,
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        enabled: true,
-                        mode: 'nearest',
-                        intersect: false
-                    }
+        var options = {
+            chart: {
+                type: 'area',
+                height: 350,
+                toolbar: {
+                    show: false
                 },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        }, // remove vertical lines
-                        ticks: {
-                            display: false
-                        } // hide x ticks because you already have custom labels
-                    },
-                    y: {
-                        min: 0,
-                        max: 2000,
-                        ticks: {
-                            stepSize: 500
-                        },
-                        grid: {
-                            drawTicks: false,
-                            drawOnChartArea: true,
-                            drawBorder: false,
-                            color: '#E7E7E7',
-                            borderDash: [5, 5] // dashed horizontal lines
-                        }
-                    }
-                },
-                hover: {
-                    mode: 'nearest',
-                    intersect: true
+                zoom: {
+                    enabled: false
                 }
+            },
+            series: [{
+                name: 'Visitors',
+                data: [200, 600, 900, 1200, 1800, 1500, 1700, 1300, 1600, 1900, 1400, 2000]
+            }],
+            xaxis: {
+                categories: [
+                    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+                ],
+                axisTicks: {
+                    show: false // ❌ remove small ticks/dots above month labels
+                }
+            },
+            yaxis: {
+                min: 0,
+                max: 2000,
+                tickAmount: 4,
+
+            },
+            stroke: {
+                curve: 'smooth',
+                width: 5
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.6,
+                    opacityTo: 0.2,
+                    stops: [0, 90, 100]
+                }
+            },
+            markers: {
+                size: 0
+            },
+            grid: {
+                borderColor: '#e0e0e0',
+                strokeDashArray: 3
+            },
+            tooltip: {
+                enabled: false
+            },
+            dataLabels: {
+                enabled: false
             }
-        });
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
     </script>
 @endsection

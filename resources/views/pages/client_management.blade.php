@@ -93,23 +93,17 @@
             <div class="content__charts">
                 <div class="client_trands_chart">
                     <div class="client_trands__header">
-                        <h2>Revenue Trends</h2>
+                        <h2>Client Trends</h2>
                     </div>
                     <div class="client_trands__body">
-                        <canvas id="revenueTrendsChart"></canvas>
-                    </div>
-                    <div class="client_trands__footer">
-                        <span>New Clients</span>
-                        <span>Previous Client</span>
+                        <div id="lineChart"></div>
                     </div>
                 </div>
                 <div class="retention_trends_chart">
                     <div class="retention_trends__header">
                         <h2>Retention Trends</h2>
                     </div>
-                    <div class="retention_trends__body" style="position: relative; height: 296px;">
-                        <canvas id="retentionTrendsChart"></canvas>
-                    </div>
+                    <div id="barChart"></div>
                 </div>
             </div>
         </div>
@@ -208,7 +202,7 @@
         <div class="client-history">
             <div class="client__history_header">
                 <h2>Appointment Breakdown</h2>
-                
+
             </div>
             <div class="client__history_body">
                 <table class="client-history_table">
@@ -342,171 +336,162 @@
 
 @section('scripts')
     <script src="{{ asset('js/chartjs-plugin-datalabels.js') }}"></script>
-    <!-- Retention Trends Bar Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
-        const ctxRetention = document.getElementById('retentionTrendsChart').getContext('2d');
-
-        new Chart(ctxRetention, {
-            type: 'bar',
-            data: {
-                labels: ['1st Visit', '2nd Visit', '3rd Visit', 'Loyal'],
-                datasets: [{
-                    label: 'Clients',
-                    data: [600, 540, 150, 70],
-                    backgroundColor: '#0076CE',
-                    borderRadius: 6,
-                    barThickness: 40,
-                    maxBarThickness: 50
-                }]
+        var options = {
+            chart: {
+                type: 'area',
+                height: 350,
+                toolbar: {
+                    show: false
+                },
+                zoom: {
+                    enabled: false
+                }
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                layout: {
-                    padding: {
-                        left: 15,
-                        right: 15
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    x: {
-                        offset: true,
-                        grid: {
-                            display: false
-                        },
-                        ticks: {
-                            color: '#646464',
-                            font: {
-                                family: 'Inter',
-                                size: 12
-                            }
+            series: [{
+                    name: 'New Client',
+                    data: [100, 300, 500, 200, 400, 600, 700, 350, 450, 650, 550, 800],
+                    color: '#EF69DE',
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shadeIntensity: 1,
+                            opacityFrom: 0.5,
+                            opacityTo: 0.1,
+                            stops: [0, 90, 100]
                         }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        min: 0,
-                        max: 800,
-                        ticks: {
-                            stepSize: 200,
-                            color: '#646464',
-                            font: {
-                                family: 'Inter',
-                                size: 12
-                            }
-                        },
-                        grid: {
-                            drawTicks: false,
-                            drawOnChartArea: true,
-                            drawBorder: true,
-                            color: function(context) {
-                                return context.tick.value === 0 ? '#E7E7E7' : '#E7E7E7';
-                            },
-                            borderDash: []
+                    }
+                },
+                {
+                    name: 'Previous Client',
+                    data: [50, 250, 450, 150, 350, 550, 650, 300, 400, 600, 500, 750],
+                    color: '#0076CE',
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shadeIntensity: 1,
+                            opacityFrom: 0.5,
+                            opacityTo: 0.1,
+                            stops: [0, 90, 100]
                         }
                     }
                 }
+            ],
+            xaxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                axisTicks: {
+                    show: false
+                }
+            },
+            yaxis: {
+                min: 0,
+                max: 800,
+                tickAmount: 4
+            },
+            stroke: {
+                curve: 'smooth',
+                width: 5
+            },
+            markers: {
+                size: 0, // chart markers
+                hover: {
+                    size: 6
+                }
+            },
+            tooltip: {
+                enabled: false
+            },
+            grid: {
+                borderColor: '#e0e0e0',
+                strokeDashArray: 3
+            },
+            dataLabels: {
+                enabled: false
+            },
+            legend: {
+                show: true,
+                position: 'bottom',
+                horizontalAlign: 'left',
+                fontSize: '12px',
+                labels: {
+                    colors: '#333'
+                },
+                markers: {
+                    width: 4, // smaller legend dot
+                    height: 4, // smaller legend dot
+                    radius: 2 // rounded corner
+                },
+                itemMargin: {
+                    horizontal: 20,
+                    vertical: 0
+                }
             }
-        });
+        };
+
+        var chart = new ApexCharts(document.querySelector("#lineChart"), options);
+        chart.render();
     </script>
 
-
     <script>
-        const ctxRevenue = document.getElementById('revenueTrendsChart').getContext('2d');
-
-        // Gradient fills with stronger colors
-        const gradientRevenue = ctxRevenue.createLinearGradient(0, 0, 0, 300);
-        gradientRevenue.addColorStop(0, 'rgba(0,118,206,0.7)'); // top stronger blue
-        gradientRevenue.addColorStop(1, 'rgba(0,118,206,0)'); // bottom transparent
-
-        const gradientExpenses = ctxRevenue.createLinearGradient(0, 0, 0, 300);
-        gradientExpenses.addColorStop(0, 'rgba(239,105,222,0.7)'); // top stronger pink
-        gradientExpenses.addColorStop(1, 'rgba(239,105,222,0)'); // bottom transparent
-
-        new Chart(ctxRevenue, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                datasets: [{
-                        label: 'Revenue',
-                        data: [230, 190, 165, 310, 540, 600, 469, 580, 546, 492, 610, 690],
-                        borderColor: '#0076CE',
-                        borderWidth: 5,
-                        pointRadius: false,
-                        pointHoverRadius: false,
-                        fill: true,
-                        backgroundColor: gradientRevenue,
-                        tension: 0.4
-                    },
-                    {
-                        label: 'Expenses',
-                        data: [260, 150, 200, 280, 400, 500, 390, 480, 490, 650, 500, 550],
-                        borderColor: '#EF69DE',
-                        borderWidth: 5,
-                        pointRadius: false,
-                        pointHoverRadius: false,
-                        fill: true,
-                        backgroundColor: gradientExpenses,
-                        tension: 0.4
-                    }
-                ]
+        var options = {
+            chart: {
+                type: 'bar',
+                height: 350,
+                toolbar: {
+                    show: false
+                }
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        enabled: true
-                    }
+            series: [{
+                name: 'Visitors',
+                data: [450, 300, 600, 700]
+            }],
+            xaxis: {
+                categories: ['1st Visit', '2nd Visit', '3rd Visit', 'Loyal'],
+                axisTicks: {
+                    show: false
                 },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        ticks: {
-                            font: {
-                                family: 'Inter',
-                                size: 12,
-                                weight: '500'
-                            },
-                            color: '#646464',
-
-                        }
-                    },
-                    y: {
-                        min: 0,
-                        max: 800,
-                        ticks: {
-                            stepSize: 200,
-                            font: {
-                                family: 'Inter',
-                                size: 12,
-                                weight: '500'
-                            },
-                            color: '#646464'
-                        },
-                        grid: {
-                            color: '#E7E7E7',
-                            drawTicks: false,
-                            drawOnChartArea: true,
-                            drawBorder: false
-                        }
+                axisBorder: {
+                    show: false
+                },
+                
+            },
+            yaxis: {
+                min: 0,
+                max: 800,
+                tickAmount: 4
+            },
+            plotOptions: {
+                bar: {
+                    columnWidth: '50%',
+                    borderRadius: 3,
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            grid: {
+                borderColor: '#e0e0e0',
+                strokeDashArray: 3
+            },
+            fill: {
+                colors: ['#0076CE']
+            },
+            tooltip: {
+                x: {
+                    show: false
+                },
+                y: {
+                    formatter: function(val) {
+                        return val;
                     }
                 }
             }
-        });
+        };
+
+        var chart = new ApexCharts(document.querySelector("#barChart"), options);
+        chart.render();
     </script>
-
-
 
 
 @endsection

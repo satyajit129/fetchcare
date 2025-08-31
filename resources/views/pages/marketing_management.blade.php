@@ -33,6 +33,7 @@
             </div>
         </div>
     </div>
+
     <div class="content__overview">
         <div class="card_1 active">
             <div class="card_1__header">
@@ -107,7 +108,7 @@
                 <h2>Ad Spent</h2>
             </div>
             <div class="ad_spent_body">
-                <canvas id="adSpentChart"></canvas>
+                <div id="lineChart"></div>
             </div>
         </div>
         <div class="add_spent_breakdown">
@@ -115,10 +116,11 @@
                 <h2>Ads Spent Breakdown</h2>
             </div>
             <div class="ad_spent_breakdown_body">
-                <canvas id="adSpentBreakdownChart"></canvas>
+                <div id="barChart"></div>
             </div>
         </div>
     </div>
+
     <div class="campaign_lead_content">
         <div class="campaign_content">
             <div class="campaign_content_header">
@@ -193,180 +195,192 @@
             </div>
         </div>
         <div class="lead_content">
-    <div class="lead_content_header">
-        <h2>Lead Source</h2>
+            <div class="lead_content_header">
+                <h2>Lead Source</h2>
+            </div>
+            <div class="lead_content_body">
+                <table class="lead_content_table">
+                    <thead>
+                        <tr>
+                            <th>Lead</th>
+                            <th>Source</th>
+                            <th>Visit Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>
+                                <p class="lead-pill">Online</p>
+                            </td>
+                            <td>Aug 25, 2025</td>
+                            <td><button class="btn btn-primary lead_view_btn">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>
+                                <p class="lead-pill">Phone</p>
+                            </td>
+                            <td>Aug 24, 2025</td>
+                            <td><button class="btn btn-primary lead_view_btn">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>Michael Johnson</td>
+                            <td>
+                                <p class="lead-pill">Email</p>
+                            </td>
+                            <td>Aug 23, 2025</td>
+                            <td><button class="btn btn-primary lead_view_btn">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>Emily Davis</td>
+                            <td>
+                                <p class="lead-pill">Referral</p>
+                            </td>
+                            <td>Aug 22, 2025</td>
+                            <td><button class="btn btn-primary lead_view_btn">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>Robert Wilson</td>
+                            <td>
+                                <p class="lead-pill">Social Media</p>
+                            </td>
+                            <td>Aug 21, 2025</td>
+                            <td><button class="btn btn-primary lead_view_btn">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="lead_content_body">
-        <table class="lead_content_table">
-            <thead>
-                <tr>
-                    <th>Lead</th>
-                    <th>Source</th>
-                    <th>Visit Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John Doe</td>
-                    <td>
-                        <p class="lead-pill">Online</p>
-                    </td>
-                    <td>Aug 25, 2025</td>
-                    <td><button class="btn btn-primary lead_view_btn">View</button></td>
-                </tr>
-                <tr>
-                    <td>Jane Smith</td>
-                    <td>
-                        <p class="lead-pill">Phone</p>
-                    </td>
-                    <td>Aug 24, 2025</td>
-                    <td><button class="btn btn-primary lead_view_btn">View</button></td>
-                </tr>
-                <tr>
-                    <td>Michael Johnson</td>
-                    <td>
-                        <p class="lead-pill">Email</p>
-                    </td>
-                    <td>Aug 23, 2025</td>
-                    <td><button class="btn btn-primary lead_view_btn">View</button></td>
-                </tr>
-                <tr>
-                    <td>Emily Davis</td>
-                    <td>
-                        <p class="lead-pill">Referral</p>
-                    </td>
-                    <td>Aug 22, 2025</td>
-                    <td><button class="btn btn-primary lead_view_btn">View</button></td>
-                </tr>
-                <tr>
-                    <td>Robert Wilson</td>
-                    <td>
-                        <p class="lead-pill">Social Media</p>
-                    </td>
-                    <td>Aug 21, 2025</td>
-                    <td><button class="btn btn-primary lead_view_btn">View</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 @endsection
 
 @section('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
-        const ctx = document.getElementById('adSpentChart').getContext('2d');
-
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: [
-                    'Aug 11', 'Aug 12', 'Aug 13', 'Aug 14', 'Aug 15',
-                    'Aug 16', 'Aug 17', 'Aug 18', 'Aug 19', 'Aug 20', 'Aug 21'
+        var lineOptions = {
+            chart: {
+                type: 'area',
+                height: 300,
+                toolbar: {
+                    show: false
+                }
+            },
+            series: [{
+                name: "Ad Spent",
+                data: [40, 50, 70, 65, 85, 95, 100, 90, 120, 130, 150]
+            }],
+            xaxis: {
+                categories: ["Aug 11", "Aug 12", "Aug 13", "Aug 14", "Aug 15", "Aug 16", "Aug 17", "Aug 18", "Aug 19",
+                    "Aug 20", "Aug 21"
                 ],
-                datasets: [{
-                    label: 'Ad Spent ($)',
-                    data: [50, 120, 380, 200, 480, 600, 410, 370, 510, 360, 730],
-                    borderColor: '#0076CE',
-                    backgroundColor: 'rgba(0, 118, 206, 0.3)',
-                    fill: true,
-                    tension: 0.4,
-                    borderWidth: 4,
-                    pointRadius: 0,
-                    pointHoverRadius: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                layout: {
-                    padding: {
-                        bottom: 20
-                    }
+                axisTicks: {
+                    show: false
                 },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        min: 0,
-                        max: 800,
-                        grid: {
-                            borderDash: [5, 5],
-                            color: '#E7E7E7'
-                        },
-                        ticks: {
-                            callback: function(value) {
-                                return '$' + value;
-                            },
-                            stepSize: 200,
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        ticks: {
-                            padding: 10 // increase this value for more margin top
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
+                labels: {
+                    style: {
+                        fontSize: "12px"
                     }
                 }
+            },
+            yaxis: {
+                min: 0,
+                max: 200,
+                tickAmount: 4,
+                labels: {
+                    style: {
+                        fontSize: "12px"
+                    }
+                }
+            },
+            colors: ["#008FFB"],
+            fill: {
+                type: "gradient",
+                gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.5,
+                    opacityTo: 0,
+                    stops: [0, 90, 100]
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth',
+                width: 5,
+            },
+            grid: {
+                borderColor: '#e0e0e0',
+                strokeDashArray: 4 // ← dotted grid lines
+            },
+            title: {
+                align: "left",
+                style: {
+                    fontSize: "16px",
+                    fontWeight: "bold"
+                }
             }
-        });
+        };
+        var lineChart = new ApexCharts(document.querySelector("#lineChart"), lineOptions);
+        lineChart.render();
     </script>
-
     <script>
-        const ctxBreakdown = document.getElementById('adSpentBreakdownChart').getContext('2d');
-
-        new Chart(ctxBreakdown, {
-            type: 'bar',
-            data: {
-                labels: ['Facebook', 'Google', 'Instagram', 'TikTok', 'YouTube'],
-                datasets: [{
-                    label: 'Ad Spent ($)',
-                    data: [140, 130, 180, 50, 190], // adjust these values to your real data
-                    backgroundColor: '#0076CE',
-                    borderRadius: 4,
-                    // Control bar width
-                    barPercentage: 0.6,
-                    categoryPercentage: 0.7
-                }]
+        // 2. Bar Chart (Ads Spent Breakdown)
+        var barOptions = {
+            chart: {
+                type: 'bar',
+                height: 300,
+                toolbar: {
+                    show: false
+                }
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 200,
-                        ticks: {
-                            stepSize: 50,
-                            callback: value => '$' + value
-                        },
-                        grid: {
-                            color: ctx => (ctx.tick.value === 0 ? '#E7E7E7' : '#E7E7E7'),
-                            borderDash: ctx => (ctx.tick.value === 0 ? [] : [5, 5]) // solid at 0, dashed otherwise
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        ticks: {
-                            color: '#646464'
-                        }
-                    }
+            series: [{
+                name: "Spent",
+                data: [180, 100, 150, 190, 160] // Facebook, Google, Instagram, TikTok, YouTube
+            }],
+            xaxis: {
+                categories: ["Facebook", "Google", "Instagram", "TikTok", "YouTube"],
+                axisTicks: {
+                    show: false
                 },
-                plugins: {
-                    legend: {
-                        display: false
+                labels: {
+                    style: {
+                        fontSize: "12px"
                     }
                 }
+            },
+            yaxis: {
+                min: 0,
+                max: 200,
+                tickAmount: 4,
+                labels: {
+                    style: {
+                        fontSize: "12px"
+                    }
+                }
+            },
+            colors: ["#008FFB"],
+            plotOptions: {
+                bar: {
+                    columnWidth: "40%",
+                    borderRadius: 4
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            title: {
+                align: "left",
+                style: {
+                    fontSize: "16px",
+                    fontWeight: "bold"
+                }
             }
-        });
+        };
+        var barChart = new ApexCharts(document.querySelector("#barChart"), barOptions);
+        barChart.render();
     </script>
 
 @endsection

@@ -116,8 +116,8 @@
                 <h2>Revenue Trends</h2>
             </div>
 
-            <div class="revenue_trends__body" style="position: relative; width: 100%; height: 290px;">
-                <canvas id="revenueTrendsChart"></canvas>
+            <div class="revenue_trends__body">
+                <div id="revenueChart"></div>
             </div>
         </div>
 
@@ -235,6 +235,7 @@
 
 @section('scripts')
     <script src="{{ asset('js/chartjs-plugin-datalabels.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
         const ctx = document.getElementById('petChart').getContext('2d');
 
@@ -288,134 +289,89 @@
         });
     </script>
 
-    <script>
-        const revenueCtx = document.getElementById('revenueTrendsChart').getContext('2d');
-
-        const gradient = revenueCtx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, 'rgba(25,135,84,0.2)');
-        gradient.addColorStop(1, 'rgba(25,135,84,0)');
-
-        new Chart(revenueCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                datasets: [{
-                    label: 'Revenue',
-                    data: [0, 3000, 6000, 9000, 25000, 31000, 16000, 14000, 18000, 17000, 27000, 39000],
-                    borderColor: '#0076CE',
-                    borderWidth: 5,
-                    pointRadius: 0,
-                    pointHoverRadius: 4,
-                    pointBackgroundColor: '#0076CE',
-                    pointHitRadius: 20,
-                    fill: true,
-                    backgroundColor: gradient,
-                    tension: 0.4
-                }]
+<script>
+      var options = {
+        chart: {
+          type: "area",
+          height: 350,
+          toolbar: { show: false },
+          zoom: { enabled: false },
+        },
+        series: [
+          {
+            name: "Revenue",
+            data: [
+              5000, 12000, 18000, 22000, 28000, 25000, 30000, 27000, 32000,
+              35000, 30000, 40000,
+            ],
+          },
+        ],
+        xaxis: {
+          categories: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          axisTicks: { show: false },
+          crosshairs: {
+            show: true,
+            width: 1,
+            stroke: { color: "#999", dashArray: 0 },
+          },
+        },
+        yaxis: {
+          min: 0,
+          max: 40000,
+          tickAmount: 4,
+          labels: {
+            formatter: function (val) {
+              return val / 1000 + "k";
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        enabled: false,
-                        external: function(context) {
-                            let tooltipEl = document.getElementById('chartjs-tooltip');
-                            if (!tooltipEl) {
-                                tooltipEl = document.createElement('div');
-                                tooltipEl.id = 'chartjs-tooltip';
-                                tooltipEl.style.position = 'absolute';
-                                tooltipEl.style.pointerEvents = 'none';
-                                tooltipEl.style.width = '106px';
-                                tooltipEl.style.height = '44px';
-                                tooltipEl.style.background = '#292929';
-                                tooltipEl.style.borderRadius = '7px';
-                                tooltipEl.style.display = 'flex';
-                                tooltipEl.style.alignItems = 'center';
-                                tooltipEl.style.gap = '6px';
-                                tooltipEl.style.padding = '6px';
-                                tooltipEl.style.boxShadow = '0px 14px 14px rgba(0,0,0,0.25)';
-                                tooltipEl.style.fontFamily = 'Inter, sans-serif';
-                                tooltipEl.style.fontWeight = '600';
-                                tooltipEl.style.fontSize = '14px';
-                                tooltipEl.style.color = '#fff';
-                                document.body.appendChild(tooltipEl);
+          },
+        },
+        stroke: { curve: "smooth", width: 5 },
+        fill: {
+          type: "gradient",
+          gradient: {
+            shadeIntensity: 1,
+            opacityFrom: 0.6,
+            opacityTo: 0.2,
+            stops: [0, 90, 100],
+          },
+        },
+        markers: {
+          size: 0,
+          hover: { size: 0 },
+        },
+        grid: { borderColor: "#e0e0e0", strokeDashArray: 3 },
+        tooltip: {
+          enabled: true,
+          shared: false, // only show single value
+          x: {
+            show: false, // ❌ hide month name
+          },
+          y: {
+            formatter: function (val) {
+              return "$" + val.toLocaleString();
+            },
+          },
+        },
+        dataLabels: { enabled: false },
+      };
 
-                                const dot = document.createElement('div');
-                                dot.style.width = '8px';
-                                dot.style.height = '8px';
-                                dot.style.borderRadius = '50%';
-                                dot.style.backgroundColor = '#0076CE';
-                                dot.id = 'tooltip-dot';
-                                tooltipEl.appendChild(dot);
-
-                                const value = document.createElement('span');
-                                value.id = 'tooltip-value';
-                                tooltipEl.appendChild(value);
-                            }
-
-                            const tooltipModel = context.tooltip;
-                            const tooltipDot = document.getElementById('tooltip-dot');
-                            const tooltipValue = document.getElementById('tooltip-value');
-
-                            if (tooltipModel.opacity === 0) {
-                                tooltipEl.style.display = 'none';
-                                return;
-                            }
-
-                            tooltipEl.style.display = 'flex';
-                            const position = context.chart.canvas.getBoundingClientRect();
-                            const body = tooltipModel.dataPoints[0].raw;
-
-                            tooltipValue.innerText = '$' + body.toLocaleString(undefined, {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            });
-
-                            tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX -
-                                tooltipEl.offsetWidth / 2 + 'px';
-                            tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY -
-                                tooltipEl.offsetHeight - 10 + 'px';
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        offset: false, // line touches edges
-                        ticks: {
-                            display: true,
-                            padding: 10, // push labels a bit from edges
-                            font: {
-                                family: 'Inter',
-                                size: 12,
-                                weight: '500'
-                            },
-                            color: '#646464'
-                        }
-                    },
-                    y: {
-                        min: 0,
-                        max: 40000,
-                        ticks: {
-                            stepSize: 10000,
-                            callback: value => value / 1000 + 'k'
-                        },
-                        grid: {
-                            drawTicks: false,
-                            drawOnChartArea: true,
-                            drawBorder: false,
-                            color: '#E7E7E7',
-                            borderDash: [5, 5]
-                        }
-                    }
-                }
-            }
-        });
+      var chart = new ApexCharts(
+        document.querySelector("#revenueChart"),
+        options
+      );
+      chart.render();
     </script>
 @endsection

@@ -1,7 +1,12 @@
 <div class="sticky"  id="sidebar">
     <div class="app-logo">
         <img class="app-logo__image" src="{{ asset('images/Logo.png') }}" alt="Logo">
-        <img class="app-logo__icon" id="toggleSidebar" src="{{ asset('svg/arrow-circle-left.svg') }}" alt="">
+        <img class="app-logo__icon toggleSidebar" src="{{ asset('svg/arrow-circle-left.svg') }}" alt="">
+    </div>
+
+    <div class="app-logo_collapsed">
+        <img class="app-logo__image_collapsed" src="{{ asset('images/logo_small.png') }}" alt="Logo">
+        <img class="app-logo__icon toggleSidebar" src="{{ asset('svg/arrow-circle-left.svg') }}" alt="">
     </div>
     <ul class="side-menu">
         <li class="slide">
@@ -9,7 +14,7 @@
                 href="{{ route('operationalManagement') }}">
 
                 @if (Route::is('operationalManagement'))
-                    <img src="{{ asset('images/element-3.png') }}" alt="">
+                    <img src="{{ asset('svg/element-3.svg') }}" alt="">
                 @else
                     <img src="{{ asset('images/element-3_1.png') }}" alt="">
                 @endif
