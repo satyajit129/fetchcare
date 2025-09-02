@@ -40,53 +40,53 @@
                 <div class="card_1 active">
                     <div class="card_1__header">
                         <p>Client Retention</p>
-                        <img src="{{ asset('svg/Frame_86.svg') }}" alt="">
+                        <img src="{{ asset('svg/Frame_91.svg') }}" alt="">
                     </div>
                     <div class="card_1__content">
                         <h6>47.5%</h6>
-                        <p>
-                            <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                            2.7%
-                        </p>
+                        <div class="card_progress up">
+                            <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                            <p>2.7%</p>
+                        </div>
                     </div>
                 </div>
                 <div class="card_1">
                     <div class="card_1__header">
                         <p>New Client Acquisition</p>
-                        <img src="{{ asset('svg/Frame_84.svg') }}" alt="">
+                        <img src="{{ asset('svg/Frame_92.svg') }}" alt="">
                     </div>
                     <div class="card_1__content">
                         <h6>24.6%</h6>
-                        <p>
-                            <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                            2.7%
-                        </p>
+                        <div class="card_progress up">
+                            <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                            <p>2.7%</p>
+                        </div>
                     </div>
                 </div>
                 <div class="card_1">
                     <div class="card_1__header">
-                        <p>Client Satisfy Score</p>
-                        <img src="{{ asset('svg/Frame_85.svg') }}" alt="">
+                        <p>Client Satisfaction Score</p>
+                        <img src="{{ asset('svg/Frame_93.svg') }}" alt="">
                     </div>
                     <div class="card_1__content">
                         <h6>4.8</h6>
-                        <p>
-                            <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                            2.7%
-                        </p>
+                        <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>2.7%</p>
+                </div>
                     </div>
                 </div>
                 <div class="card_1">
                     <div class="card_1__header">
                         <p>Active Clients</p>
-                        <img src="{{ asset('svg/Frame_82.svg') }}" alt="">
+                        <img src="{{ asset('svg/Frame_94.svg') }}" alt="">
                     </div>
                     <div class="card_1__content">
-                        <h6>87</h6>
-                        <p>
-                            <img src="{{ asset('svg/arrow-bottom.svg') }}" alt="up arrow" class="arrow-icon">
-                            2.7%
-                        </p>
+                        <h6>123</h6>
+                        <div class="card_progress up">
+                            <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                            <p>2.7%</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -418,9 +418,9 @@
                     colors: '#333'
                 },
                 markers: {
-                    width: 4, // smaller legend dot
-                    height: 4, // smaller legend dot
-                    radius: 2 // rounded corner
+                    width: 4,
+                    height: 4,
+                    radius: 2
                 },
                 itemMargin: {
                     horizontal: 20,

@@ -39,10 +39,10 @@
             </div>
             <div class="card_1__content">
                 <h6>2,275</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+                <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>9.3%</p>
+                </div>
             </div>
         </div>
         <div class="providers_utilizitions card_1">
@@ -52,10 +52,10 @@
             </div>
             <div class="card_1__content">
                 <h6>89.8%</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+                <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>2.7%</p>
+                </div>
             </div>
         </div>
         <div class="technician_unilizition card_1">
@@ -65,10 +65,10 @@
             </div>
             <div class="card_1__content">
                 <h6>3.7%</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+                <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>2.7%</p>
+                </div>
             </div>
         </div>
         <div class="stuff_to_patient_ratio card_1">
@@ -78,23 +78,23 @@
             </div>
             <div class="card_1__content">
                 <h6>87</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-bottom.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+                <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>2.7%</p>
+                </div>
             </div>
         </div>
         <div class="avg_app_dur card_1">
             <div class="card_1__header">
-                <p>Avg. Appoint Duration</p>
+                <p>Avg. Appointment Duration</p>
                 <img src="{{ asset('svg/Frame_81.svg') }}" alt="">
             </div>
             <div class="card_1__content">
                 <h6>41.7 min</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-bottom.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+                <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>2.7%</p>
+                </div>
             </div>
         </div>
     </div>
@@ -103,14 +103,23 @@
             <div class="visit_trends__header">
                 <h2>Visit Trends</h2>
             </div>
-            <div style="padding: 0 8px 16px 16px;">
-                
+            <div>
+
                 <div id="chart"></div>
             </div>
         </div>
         <div class="chart-container">
             <div class="pet_distribution__header">
                 <h2>Pets Distributions</h2>
+            </div>
+            <div class="pet_distribution_data">
+                <p>
+                    Total 2,275 pets
+                </p>
+                <div class="pet_distribution_progress">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>9.3%</p>
+                </div>
             </div>
             <div class="chart-container_body">
                 <canvas id="petChart"></canvas>
@@ -273,14 +282,14 @@
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: [12, 13, 24, 20, 21, 10], // your 6 slice values
+                    data: [13, 24, 20, 21, 10, 12, ],
                     backgroundColor: [
-                        '#FF6384',
-                        '#36A2EB',
-                        '#FFCE56',
-                        '#4BC0C0',
-                        '#9966FF',
-                        '#FF9F40'
+                        '#A1E92C',
+                        '#66ADE2',
+                        '#F4BE05',
+                        '#9166F4',
+                        '#EF69DE',
+                        '#2DE39A'
                     ],
                     borderRadius: 7,
                     borderWidth: 0,
@@ -302,7 +311,12 @@
                         color: '#fff',
                         font: {
                             size: 12,
-                            weight: 'bold'
+                            weight: 'thin',
+                            fontFamily: 'Inter',
+                            fontSize: '12px',
+                            fontWeight: 400,
+                            lineHeight: '19px',
+                            letterSpacing: '-0.02em'
                         },
                         anchor: 'end',
                         align: 'start',
@@ -324,17 +338,17 @@
         var options = {
             chart: {
                 type: 'area',
-                height: 350,
+                height: 299,
                 toolbar: {
                     show: false
                 },
                 zoom: {
                     enabled: false
-                }
+                },
             },
             series: [{
                 name: 'Visitors',
-                data: [200, 600, 900, 1200, 1800, 1500, 1700, 1300, 1600, 1900, 1400, 2000]
+                data: [750, 900, 1000, 1200, 1800, 1500, 1700, 1300, 1600, 1900, 1400, 2000]
             }],
             xaxis: {
                 categories: [
@@ -342,14 +356,16 @@
                     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
                 ],
                 axisTicks: {
-                    show: false // ❌ remove small ticks/dots above month labels
-                }
+                    show: false
+                },
+                labels: {
+                    trim: false
+                },
             },
             yaxis: {
                 min: 0,
                 max: 2000,
                 tickAmount: 4,
-
             },
             stroke: {
                 curve: 'smooth',
@@ -369,10 +385,19 @@
             },
             grid: {
                 borderColor: '#e0e0e0',
-                strokeDashArray: 3
+                strokeDashArray: 3,
             },
             tooltip: {
-                enabled: false
+                enabled: true,
+                shared: false,
+                x: {
+                    show: false,
+                },
+                y: {
+                    formatter: function(val) {
+                        return "$" + val.toLocaleString();
+                    },
+                },
             },
             dataLabels: {
                 enabled: false
@@ -382,4 +407,5 @@
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
     </script>
+
 @endsection

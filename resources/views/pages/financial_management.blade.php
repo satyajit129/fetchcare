@@ -44,74 +44,74 @@
         </div>
     </div>
     <div class="content__overview">
-        <div class="card_1 active">
+        <div class="total_revenue card_1 active">
             <div class="card_1__header">
                 <p>Total Revenue</p>
-                <img src="{{ asset('svg/Frame_83.svg') }}" alt="">
+                <img src="{{ asset('svg/Frame_87.svg') }}" alt="">
             </div>
             <div class="card_1__content">
                 <h6>$17,365.00</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+                <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>2.7%</p>
+                </div>
             </div>
         </div>
-        <div class="card_1">
+        <div class="avg_transaction card_1">
             <div class="card_1__header">
                 <p>Avg Transaction</p>
                 <img src="{{ asset('svg/Frame_84.svg') }}" alt="">
             </div>
             <div class="card_1__content">
                 <h6>$370.00</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+                <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>2.7%</p>
+                </div>
             </div>
         </div>
-        <div class="card_1">
+        <div class="revenue_per_pet card_1">
             <div class="card_1__header">
                 <p>Revenue per Vet</p>
                 <img src="{{ asset('svg/Frame_85.svg') }}" alt="">
             </div>
             <div class="card_1__content">
-                <h6>$370.00</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+                <h6>$4,850.00</h6>
+                <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>2.7%</p>
+                </div>
             </div>
         </div>
-        <div class="card_1">
+        <div class="invoice_collection card_1">
             <div class="card_1__header">
                 <p>Invoice Collection</p>
-                <img src="{{ asset('svg/Frame_82.svg') }}" alt="">
+                <img src="{{ asset('svg/Frame_89.svg') }}" alt="">
             </div>
             <div class="card_1__content">
-                <h6>87</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-bottom.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+                <h6>96%</h6>
+                <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>2.7%</p>
+                </div>
             </div>
         </div>
-        <div class="avg_app_dur card_1">
+        <div class="cost_of_good_sold card_1">
             <div class="card_1__header">
-                <p>Avg. Appoint Duration</p>
-                <img src="{{ asset('svg/Frame_81.svg') }}" alt="">
+                <p>Cost of Goods Sold Ratio</p>
+                <img src="{{ asset('svg/Frame_90.svg') }}" alt="">
             </div>
             <div class="card_1__content">
-                <h6>41.7 min</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-bottom.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+                <h6>33%</h6>
+                <div class="card_progress up">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>2.7%</p>
+                </div>
             </div>
         </div>
     </div>
     <div class="content__charts">
-        <div class="revenue_trends_chart" style="width: 100%;">
+        <div class="revenue_trends_chart">
             <div class="revenue_trends__header">
                 <h2>Revenue Trends</h2>
             </div>
@@ -125,19 +125,28 @@
             <div class="pet_distribution__header">
                 <h2>Revenue By Services</h2>
             </div>
+            <div class="pet_distribution_data">
+                <p>
+                    Total 2,275 pets
+                </p>
+                <div class="pet_distribution_progress">
+                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                    <p>9.3%</p>
+                </div>
+            </div>
             <div class="chart-container_body">
                 <canvas id="petChart"></canvas>
             </div>
             <div class="revenue-chart-container_footer">
                 <div class="revenue-chart-container_footer-left">
-                    <span>General Health Checkup</span>
-                    <span>Diagnostic Lab testing</span>
-                    <span>Surgery</span>
+                    <span>General Health Checkups</span>
+                    <span>Diagnostic & Lab testing</span>
+                    <span>Surgery & Anesthesia</span>
                 </div>
                 <div class="revenue-chart-container_footer-right">
-                    <span>Dental care</span>
+                    <span>Dental Care</span>
+                    <span>Emergency & Critical Care</span>
                     <span>Pet Nutrition</span>
-                    <span>Others</span>
                 </div>
             </div>
         </div>
@@ -160,42 +169,42 @@
                 <div class="a__body_row">
                     <div class="a__body_col">Samuel</div>
                     <div class="a__body_col">Max</div>
-                    <div class="a__body_col">$375.00</div>
+                    <div class="a__body_col amount_color">$375.00</div>
                     <div class="a__body_col">Jun 14</div>
                     <div class="a__body_col">General</div>
                     <div class="a__body_col">
-                        <span class="status-indicator pending"></span>
+                        <span class="status-indicator completed"></span>
                         Paid
                     </div>
                 </div>
 
                 <div class="a__body_row">
-                    <div class="a__body_col">Bella</div>
-                    <div class="a__body_col">Bella</div>
-                    <div class="a__body_col">$120.00</div>
+                    <div class="a__body_col">Samuel</div>
+                    <div class="a__body_col">Max</div>
+                    <div class="a__body_col amount_color">$375.00</div>
                     <div class="a__body_col">Jun 14</div>
-                    <div class="a__body_col">Vaccination</div>
+                    <div class="a__body_col">General</div>
                     <div class="a__body_col">
-                        <span class="status-indicator pending"></span>
-                        Pending
+                        <span class="status-indicator completed"></span>
+                        Paid
                     </div>
                 </div>
 
                 <div class="a__body_row">
-                    <div class="a__body_col">Charlie</div>
-                    <div class="a__body_col">Charlie</div>
-                    <div class="a__body_col">$200.00</div>
+                    <div class="a__body_col">Samuel</div>
+                    <div class="a__body_col">Max</div>
+                    <div class="a__body_col amount_color">$375.00</div>
                     <div class="a__body_col">Jun 14</div>
-                    <div class="a__body_col">Dental</div>
+                    <div class="a__body_col">General</div>
                     <div class="a__body_col">
-                        <span class="status-indicator cancelled"></span>
-                        Cancelled
+                        <span class="status-indicator completed"></span>
+                        Paid
                     </div>
                 </div>
                 <div class="a__body_row">
                     <div class="a__body_col">Samuel</div>
                     <div class="a__body_col">Max</div>
-                    <div class="a__body_col">$375.00</div>
+                    <div class="a__body_col amount_color">$375.00</div>
                     <div class="a__body_col">Jun 14</div>
                     <div class="a__body_col">General</div>
                     <div class="a__body_col">
@@ -205,26 +214,26 @@
                 </div>
 
                 <div class="a__body_row">
-                    <div class="a__body_col">Bella</div>
-                    <div class="a__body_col">Bella</div>
-                    <div class="a__body_col">$120.00</div>
+                    <div class="a__body_col">Samuel</div>
+                    <div class="a__body_col">Max</div>
+                    <div class="a__body_col amount_color">$375.00</div>
                     <div class="a__body_col">Jun 14</div>
-                    <div class="a__body_col">Vaccination</div>
+                    <div class="a__body_col">General</div>
                     <div class="a__body_col">
                         <span class="status-indicator pending"></span>
-                        Pending
+                        Paid
                     </div>
                 </div>
 
                 <div class="a__body_row">
-                    <div class="a__body_col">Charlie</div>
-                    <div class="a__body_col">Charlie</div>
-                    <div class="a__body_col">$200.00</div>
+                    <div class="a__body_col">Samuel</div>
+                    <div class="a__body_col">Max</div>
+                    <div class="a__body_col amount_color">$375.00</div>
                     <div class="a__body_col">Jun 14</div>
-                    <div class="a__body_col">Dental</div>
+                    <div class="a__body_col">General</div>
                     <div class="a__body_col">
-                        <span class="status-indicator cancelled"></span>
-                        Cancelled
+                        <span class="status-indicator completed"></span>
+                        Paid
                     </div>
                 </div>
             </div>
@@ -243,14 +252,14 @@
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: [12, 13, 24, 20, 21, 10], // your 6 slice values
+                    data: [13, 24, 20, 21, 10, 12, ],
                     backgroundColor: [
-                        '#FF6384',
-                        '#36A2EB',
-                        '#FFCE56',
-                        '#4BC0C0',
-                        '#9966FF',
-                        '#FF9F40'
+                        '#A1E92C',
+                        '#66ADE2',
+                        '#F4BE05',
+                        '#9166F4',
+                        '#EF69DE',
+                        '#2DE39A'
                     ],
                     borderRadius: 7,
                     borderWidth: 0,
@@ -272,7 +281,12 @@
                         color: '#fff',
                         font: {
                             size: 12,
-                            weight: 'bold'
+                            weight: 'thin',
+                            fontFamily: 'Inter',
+                            fontSize: '12px',
+                            fontWeight: 400,
+                            lineHeight: '19px',
+                            letterSpacing: '-0.02em'
                         },
                         anchor: 'end',
                         align: 'start',
@@ -289,89 +303,97 @@
         });
     </script>
 
-<script>
-      var options = {
-        chart: {
-          type: "area",
-          height: 350,
-          toolbar: { show: false },
-          zoom: { enabled: false },
-        },
-        series: [
-          {
-            name: "Revenue",
-            data: [
-              5000, 12000, 18000, 22000, 28000, 25000, 30000, 27000, 32000,
-              35000, 30000, 40000,
-            ],
-          },
-        ],
-        xaxis: {
-          categories: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
-          ],
-          axisTicks: { show: false },
-          crosshairs: {
-            show: true,
-            width: 1,
-            stroke: { color: "#999", dashArray: 0 },
-          },
-        },
-        yaxis: {
-          min: 0,
-          max: 40000,
-          tickAmount: 4,
-          labels: {
-            formatter: function (val) {
-              return val / 1000 + "k";
+    <script>
+        var options = {
+            chart: {
+                type: "area",
+                height: 299,
+                toolbar: {
+                    show: false
+                },
+                zoom: {
+                    enabled: false
+                },
             },
-          },
-        },
-        stroke: { curve: "smooth", width: 5 },
-        fill: {
-          type: "gradient",
-          gradient: {
-            shadeIntensity: 1,
-            opacityFrom: 0.6,
-            opacityTo: 0.2,
-            stops: [0, 90, 100],
-          },
-        },
-        markers: {
-          size: 0,
-          hover: { size: 0 },
-        },
-        grid: { borderColor: "#e0e0e0", strokeDashArray: 3 },
-        tooltip: {
-          enabled: true,
-          shared: false, // only show single value
-          x: {
-            show: false, // ❌ hide month name
-          },
-          y: {
-            formatter: function (val) {
-              return "$" + val.toLocaleString();
+            series: [{
+                name: "Revenue",
+                data: [
+                    5000, 12000, 18000, 22000, 28000, 25000, 30000, 27000, 32000,
+                    35000, 30000, 40000,
+                ],
+            }, ],
+            xaxis: {
+                categories: [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec",
+                ],
+                axisTicks: {
+                    show: false
+                },
+                labels: { trim: false },
+                
             },
-          },
-        },
-        dataLabels: { enabled: false },
-      };
+            yaxis: {
+                min: 0,
+                max: 40000,
+                tickAmount: 4,
+                labels: {
+                    formatter: function(val) {
+                        return val / 1000 + "k";
+                    },
+                },
+            },
+            stroke: {
+                curve: "smooth",
+                width: 5
+            },
+            fill: {
+                type: "gradient",
+                gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.6,
+                    opacityTo: 0.2,
+                    stops: [0, 90, 100],
+                },
+            },
+            markers: {
+                size: 0
+            },
+            grid: {
+                borderColor: '#e0e0e0',
+                strokeDashArray: 3,
+            },
+            tooltip: {
+                enabled: true,
+                shared: false,
+                x: {
+                    show: false,
+                },
+                y: {
+                    formatter: function(val) {
+                        return "$" + val.toLocaleString();
+                    },
+                },
+            },
+            dataLabels: {
+                enabled: false
+            },
+        };
 
-      var chart = new ApexCharts(
-        document.querySelector("#revenueChart"),
-        options
-      );
-      chart.render();
+        var chart = new ApexCharts(
+            document.querySelector("#revenueChart"),
+            options
+        );
+        chart.render();
     </script>
 @endsection
