@@ -37,7 +37,7 @@
     <div class="client__management_container">
         <div class="client__management_left">
             <div class="content__overview">
-                <div class="card_1 active">
+                <div class="card_1 client_retention active">
                     <div class="card_1__header">
                         <p>Client Retention</p>
                         <img src="{{ asset('svg/Frame_91.svg') }}" alt="">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card_1">
+                <div class="card_1 new_client_aquistion">
                     <div class="card_1__header">
                         <p>New Client Acquisition</p>
                         <img src="{{ asset('svg/Frame_92.svg') }}" alt="">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card_1">
+                <div class="card_1 client_satisfaction_score">
                     <div class="card_1__header">
                         <p>Client Satisfaction Score</p>
                         <img src="{{ asset('svg/Frame_93.svg') }}" alt="">
@@ -71,12 +71,12 @@
                     <div class="card_1__content">
                         <h6>4.8</h6>
                         <div class="card_progress up">
-                    <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                    <p>2.7%</p>
-                </div>
+                            <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                            <p>2.7%</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card_1">
+                <div class="card_1 active_client">
                     <div class="card_1__header">
                         <p>Active Clients</p>
                         <img src="{{ asset('svg/Frame_94.svg') }}" alt="">
@@ -96,7 +96,17 @@
                         <h2>Client Trends</h2>
                     </div>
                     <div class="client_trands__body">
-                        <div id="lineChart"></div>
+                        <div id="chart"></div>
+                    </div>
+                    <div class="client_trands_footer">
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background:#EF69DE;"></span>
+                            <span class="legend_item_label">New Client</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background:#0076CE;"></span>
+                            <span class="legend_item_label">Previous Client</span>
+                        </div>
                     </div>
                 </div>
                 <div class="retention_trends_chart">
@@ -105,6 +115,7 @@
                     </div>
                     <div id="barChart"></div>
                 </div>
+
             </div>
         </div>
         <div class="filters__container">
@@ -201,7 +212,7 @@
     <div class="recent-transactions">
         <div class="client-history">
             <div class="client__history_header">
-                <h2>Appointment Breakdown</h2>
+                <h2>Client Breakdown</h2>
 
             </div>
             <div class="client__history_body">
@@ -221,14 +232,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>John Doe</td>
-                            <td>Buddy</td>
-                            <td>Dr. Smith</td>
-                            <td>$100</td>
-                            <td>2023-01-01</td>
+                            <td>Samuel</td>
+                            <td>Oliver</td>
+                            <td>Dr. Lee</td>
+                            <td>$3375.00</td>
+                            <td>Jun 14, 2025</td>
                             <td>Newtown Clinic</td>
                             <td>
-                                <p class="status-pill">Regular</p>
+                                <p class="status-pill">New</p>
                             </td>
                             <td class="rating">
                                 <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
@@ -242,77 +253,98 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Jane Roe</td>
-                            <td>Charlie</td>
-                            <td>Dr. Brown</td>
-                            <td>$150</td>
-                            <td>2023-02-15</td>
-                            <td>Happy Pets Clinic</td>
-                            <td>
-                                <p class="status-pill">Regular</p>
-                            </td>
-                            <td class="rating">
-                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
-                                    1.2</span>
-                            </td>
-                            <td class="action_btn">
-                                <button class="btn btn-primary view_btn">View</button>
-                                <a href="">
-                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Mark Twain</td>
+                            <td>Samuel</td>
                             <td>Max</td>
-                            <td>Dr. Green</td>
-                            <td>$200</td>
-                            <td>2023-03-10</td>
-                            <td>City Vet Clinic</td>
-                            <td>
-                                <p class="status-pill">Regular</p>
-                            </td>
-                            <td class="rating">
-                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
-                                    1.2</span>
-                            </td>
-                            <td class="action_btn">
-                                <button class="btn btn-primary view_btn">View</button>
-                                <a href="">
-                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Emily Davis</td>
-                            <td>Rocky</td>
-                            <td>Dr. Wilson</td>
-                            <td>$250</td>
-                            <td>2023-04-05</td>
-                            <td>Greenfield Clinic</td>
-                            <td>
-                                <p class="status-pill">Regular</p>
-                            </td>
-                            <td class="rating">
-                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
-                                    1.2</span>
-                            </td>
-                            <td class="action_btn">
-                                <button class="btn btn-primary view_btn">View</button>
-                                <a href="">
-                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Michael Johnson</td>
-                            <td>Buddy</td>
                             <td>Dr. Smith</td>
-                            <td>$100</td>
-                            <td>2023-01-01</td>
+                            <td>$3362.00</td>
+                            <td>Jun 14, 2025</td>
+                            <td>Uptown Clinic</td>
+                            <td>
+                                <p class="status-pill active">Active</p>
+                            </td>
+                            <td class="rating">
+                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
+                                    1.2</span>
+                            </td>
+                            <td class="action_btn">
+                                <button class="btn btn-primary view_btn">View</button>
+                                <a href="">
+                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Samuel</td>
+                            <td>Kai</td>
+                            <td>Dr. Johnson</td>
+                            <td>$3100.00</td>
+                            <td>Jun 14, 2025</td>
+                            <td>Uptown Clinic</td>
+                            <td>
+                                <p class="status-pill active">Active</p>
+                            </td>
+                            <td class="rating">
+                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
+                                    1.2</span>
+                            </td>
+                            <td class="action_btn">
+                                <button class="btn btn-primary view_btn">View</button>
+                                <a href="">
+                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Samuel</td>
+                            <td>Makai</td>
+                            <td>Dr. Lee</td>
+                            <td>$3075.00</td>
+                            <td>Jun 14, 2025</td>
+                            <td>Oldtown Clinic</td>
+                            <td>
+                                <p class="status-pill active">Active</p>
+                            </td>
+                            <td class="rating">
+                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
+                                    1.2</span>
+                            </td>
+                            <td class="action_btn">
+                                <button class="btn btn-primary view_btn">View</button>
+                                <a href="">
+                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Samuel</td>
+                            <td>Larry</td>
+                            <td>Dr. Johnson</td>
+                            <td>$3020.00</td>
+                            <td>Jun 14, 2025</td>
+                            <td>Downtown Clinic</td>
+                            <td>
+                                <p class="status-pill">New</p>
+                            </td>
+                            <td class="rating">
+                                <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
+                                    1.2</span>
+                            </td>
+                            <td class="action_btn">
+                                <button class="btn btn-primary view_btn">View</button>
+                                <a href="">
+                                    <img src="{{ asset('svg/edit.svg') }}" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Samuel</td>
+                            <td>Jack</td>
+                            <td>Dr. Samuel</td>
+                            <td>$2905.00</td>
+                            <td>Jun 14, 2025</td>
                             <td>Newtown Clinic</td>
                             <td>
-                                <p class="status-pill">Regular</p>
+                                <p class="status-pill active">Active</p>
                             </td>
                             <td class="rating">
                                 <span class="star"><i class="bi bi-star-fill"></i></span><span class="rating_point">
@@ -341,13 +373,13 @@
         var options = {
             chart: {
                 type: 'area',
-                height: 350,
+                height: 263,
                 toolbar: {
                     show: false
                 },
                 zoom: {
                     enabled: false
-                }
+                },
             },
             series: [{
                     name: 'New Client',
@@ -379,10 +411,16 @@
                 }
             ],
             xaxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                categories: [
+                    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+                ],
                 axisTicks: {
                     show: false
-                }
+                },
+                labels: {
+                    trim: false
+                },
             },
             yaxis: {
                 min: 0,
@@ -393,43 +431,44 @@
                 curve: 'smooth',
                 width: 5
             },
-            markers: {
-                size: 0, // chart markers
-                hover: {
-                    size: 6
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.6,
+                    opacityTo: 0.2,
+                    stops: [0, 90, 100]
                 }
             },
-            tooltip: {
-                enabled: false
+            markers: {
+                size: 0
             },
+            legend: {
+                show: false
+            },
+
             grid: {
                 borderColor: '#e0e0e0',
-                strokeDashArray: 3
+                strokeDashArray: 3,
+            },
+            tooltip: {
+                enabled: true,
+                shared: false,
+                x: {
+                    show: false,
+                },
+                y: {
+                    formatter: function(val) {
+                        return "$" + val.toLocaleString();
+                    },
+                },
             },
             dataLabels: {
                 enabled: false
-            },
-            legend: {
-                show: true,
-                position: 'bottom',
-                horizontalAlign: 'left',
-                fontSize: '12px',
-                labels: {
-                    colors: '#333'
-                },
-                markers: {
-                    width: 4,
-                    height: 4,
-                    radius: 2
-                },
-                itemMargin: {
-                    horizontal: 20,
-                    vertical: 0
-                }
             }
         };
 
-        var chart = new ApexCharts(document.querySelector("#lineChart"), options);
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
     </script>
 
@@ -437,7 +476,7 @@
         var options = {
             chart: {
                 type: 'bar',
-                height: 350,
+                height: 299,
                 toolbar: {
                     show: false
                 }
@@ -454,7 +493,7 @@
                 axisBorder: {
                     show: false
                 },
-                
+
             },
             yaxis: {
                 min: 0,
@@ -463,7 +502,7 @@
             },
             plotOptions: {
                 bar: {
-                    columnWidth: '50%',
+                    columnWidth: '40%',
                     borderRadius: 3,
                 }
             },
@@ -472,7 +511,10 @@
             },
             grid: {
                 borderColor: '#e0e0e0',
-                strokeDashArray: 3
+                strokeDashArray: 3,
+                padding: {
+                    bottom: 0 // removes extra bottom space
+                }
             },
             fill: {
                 colors: ['#0076CE']

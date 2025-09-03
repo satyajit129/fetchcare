@@ -21,8 +21,10 @@ html body {
 }
 
 .container-fluid {
-    width: 103%;
+    width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: space-between;
 }
 body::-webkit-scrollbar {
     display: none;
@@ -425,7 +427,8 @@ a {
     border-radius: 4px;
 }
 .providers_utilizitions,
-.avg_transaction{
+.avg_transaction,
+.new_client_aquistion{
     border-bottom: 2px solid #F44336;
 }
 /* card Section */
@@ -530,7 +533,7 @@ a {
     flex-direction: column;
     justify-content: space-between;
     gap: 40px;
-    padding: 16px 16px 0 16px;
+    /* padding: 16px 16px 0 16px; */
     position: relative;
 }
 /* .revenue_trends__body{
@@ -906,7 +909,7 @@ a {
     padding: 16px;
     background: #ffffff;
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 17px;
 }
 
 .recent-transactions__header h2 {
@@ -921,41 +924,63 @@ a {
 .client__management_container {
     display: flex;
     justify-content: space-between;
-    gap: 17px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* Client Trends Chart (bigger one) */
 .client_trands_chart {
-    flex: 2;
-    /* take more space */
-    min-width: 320px;
-    /* prevent shrinking too much */
-    height: auto;
+    flex: 1.32;
     background: #ffffff;
     border-radius: 8px;
-    font-family: "Inter", sans-serif;
-    position: relative;
+    padding: 16px;
+    /* height: 381px; */
+    min-width: 300px; /* ensures it won’t shrink too much */
 }
 
 /* Retention Trends Chart (smaller one) */
 .retention_trends_chart {
     flex: 1;
-    /* take less space */
-    min-width: 250px;
-    height: auto;
+    /* height: 381px; */
     background: #ffffff;
     border-radius: 8px;
-    font-family: "Inter", sans-serif;
-    position: relative;
+    padding: 15px;
+    min-width: 250px;
+}
+
+.client_trands_footer {
+    display: flex;
+    gap: 16px;
+    margin-top: -5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #333;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.legend_item_label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #292929;
 }
 
 .client__management_left {
     flex: 3;
-    /* takes more space */
     min-width: 300px;
-    /* prevent shrinking too much */
     height: auto;
-    /* let height adjust */
 }
 
 .filters__container {
@@ -969,7 +994,7 @@ a {
 }
 
 .client_trands__header h2 {
-    padding: 16px;
+    /* padding: 16px; */
     font-weight: 600;
     font-size: 24px;
     line-height: 34px;
@@ -1029,7 +1054,7 @@ a {
 }
 
 .retention_trends__header h2 {
-    padding: 16px;
+    /* padding: 16px; */
     font-weight: 600;
     font-size: 24px;
     line-height: 34px;
@@ -1194,7 +1219,7 @@ a {
 }
 
 .filter__buttons {
-    padding: 16px;
+    padding: 12px;
 }
 
 .filter__reset__button {
@@ -1237,7 +1262,7 @@ a {
 /* Header */
 .client-history_table th {
     text-align: left;
-    padding: 10px 12px;
+    padding: 10px 12px 10px 10px;
     font-size: 14px;
     color: #888888;
     white-space: nowrap;
@@ -1303,7 +1328,23 @@ a {
     font-size: 14px;
     font-weight: 500;
     color: #2e7d32;
-    /* optional: dark green text for contrast */
+}
+.status-pill.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 76px;
+    height: 27px;
+    background: #E0F0FF;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #0076CE;
 }
 
 .rating .star {
