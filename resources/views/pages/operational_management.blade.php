@@ -3,6 +3,7 @@
 
 @section('styles')
 @section('content')
+<div style="margin-bottom: 1rem;">
     <div class="content__header">
         <h2 class="content__title">Operational Management</h2>
         <div class="dropdown__container">
@@ -269,6 +270,11 @@
             </div>
         </div>
     </div>
+    <div style="height: 2rem;">
+
+    </div>
+</div>
+    
 @endsection
 
 

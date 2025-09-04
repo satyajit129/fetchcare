@@ -26,6 +26,7 @@ html body {
     display: flex;
     justify-content: space-between;
 }
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -47,6 +48,7 @@ a {
     --webkit-text-decoration-skip: objects;
     color: #000000;
 }
+
 .sticky {
     position: fixed;
     top: 0;
@@ -60,9 +62,11 @@ a {
     border-radius: 0px 12px 12px 0px;
     transition: width 0.6s ease;
 }
+
 .sticky.collapsed {
     width: 100px;
 }
+
 /* Expanded logo visible by default */
 .app-logo {
     display: flex;
@@ -116,9 +120,11 @@ a {
 .sticky.collapsed .side-menu__label {
     display: none;
 }
-.sticky.collapsed .side-menu__item .icon-active{
+
+.sticky.collapsed .side-menu__item .icon-active {
     display: none !important;
 }
+
 .sticky.collapsed .side-menu__item img {
     margin: 0 auto;
     display: block;
@@ -156,12 +162,14 @@ a {
     letter-spacing: -0.02em;
     flex: 1;
     opacity: 1;
-    transition: opacity 0.3s ease 0.6s; /* fade in after expand delay */
+    transition: opacity 0.3s ease 0.6s;
+    /* fade in after expand delay */
 }
 
 .sticky.collapsed .side-menu__item .side-menu__label {
     opacity: 0;
-    transition: opacity 0.3s ease 0s; /* fade out immediately on collapse */
+    transition: opacity 0.3s ease 0s;
+    /* fade out immediately on collapse */
 }
 
 .side-menu__item.active {
@@ -365,7 +373,8 @@ a {
     align-items: center;
     color: #292929;
 }
-.card_1.active .card_1__header p{
+
+.card_1.active .card_1__header p {
     color: #CCE4F5;
 }
 
@@ -402,7 +411,8 @@ a {
     gap: 4px;
     margin: 0;
 }
-.card_progress{
+
+.card_progress {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -413,7 +423,8 @@ a {
     width: 56px;
     height: 18px;
 }
-.card_1.active .card_progress p{
+
+.card_1.active .card_progress p {
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
@@ -421,16 +432,24 @@ a {
     letter-spacing: -0.01em;
     color: #75B798;
 }
+.card_progress.down{
+    color: #F44336;
+}
+
 .arrow-icon {
     width: 12px;
     height: 12px;
     border-radius: 4px;
 }
+
 .providers_utilizitions,
 .avg_transaction,
-.new_client_aquistion{
+.new_client_aquistion,
+.appointment_utilization,
+.cancellation_rate {
     border-bottom: 2px solid #F44336;
 }
+
 /* card Section */
 
 .content__charts {
@@ -449,7 +468,7 @@ a {
     border-radius: 8px;
     font-family: "Inter", sans-serif;
     position: relative;
-    padding: 16px 16px 0 16px;
+    /* padding: 16px 16px 0 16px; */
 }
 
 /* Revenue Pie/Secondary Chart */
@@ -472,7 +491,7 @@ a {
     padding: 16px 16px 0 16px;
 }
 
-.pet_distribution__header h2{
+.pet_distribution__header h2 {
     padding: 16px 16px 0 16px;
     font-weight: 600;
     font-size: 24px;
@@ -480,34 +499,39 @@ a {
     letter-spacing: -0.02em;
     color: #292929;
 }
-.visit_trends__header h2{
+
+.visit_trends__header h2 {
     font-weight: 600;
     font-size: 24px;
     line-height: 34px;
     letter-spacing: -0.02em;
     color: #292929;
 }
+
 .revenue_trends__header h2 {
-    /* padding: 16px; */
+    padding: 16px 16px 0 16px;
     font-weight: 600;
     font-size: 24px;
     line-height: 34px;
     letter-spacing: -0.02em;
     color: #292929;
 }
-.pet_distribution_data{
+
+.pet_distribution_data {
     display: flex;
     justify-content: space-between;
     padding: 0 16px;
     margin-top: 3px;
 }
-.pet_distribution_data p{
+
+.pet_distribution_data p {
     font-weight: 500;
     font-size: 14px;
     line-height: 140%;
     letter-spacing: -0.02em;
     color: #646464;
 }
+
 .pet_distribution_progress {
     display: flex;
     flex-direction: row;
@@ -518,7 +542,8 @@ a {
     width: 56px;
     height: 18px;
 }
-.pet_distribution_progress p{
+
+.pet_distribution_progress p {
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
@@ -536,6 +561,7 @@ a {
     /* padding: 16px 16px 0 16px; */
     position: relative;
 }
+
 /* .revenue_trends__body{
     padding: 0 8px 16px 16px;
 } */
@@ -658,11 +684,12 @@ a {
 }
 
 .chart-container_footer-left,
-.chart-container_footer-right{
+.chart-container_footer-right {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
+
 .revenue-chart-container_footer-left,
 .revenue-chart-container_footer-right {
     display: flex;
@@ -749,10 +776,12 @@ a {
     min-width: 300px;
     height: auto;
 }
-.appointment_list{
+
+.appointment_list {
     flex: 1.84;
 }
-.upcoming_appointment{
+
+.upcoming_appointment {
     flex: 1;
 }
 
@@ -811,7 +840,7 @@ a {
 .a__body_row {
     border-bottom: 1px solid #eee;
     background: #f2f2f2;
-    border-radius: 4px;
+    border-radius: 8px;
     margin-bottom: 8px;
 }
 
@@ -820,7 +849,8 @@ a {
     font-size: 14px;
     color: #292929;
 }
-.amount_color{
+
+.amount_color {
     color: #0076CE;
     font-weight: 600;
 }
@@ -933,9 +963,10 @@ a {
     flex: 1.32;
     background: #ffffff;
     border-radius: 8px;
-    padding: 16px;
+    /* padding: 16px; */
     /* height: 381px; */
-    min-width: 300px; /* ensures it won’t shrink too much */
+    min-width: 300px;
+    /* ensures it won’t shrink too much */
 }
 
 /* Retention Trends Chart (smaller one) */
@@ -944,14 +975,16 @@ a {
     /* height: 381px; */
     background: #ffffff;
     border-radius: 8px;
-    padding: 15px;
+    /* padding: 15px; */
     min-width: 250px;
+    height: 360px;
 }
 
 .client_trands_footer {
     display: flex;
     gap: 16px;
     margin-top: -5px;
+    padding-left: 16px;
 }
 
 .legend-item {
@@ -968,6 +1001,7 @@ a {
     border-radius: 50%;
     display: inline-block;
 }
+
 .legend_item_label {
     font-weight: 500;
     font-size: 14px;
@@ -999,8 +1033,8 @@ a {
     font-size: 24px;
     line-height: 34px;
     letter-spacing: -0.02em;
-
     color: #292929;
+    padding: 16px 16px 0 16px;
 }
 
 .client_trands__body canvas {
@@ -1055,6 +1089,7 @@ a {
 
 .retention_trends__header h2 {
     /* padding: 16px; */
+    padding: 16px 16px 0 16px;
     font-weight: 600;
     font-size: 24px;
     line-height: 34px;
@@ -1252,75 +1287,67 @@ a {
     color: #292929;
 }
 
-/* Table styles */
-.client-history_table {
+/* Table wrapper */
+.client-history_table_body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 8px;
+    font-size: 14px;
+}
+.table-header-row{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    background: #f2f2f2;
+    border-radius: 4px;
+    overflow: hidden;
+    align-items: center;
+}
+/* Row */
+.table-data-row {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    background: #f2f2f2;
+    border-radius: 4px;
+    overflow: hidden;
+    align-items: center;
 }
 
-/* Header */
-.client-history_table th {
-    text-align: left;
-    padding: 10px 12px 10px 10px;
-    font-size: 14px;
+/* Header row */
+.table-header {
+    background: transparent;
+    color: #888;
+    font-weight: 400;
+}
+.table-header .table-cell{
+    padding: 0px 12px;
     color: #888888;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: 400;
-}
-
-/* Body cells */
-.client-history_table td {
-    text-align: left;
-    padding: 10px 12px;
     font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+/* Cell */
+.table-data-cell {
+    padding: 10px 15px;
     font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
     color: #292929;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-/* Rounded rows and hover */
-.client-history_table tbody tr {
-    background-color: #f2f2f2;
-    transition: background 0.2s;
-    vertical-align: middle;
-}
-
-/* Round first and last cells to simulate row border-radius */
-.client-history_table tbody tr td:first-child {
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-}
-
-.client-history_table tbody tr td:last-child {
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-/* .client-type {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 6px 8px;
-    gap: 8px;
-    justify-content: center;
-    width: 76px;
-    height: 27px;
-
-    background: #def1de;
-    border-radius: 14px;
-} */
-
+/* Pills */
 .status-pill {
     display: flex;
     justify-content: center;
-    /* centers text horizontally */
     align-items: center;
-    /* centers text vertically */
     width: 76px;
     height: 27px;
     background: #def1de;
@@ -1329,30 +1356,20 @@ a {
     font-weight: 500;
     color: #2e7d32;
 }
-.status-pill.active{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 76px;
-    height: 27px;
+
+.status-pill.active {
     background: #E0F0FF;
-    border-radius: 14px;
-    font-size: 14px;
-    font-weight: 500;
     font-weight: 600;
     font-size: 12px;
-    line-height: 15px;
-    text-align: center;
     letter-spacing: -0.02em;
     color: #0076CE;
 }
 
+/* Rating */
 .rating .star {
     color: #ffc107;
-    /* yellow star */
     margin-right: 4px;
     font-size: 20px;
-    /* adjust size */
     vertical-align: middle;
 }
 
@@ -1360,21 +1377,7 @@ a {
     font-weight: 500;
 }
 
-
-/* Button styles */
-.btn {
-    padding: 4px 8px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    color: #fff;
-}
-
+/* Buttons */
 .action_btn {
     display: flex;
     align-items: center;
@@ -1387,7 +1390,12 @@ a {
     height: 27px;
     background: #0076CE;
     border-radius: 24px;
+    font-size: 12px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
+
 
 /* schedule management */
 
@@ -1403,12 +1411,9 @@ a {
 
 /* Main chart: Appointment Completed */
 .appointment__completed_chart {
-    flex: 2;
-    /* takes more space */
+    flex: 1.44;
     min-width: 350px;
-    /* prevents shrinking too much */
     height: auto;
-    /* let height adjust */
     background: #ffffff;
     border-radius: 8px;
     position: relative;
@@ -1417,18 +1422,16 @@ a {
 /* Secondary chart: Peak Hour */
 .peak_hour_chart {
     flex: 1;
-    /* smaller than main chart */
     min-width: 250px;
-    /* prevents collapsing */
     height: auto;
     background: #ffffff;
-    padding: 16px;
+    /* padding: 16px; */
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .appointment__header h2 {
-    padding: 16px;
+    padding: 16px 16px 0 16px;
     font-weight: 600;
     font-size: 24px;
     line-height: 34px;
@@ -1439,9 +1442,8 @@ a {
 /* chart */
 
 .appointment__body {
-    /* width: 607px; */
     background: #fff;
-    padding: 0 8px 16px 16px;
+    /* padding: 0 8px 16px 16px; */
     border-radius: 8px;
 }
 
@@ -1469,6 +1471,7 @@ a {
     letter-spacing: -0.02em;
     color: #292929;
     margin-bottom: 20px;
+    padding: 16px 16px 0 16px;
 }
 
 /* Parent container for Y-axis + grid */
@@ -1541,11 +1544,151 @@ a {
     font-size: 16px;
 }
 
+.appointment_breakdown {
+    width: 100%;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 8px;
+    margin-top: 17px;
+}
+
+.appointment_breakdown_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.appointment_breakdown_header h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: -0.02em;
+    color: #292929;
+}
+
+/* Table Header */
+.appointment_breakdown_header-row {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    border-radius: 4px;
+    /* background: #f2f2f2; */
+    padding: 0px 12px;
+    margin-bottom: 18px;
+    align-items: center;
+}
+
+.appointment_breakdown_header-row .appointments-cell {
+    padding: 0 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #888888;
+
+    font-weight: 400;
+line-height: 21px;
+letter-spacing: -0.02em;
+
+}
+
+/* Body wrapper */
+.appointment_breakdown_body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Body Rows */
+.appointment_breakdown_body .appointments-row {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    background: #F2F2F2;
+    border-radius: 6px;
+    padding: 10px 15px;
+    align-items: center;
+}
+
+.appointment_breakdown_body .appointments-row .appointments-cell {
+    padding: 0 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* Status pills */
+.appointments-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 89px;
+    height: 27px;
+    background: #def1de;
+    border-radius: 14px;
+    font-size: 12px !important;
+    font-weight: 500;
+    color: #2e7d32;
+    padding: 6px 12px;
+}
+.appointments-status.progress{
+    background: #E0F0FF;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: #0076CE;
+}
+.appointments-status.cancelled{
+    background: #FDD9D7;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: #F44336;
+}
+.appointments-status.missed{
+    background: #FDD9D7;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: #F44336;
+}
+
+/* Action buttons */
+.appointments-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.appointments-view-btn {
+    padding: 6px 14px;
+    background: #0076CE;
+    border-radius: 24px;
+    color: #fff;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.appointments-actions i {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Ensure <p> inside cells does not break alignment */
+.appointments-cell p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+
 .ad_chart,
 .campaign_lead_content {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     margin-top: 20px;
     justify-content: space-between;
 }
@@ -1621,7 +1764,7 @@ a {
 .lead_content {
     flex: 3;
     min-width: 250px;
-        height: 100%;
+    height: 100%;
     background: #ffffff;
     border-radius: 8px;
     display: flex;
@@ -2681,12 +2824,15 @@ input:checked+.slider::before {
     color: #292929;
     margin: 0;
 }
-.billing_content_body{
+
+.billing_content_body {
     flex: 2;
     width: 100%;
 }
+
 .billing_content_body select {
-    appearance: none;       /* Remove default arrow */
+    appearance: none;
+    /* Remove default arrow */
     -webkit-appearance: none;
     -moz-appearance: none;
 
@@ -2697,8 +2843,10 @@ input:checked+.slider::before {
     padding: 8px 20px 8px 24px;
     width: 100%;
     height: 36px;
-    background: #F2F2F2 url('./../svg/Vector.svg') no-repeat right 12px center; /* Custom arrow */
-    background-size: 10px;  /* Adjust arrow size */
+    background: #F2F2F2 url('./../svg/Vector.svg') no-repeat right 12px center;
+    /* Custom arrow */
+    background-size: 10px;
+    /* Adjust arrow size */
     border-radius: 6px;
     border: none;
     font-weight: 500;
@@ -2707,14 +2855,17 @@ input:checked+.slider::before {
     color: #292929;
     cursor: pointer;
 }
+
 .billing_content_body input {
     width: 100%;
     height: 36px;
-    padding: 8px 12px 8px 40px; /* left padding for icon */
+    padding: 8px 12px 8px 40px;
+    /* left padding for icon */
     border: none;
     border-radius: 6px;
     background: #F2F2F2 url('./../svg/card.svg') no-repeat 12px center;
-    background-size: 16px; /* icon size */
+    background-size: 16px;
+    /* icon size */
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -2732,11 +2883,13 @@ input:checked+.slider::before {
     width: 202px;
     height: 36px;
     border-radius: 6px;
-    overflow: hidden; /* round corners for each button */
+    overflow: hidden;
+    /* round corners for each button */
 }
 
 .billing_btn {
-    flex: 1; /* equal width */
+    flex: 1;
+    /* equal width */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2751,15 +2904,21 @@ input:checked+.slider::before {
 }
 
 .billing_btn.active {
-    background: #CCE4F5; /* active background */
-    color: #0076CE;      /* active text color */
-    border-radius: 6px 0 0 6px; /* left round for first button */
+    background: #CCE4F5;
+    /* active background */
+    color: #0076CE;
+    /* active text color */
+    border-radius: 6px 0 0 6px;
+    /* left round for first button */
 }
 
 .billing_btn:not(.active) {
-    background: #F2F2F2; /* inactive background */
-    color: #ACACAC;      /* inactive text color */
-    border-radius: 0 6px 6px 0; /* right round for second button */
+    background: #F2F2F2;
+    /* inactive background */
+    color: #ACACAC;
+    /* inactive text color */
+    border-radius: 0 6px 6px 0;
+    /* right round for second button */
 }
 
 /* Optional: hover effect */
@@ -2815,11 +2974,12 @@ input:checked+.slider::before {
     cursor: pointer;
 }
 
-.billing_content{
+.billing_content {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
+
 .billing_item {
     display: flex;
     justify-content: space-between;
@@ -2832,6 +2992,7 @@ input:checked+.slider::before {
     align-items: center;
     margin-bottom: 10px;
 }
+
 .login_history {
     display: flex;
     justify-content: space-between;
@@ -2852,7 +3013,7 @@ input:checked+.slider::before {
     line-height: 140%;
     letter-spacing: -0.02em;
     color: #292929;
-    
+
 }
 
 /* Button */
@@ -2947,5 +3108,3 @@ input:checked+.slider::before {
 .app_remove:hover {
     background-color: #005fa3;
 }
-
-
