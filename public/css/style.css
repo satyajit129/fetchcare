@@ -869,6 +869,12 @@ a {
     vertical-align: middle;
 }
 
+.status-text.completed{
+    color: #28a745;
+}
+.status-text.progress{
+    color: #005EA5;
+}
 /* status colors */
 .status-indicator.completed {
     background-color: #28a745;
@@ -880,6 +886,9 @@ a {
 
 .status-indicator.cancelled {
     background-color: #dc3545;
+}
+.status-indicator.progress{
+    background-color: #005EA5;
 }
 
 .upcoming_appointment {
@@ -920,12 +929,13 @@ a {
 
 .u__f__row_col {
     flex: 1;
-    /* each column takes available space */
     font-weight: 500;
-
     line-height: 140%;
     letter-spacing: -0.02em;
-    color: #0076ce;
+   
+}
+.u__f__row_col.color{
+     color: #0076ce;
 }
 
 .u__f__row_col:first-child {

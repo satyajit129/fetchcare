@@ -157,68 +157,70 @@
                 <div class="a__body">
                     <div class="a__body_row">
                         <div class="a__body_col">Max</div>
-                        <div class="a__body_col">10:00 AM</div>
-                        <div class="a__body_col">Dr. Smith</div>
-                        <div class="a__body_col">Checkup</div>
-                        <div class="a__body_col">30 mins</div>
+                        <div class="a__body_col">08:00 AM</div>
+                        <div class="a__body_col">Dr. Lee</div>
+                        <div class="a__body_col">General</div>
+                        <div class="a__body_col">36 min</div>
                         <div class="a__body_col">
                             <span class="status-indicator completed"></span>
-                            Completed
-                        </div>
-                    </div>
-                    <div class="a__body_row">
-                        <div class="a__body_col">Bella</div>
-                        <div class="a__body_col">11:00 AM</div>
-                        <div class="a__body_col">Dr. Jones</div>
-                        <div class="a__body_col">Vaccination</div>
-                        <div class="a__body_col">20 mins</div>
-                        <div class="a__body_col">
-                            <span class="status-indicator pending"></span>
-                            Pending
-                        </div>
-                    </div>
-                    <div class="a__body_row">
-                        <div class="a__body_col">Charlie</div>
-                        <div class="a__body_col">01:00 PM</div>
-                        <div class="a__body_col">Dr. Brown</div>
-                        <div class="a__body_col">Dental Cleaning</div>
-                        <div class="a__body_col">45 mins</div>
-                        <div class="a__body_col">
-                            <span class="status-indicator cancelled"></span>
-                            Cancelled
+                            <span class="status-text completed">Completed</span>
                         </div>
                     </div>
                     <div class="a__body_row">
                         <div class="a__body_col">Max</div>
-                        <div class="a__body_col">10:00 AM</div>
+                        <div class="a__body_col">10:50 AM</div>
                         <div class="a__body_col">Dr. Smith</div>
-                        <div class="a__body_col">Checkup</div>
-                        <div class="a__body_col">30 mins</div>
+                        <div class="a__body_col">General</div>
+                        <div class="a__body_col">29 mins</div>
                         <div class="a__body_col">
                             <span class="status-indicator completed"></span>
-                            Completed
+
+                            <span class="status-text completed">Completed</span>
                         </div>
                     </div>
                     <div class="a__body_row">
-                        <div class="a__body_col">Bella</div>
+                        <div class="a__body_col">Max</div>
                         <div class="a__body_col">11:00 AM</div>
-                        <div class="a__body_col">Dr. Jones</div>
-                        <div class="a__body_col">Vaccination</div>
+                        <div class="a__body_col">Dr. Johnson</div>
+                        <div class="a__body_col">General</div>
+                        <div class="a__body_col">44 mins</div>
+                        <div class="a__body_col">
+                            <span class="status-indicator completed"></span>
+                             <span class="status-text completed">Completed</span>
+                        </div>
+                    </div>
+                    <div class="a__body_row">
+                        <div class="a__body_col">Max</div>
+                        <div class="a__body_col">1:30 PM</div>
+                        <div class="a__body_col">Dr. Lee</div>
+                        <div class="a__body_col">General</div>
+                        <div class="a__body_col">56 mins</div>
+                        <div class="a__body_col">
+                            <span class="status-indicator progress"></span>
+                            
+                            <span class="status-text progress">In Progress</span>
+                        </div>
+                    </div>
+                    <div class="a__body_row">
+                        <div class="a__body_col">Max</div>
+                        <div class="a__body_col">2:00 PM</div>
+                        <div class="a__body_col">Dr. Johnson</div>
+                        <div class="a__body_col">General</div>
                         <div class="a__body_col">20 mins</div>
                         <div class="a__body_col">
-                            <span class="status-indicator pending"></span>
-                            Pending
+                            <span class="status-indicator progress"></span>
+                            <span class="status-text progress">In Progress</span>
                         </div>
                     </div>
                     <div class="a__body_row">
-                        <div class="a__body_col">Charlie</div>
-                        <div class="a__body_col">01:00 PM</div>
-                        <div class="a__body_col">Dr. Brown</div>
-                        <div class="a__body_col">Dental Cleaning</div>
-                        <div class="a__body_col">45 mins</div>
+                        <div class="a__body_col">Max</div>
+                        <div class="a__body_col">02:20 PM</div>
+                        <div class="a__body_col">Dr. Samuel</div>
+                        <div class="a__body_col">General</div>
+                        <div class="a__body_col">40 mins</div>
                         <div class="a__body_col">
-                            <span class="status-indicator cancelled"></span>
-                            Cancelled
+                            <span class="status-indicator completed"></span>
+                             <span class="status-text completed">Completed</span>
                         </div>
                     </div>
                 </div>
@@ -233,37 +235,37 @@
             </div>
             <div class="upcoming_follow_up_body">
                 <div class="u__f__row">
-                    <div class="u__f__row_col">Max</div>
+                    <div class="u__f__row_col color">Max</div>
                     <div class="u__f__row_col">Dr. Lee</div>
                     <div class="u__f__row_col">Ear Infection</div>
                 </div>
                 <div class="u__f__row">
-                    <div class="u__f__row_col">Pussy</div>
+                    <div class="u__f__row_col color">Pussy</div>
                     <div class="u__f__row_col">Dr. Smith</div>
                     <div class="u__f__row_col">Vaccine booster</div>
                 </div>
                 <div class="u__f__row">
-                    <div class="u__f__row_col">Bella</div>
+                    <div class="u__f__row_col color">Bella</div>
                     <div class="u__f__row_col">Dr. Doe</div>
                     <div class="u__f__row_col">Surgery checkup</div>
                 </div>
                 <div class="u__f__row">
-                    <div class="u__f__row_col">Max</div>
+                    <div class="u__f__row_col color">Max</div>
                     <div class="u__f__row_col">Dr. Lee</div>
                     <div class="u__f__row_col">Ear Infection</div>
                 </div>
                 <div class="u__f__row">
-                    <div class="u__f__row_col">Max</div>
+                    <div class="u__f__row_col color">Max</div>
                     <div class="u__f__row_col">Dr. Lee</div>
                     <div class="u__f__row_col">Ear Infection</div>
                 </div>
                 <div class="u__f__row">
-                    <div class="u__f__row_col">Max</div>
+                    <div class="u__f__row_col color">Max</div>
                     <div class="u__f__row_col">Dr. Lee</div>
                     <div class="u__f__row_col">Ear Infection</div>
                 </div>
                 <div class="u__f__row">
-                    <div class="u__f__row_col">Max</div>
+                    <div class="u__f__row_col color">Max</div>
                     <div class="u__f__row_col">Dr. Lee</div>
                     <div class="u__f__row_col">Ear Infection</div>
                 </div>
