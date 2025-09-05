@@ -15,6 +15,7 @@
 @endsection
 
 @section('content')
+<div>
     <div class="content__header">
         <h2 class="content__title">Financial Management</h2>
         <div class="dropdown__container">
@@ -238,8 +239,11 @@
                 </div>
             </div>
         </div>
-
     </div>
+    <div style="height: 2rem;">
+
+        </div>
+        </div>
 @endsection
 
 @section('scripts')
@@ -340,8 +344,18 @@
                 axisTicks: {
                     show: false
                 },
-                labels: { trim: false },
-                
+                labels: { 
+                    trim: false,
+                    style: {
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
+                        
+                    },
+                },
+                axisBorder: {
+                    show: false
+                },
             },
             yaxis: {
                 min: 0,
@@ -351,6 +365,11 @@
                     formatter: function(val) {
                         return val / 1000 + "k";
                     },
+                    style: {
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
+                    }
                 },
             },
             stroke: {

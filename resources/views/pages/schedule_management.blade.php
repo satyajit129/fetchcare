@@ -309,8 +309,9 @@
                 labels: {
                     rotate: -45,
                     style: {
-                        fontSize: '12px',
-                        colors: '#646464'
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
                     }
                 },
                 axisBorder: {
@@ -326,8 +327,9 @@
                 tickAmount: 4,
                 labels: {
                     style: {
-                        colors: '#646464',
-                        fontSize: '12px'
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
                     }
                 }
             },
@@ -465,8 +467,9 @@
                 labels: {
                     rotate: -45,
                     style: {
+                        colors: "#646464",
                         fontSize: "12px",
-                        colors: "#333"
+                        fontWeight: 400,
                     }
                 }
             },
@@ -474,8 +477,9 @@
                 reversed: true,
                 labels: {
                     style: {
+                        colors: "#646464",
                         fontSize: "12px",
-                        colors: "#333"
+                        fontWeight: 400,
                     }
                 }
             },

@@ -5,253 +5,284 @@
 @endsection
 
 @section('content')
-    <div class="content__header">
-        <h2 class="content__title">Marketing Management</h2>
-        <div class="dropdown__container">
-            <!-- Dropdown 1 -->
-            <div class="dropdown">
-                <button class="dropbtn">
-                    Vet Name <img src="{{ asset('svg/Vector.svg') }}" alt="">
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Dr. Smith</a>
-                    <a href="#">Dr. Johnson</a>
-                    <a href="#">Dr. Brown</a>
+    <div>
+        <div class="content__header">
+            <h2 class="content__title">Marketing Management</h2>
+            <div class="dropdown__container">
+                <!-- Dropdown 1 -->
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Vet Name <img src="{{ asset('svg/Vector.svg') }}" alt="">
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Dr. Smith</a>
+                        <a href="#">Dr. Johnson</a>
+                        <a href="#">Dr. Brown</a>
+                    </div>
+                </div>
+
+                <!-- Dropdown 2 -->
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Last 30 days <img src="{{ asset('svg/Vector.svg') }}" alt="">
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Today</a>
+                        <a href="#">Last 7 Days</a>
+                        <a href="#">Last 30 Days</a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Dropdown 2 -->
-            <div class="dropdown">
-                <button class="dropbtn">
-                    Last 30 days <img src="{{ asset('svg/Vector.svg') }}" alt="">
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Today</a>
-                    <a href="#">Last 7 Days</a>
-                    <a href="#">Last 30 Days</a>
+        <div class="content__overview">
+            <div class="card_1 active">
+                <div class="card_1__header">
+                    <p>Total Ad Costs</p>
+                    <img src="{{ asset('svg/Frame_101.svg') }}" alt="">
+                </div>
+                <div class="card_1__content">
+                    <h6>$4,473.37</h6>
+                    <div class="card_progress up">
+                        <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                        <p>2.7%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card_1">
+                <div class="card_1__header">
+                    <p>Website Traffic</p>
+                    <img src="{{ asset('svg/Frame_102.svg') }}" alt="">
+                </div>
+                <div class="card_1__content">
+                    <h6>16,227</h6>
+                    <div class="card_progress up">
+                        <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                        <p>+6.7%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card_1">
+                <div class="card_1__header">
+                    <p>Social Media Engagement</p>
+                    <img src="{{ asset('svg/Frame_103.svg') }}" alt="">
+                </div>
+                <div class="card_1__content">
+                    <h6>27,465</h6>
+                    <div class="card_progress up">
+                        <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                        <p>+1.9%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card_1">
+                <div class="card_1__header">
+                    <p>Campaign Conversion Rate</p>
+                    <img src="{{ asset('svg/Frame_104.svg') }}" alt="">
+                </div>
+                <div class="card_1__content">
+                    <h6>87</h6>
+                    <div class="card_progress up">
+                        <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                        <p>6.3%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="avg_app_dur card_1">
+                <div class="card_1__header">
+                    <p>Marketing ROI</p>
+                    <img src="{{ asset('svg/Frame_105.svg') }}" alt="">
+                </div>
+                <div class="card_1__content">
+                    <h6>131%</h6>
+                    <div class="card_progress up">
+                        <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
+                        <p>2.7%</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="content__overview">
-        <div class="card_1 active">
-            <div class="card_1__header">
-                <p>Total Revenue</p>
-                <img src="{{ asset('svg/Frame_83.svg') }}" alt="">
+        <div class="ad_chart">
+            <div class="ad_spent_chart">
+                <div class="ad_spent_header">
+                    <h2>Ad Spent</h2>
+                </div>
+                <div class="ad_spent_body">
+                    <div id="lineChart"></div>
+                </div>
             </div>
-            <div class="card_1__content">
-                <h6>$17,365.00</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
-            </div>
-        </div>
-        <div class="card_1">
-            <div class="card_1__header">
-                <p>Avg Transaction</p>
-                <img src="{{ asset('svg/Frame_84.svg') }}" alt="">
-            </div>
-            <div class="card_1__content">
-                <h6>$370.00</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
+            <div class="add_spent_breakdown">
+                <div class="ad_spent_breakdown_header">
+                    <h2>Ads Spent Breakdown</h2>
+                </div>
+                <div class="ad_spent_breakdown_body">
+                    <div id="barChart"></div>
+                </div>
             </div>
         </div>
-        <div class="card_1">
-            <div class="card_1__header">
-                <p>Revenue per Vet</p>
-                <img src="{{ asset('svg/Frame_85.svg') }}" alt="">
-            </div>
-            <div class="card_1__content">
-                <h6>$370.00</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
-            </div>
-        </div>
-        <div class="card_1">
-            <div class="card_1__header">
-                <p>Invoice Collection</p>
-                <img src="{{ asset('svg/Frame_82.svg') }}" alt="">
-            </div>
-            <div class="card_1__content">
-                <h6>87</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-bottom.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
-            </div>
-        </div>
-        <div class="avg_app_dur card_1">
-            <div class="card_1__header">
-                <p>Avg. Appoint Duration</p>
-                <img src="{{ asset('svg/Frame_81.svg') }}" alt="">
-            </div>
-            <div class="card_1__content">
-                <h6>41.7 min</h6>
-                <p>
-                    <img src="{{ asset('svg/arrow-bottom.svg') }}" alt="up arrow" class="arrow-icon">
-                    2.7%
-                </p>
-            </div>
-        </div>
-    </div>
 
-    <div class="ad_chart">
-        <div class="ad_spent_chart">
-            <div class="ad_spent_header">
-                <h2>Ad Spent</h2>
-            </div>
-            <div class="ad_spent_body">
-                <div id="lineChart"></div>
-            </div>
-        </div>
-        <div class="add_spent_breakdown">
-            <div class="ad_spent_breakdown_header">
-                <h2>Ads Spent Breakdown</h2>
-            </div>
-            <div class="ad_spent_breakdown_body">
-                <div id="barChart"></div>
-            </div>
-        </div>
-    </div>
+        <div class="campaign_lead_content">
+            <div class="campaign_content">
+                <div class="campaign_content_header">
+                    <h2>Campaign Summary</h2>
+                </div>
+                <div class="campaign_content_body">
+                    <table class="campaign_content_table">
+                        <thead>
+                            <tr>
+                                <th>Camp. Name </th>
+                                <th>Channel</th>
+                                <th>Reach</th>
+                                <th>CTR</th>
+                                <th>Cost</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Modern Medicine for Four-Legged Friends</td>
+                                <td>
+                                    <p class="channel-pill">Google</p>
+                                </td>
+                                <td>123,852</td>
+                                <td>73%</td>
+                                <td>$375.00</td>
+                                <td><button class="campaign-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Care for Every Pet</td>
+                                <td>
+                                    <p class="channel-pill">Facebook</p>
+                                </td>
+                                <td>225,745</td>
+                                <td>69%</td>
+                                <td>$248.70</td>
+                                <td><button class="campaign-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Diagnosis to Recover - We’re here</td>
+                                <td>
+                                    <p class="channel-pill">Facebook</p>
+                                </td>
+                                <td>176,759</td>
+                                <td>47%</td>
+                                <td>$556.00</td>
+                                <td><button class="campaign-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Clinical Care for Happier Lives</td>
+                                <td>
+                                    <p class="channel-pill">Google</p>
+                                </td>
+                                <td>190,761</td>
+                                <td>56%</td>
+                                <td>$126.50</td>
+                                <td><button class="campaign-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Discount Promo</td>
+                                <td>
+                                    <p class="channel-pill">YouTube</p>
+                                </td>
+                                <td>301,269</td>
+                                <td>71%</td>
+                                <td>$180.00</td>
+                                <td><button class="campaign-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>From Checkup to Cure</td>
+                                <td>
+                                    <p class="channel-pill">Instagram</p>
+                                </td>
+                                <td>336,738</td>
+                                <td>64%</td>
+                                <td>$438.78</td>
+                                <td><button class="campaign-view-btn">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    <div class="campaign_lead_content">
-        <div class="campaign_content">
-            <div class="campaign_content_header">
-                <h2>Campaign Content</h2>
+                </div>
             </div>
-            <div class="campaign_content_body">
-                <table class="campaign_content_table">
-                    <thead>
-                        <tr>
-                            <th>Campain Name</th>
-                            <th>Channel</th>
-                            <th>Reach</th>
-                            <th>CTR</th>
-                            <th>Cost</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Modern Medicine for Four-Legged Friends</td>
-                            <td>
-                                <p class="channel-pill">Google</p>
-                            </td>
-                            <td>3201</td>
-                            <td>73%</td>
-                            <td>$375.00</td>
-                            <td><button class="btn btn-primary campaign_view_btn">View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Healthy Pets Campaign</td>
-                            <td>
-                                <p class="channel-pill">Facebook</p>
-                            </td>
-                            <td>4100</td>
-                            <td>65%</td>
-                            <td>$420.00</td>
-                            <td><button class="btn btn-primary campaign_view_btn">View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Vaccination Drive 2025</td>
-                            <td>
-                                <p class="channel-pill">Instagram</p>
-                            </td>
-                            <td>2890</td>
-                            <td>58%</td>
-                            <td>$300.00</td>
-                            <td><button class="btn btn-primary campaign_view_btn">View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Pet Nutrition Awareness</td>
-                            <td>
-                                <p class="channel-pill">LinkedIn</p>
-                            </td>
-                            <td>1520</td>
-                            <td>49%</td>
-                            <td>$220.00</td>
-                            <td><button class="btn btn-primary campaign_view_btn">View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Emergency Care Tips</td>
-                            <td>
-                                <p class="channel-pill">Twitter</p>
-                            </td>
-                            <td>2310</td>
-                            <td>55%</td>
-                            <td>$310.00</td>
-                            <td><button class="btn btn-primary campaign_view_btn">View</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-
+            <div class="lead_content">
+                <div class="lead_content_header">
+                    <h2>Lead Source</h2>
+                </div>
+                <div class="lead_content_body">
+                    <table class="lead_content_table">
+                        <thead>
+                            <tr>
+                                <th>Lead</th>
+                                <th>Source</th>
+                                <th>Visit Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mitchel</td>
+                                <td>
+                                    <p class="lead-pill">Google</p>
+                                </td>
+                                <td>Aug 28, 2025</td>
+                                <td><button class="lead-source-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Shane</td>
+                                <td>
+                                    <p class="lead-pill">Facebook</p>
+                                </td>
+                                <td>Aug 28, 2025</td>
+                                <td><button class="lead-source-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Emily</td>
+                                <td>
+                                    <p class="lead-pill">Facebook</p>
+                                </td>
+                                <td>Aug 28, 2025</td>
+                                <td><button class="lead-source-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Jason</td>
+                                <td>
+                                    <p class="lead-pill">Google</p>
+                                </td>
+                                <td>Aug 28, 2025</td>
+                                <td><button class="lead-source-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Noah</td>
+                                <td>
+                                    <p class="lead-pill">YouTube</p>
+                                </td>
+                                <td>Aug 28, 2025</td>
+                                <td><button class="lead-source-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Charlie</td>
+                                <td>
+                                    <p class="lead-pill">Instagram</p>
+                                </td>
+                                <td>Aug 28, 2025</td>
+                                <td><button class="lead-source-view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Charlie</td>
+                                <td>
+                                    <p class="lead-pill">Instagram</p>
+                                </td>
+                                <td>Aug 28, 2025</td>
+                                <td><button class="lead-source-view-btn">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-        <div class="lead_content">
-            <div class="lead_content_header">
-                <h2>Lead Source</h2>
-            </div>
-            <div class="lead_content_body">
-                <table class="lead_content_table">
-                    <thead>
-                        <tr>
-                            <th>Lead</th>
-                            <th>Source</th>
-                            <th>Visit Date</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>
-                                <p class="lead-pill">Online</p>
-                            </td>
-                            <td>Aug 25, 2025</td>
-                            <td><button class="btn btn-primary lead_view_btn">View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Jane Smith</td>
-                            <td>
-                                <p class="lead-pill">Phone</p>
-                            </td>
-                            <td>Aug 24, 2025</td>
-                            <td><button class="btn btn-primary lead_view_btn">View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Michael Johnson</td>
-                            <td>
-                                <p class="lead-pill">Email</p>
-                            </td>
-                            <td>Aug 23, 2025</td>
-                            <td><button class="btn btn-primary lead_view_btn">View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Emily Davis</td>
-                            <td>
-                                <p class="lead-pill">Referral</p>
-                            </td>
-                            <td>Aug 22, 2025</td>
-                            <td><button class="btn btn-primary lead_view_btn">View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Robert Wilson</td>
-                            <td>
-                                <p class="lead-pill">Social Media</p>
-                            </td>
-                            <td>Aug 21, 2025</td>
-                            <td><button class="btn btn-primary lead_view_btn">View</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div style="height: 2rem;">
+
         </div>
     </div>
 @endsection
@@ -262,10 +293,13 @@
         var lineOptions = {
             chart: {
                 type: 'area',
-                height: 300,
+                height: 263,
                 toolbar: {
                     show: false
-                }
+                },
+                zoom: {
+                    enabled: false
+                },
             },
             series: [{
                 name: "Ad Spent",
@@ -279,49 +313,70 @@
                     show: false
                 },
                 labels: {
+                    trim: false,
                     style: {
-                        fontSize: "12px"
-                    }
-                }
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
+                    },
+                },
+                axisBorder: {
+                    show: false
+                },
             },
             yaxis: {
                 min: 0,
                 max: 200,
                 tickAmount: 4,
                 labels: {
+                    formatter: function(val) {
+                        return "$" + val;
+                    },
                     style: {
-                        fontSize: "12px"
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
                     }
-                }
-            },
-            colors: ["#008FFB"],
-            fill: {
-                type: "gradient",
-                gradient: {
-                    shadeIntensity: 1,
-                    opacityFrom: 0.5,
-                    opacityTo: 0,
-                    stops: [0, 90, 100]
-                }
-            },
-            dataLabels: {
-                enabled: false
+                },
             },
             stroke: {
                 curve: 'smooth',
                 width: 5,
             },
+            fill: {
+                type: "gradient",
+                gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.6,
+                    opacityTo: 0.2,
+                    stops: [0, 90, 100],
+                },
+            },
+            markers: {
+                size: 0
+            },
             grid: {
                 borderColor: '#e0e0e0',
-                strokeDashArray: 4 // ← dotted grid lines
-            },
-            title: {
-                align: "left",
-                style: {
-                    fontSize: "16px",
-                    fontWeight: "bold"
+                strokeDashArray: 3,
+                padding: {
+                    bottom: 0 // removes extra bottom space
                 }
-            }
+            },
+            tooltip: {
+                enabled: true,
+                shared: false,
+                x: {
+                    show: false,
+                },
+                y: {
+                    formatter: function(val) {
+                        return "$" + val.toLocaleString();
+                    },
+                },
+            },
+            dataLabels: {
+                enabled: false
+            },
         };
         var lineChart = new ApexCharts(document.querySelector("#lineChart"), lineOptions);
         lineChart.render();
@@ -331,7 +386,7 @@
         var barOptions = {
             chart: {
                 type: 'bar',
-                height: 300,
+                height: 271,
                 toolbar: {
                     show: false
                 }
@@ -347,9 +402,14 @@
                 },
                 labels: {
                     style: {
-                        fontSize: "12px"
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
                     }
-                }
+                },
+                axisBorder: {
+                    show: false
+                },
             },
             yaxis: {
                 min: 0,
@@ -357,10 +417,13 @@
                 tickAmount: 4,
                 labels: {
                     style: {
-                        fontSize: "12px"
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
                     }
                 }
             },
+
             colors: ["#008FFB"],
             plotOptions: {
                 bar: {
@@ -371,11 +434,24 @@
             dataLabels: {
                 enabled: false
             },
-            title: {
-                align: "left",
-                style: {
-                    fontSize: "16px",
-                    fontWeight: "bold"
+            grid: {
+                borderColor: '#e0e0e0',
+                strokeDashArray: 3,
+                padding: {
+                    bottom: 0 // removes extra bottom space
+                }
+            },
+            fill: {
+                colors: ['#0076CE']
+            },
+            tooltip: {
+                x: {
+                    show: false
+                },
+                y: {
+                    formatter: function(val) {
+                        return val;
+                    }
                 }
             }
         };

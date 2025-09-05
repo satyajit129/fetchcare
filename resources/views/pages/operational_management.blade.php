@@ -365,13 +365,29 @@
                     show: false
                 },
                 labels: {
-                    trim: false
+                    trim: false,
+                    style: {
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
+                    },
+                },
+                axisBorder: {
+                    show: false
                 },
             },
             yaxis: {
                 min: 0,
                 max: 2000,
                 tickAmount: 4,
+                labels: {
+                    trim: false,
+                    style: {
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
+                    },
+                },
             },
             stroke: {
                 curve: 'smooth',

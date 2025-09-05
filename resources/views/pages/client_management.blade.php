@@ -428,13 +428,28 @@
                     show: false
                 },
                 labels: {
-                    trim: false
+                    trim: false,
+                    style: {
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
+                    }
+                },
+                axisBorder: {
+                    show: false
                 },
             },
             yaxis: {
                 min: 0,
                 max: 800,
-                tickAmount: 4
+                tickAmount: 4,
+                labels: {
+                    style: {
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
+                    }
+                }
             },
             stroke: {
                 curve: 'smooth',
@@ -462,7 +477,8 @@
             },
             tooltip: {
                 enabled: true,
-                shared: false,
+                shared: true,   // ✅ show both series on hover
+                intersect: false, // ✅ allows hover even if you’re not exactly on a point
                 x: {
                     show: false,
                 },
@@ -502,12 +518,28 @@
                 axisBorder: {
                     show: false
                 },
+                labels: {
+                    trim: false,
+                    style: {
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
+                    },
+                },
 
             },
             yaxis: {
                 min: 0,
                 max: 800,
-                tickAmount: 4
+                tickAmount: 4,
+                labels: {
+                    trim: false,
+                    style: {
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
+                    },
+                },
             },
             plotOptions: {
                 bar: {
@@ -522,7 +554,7 @@
                 borderColor: '#e0e0e0',
                 strokeDashArray: 3,
                 padding: {
-                    bottom: 0 // removes extra bottom space
+                    bottom: 0
                 }
             },
             fill: {
