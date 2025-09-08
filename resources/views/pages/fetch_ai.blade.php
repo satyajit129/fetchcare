@@ -164,6 +164,7 @@
         <div class="client__insight">
             <div class="client__insight_header">
                 <h2>AI Insight</h2>
+                <p>3 new insights detected</p>
             </div>
             <div class="client__insight_body">
                 <div class="client_insight_body_card card_3">
@@ -264,9 +265,11 @@
             </div>
         </div>
         <div class="impact__section">
-            <h2 class="impact__section__title">Suggested Actions</h2>
+            <div class="insight_section_header">
+                <h2 class="impact__section__title">Suggested Actions</h2>
+                <p>4 actions recommended</p>
+            </div>
 
-            <!-- Card 1 -->
             <div class="impact_card_container">
                 <div class="impact_card">
                     <div class="impact"><span>High Impact</span></div>

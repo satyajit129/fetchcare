@@ -17,6 +17,10 @@
         <div class="content">
             @yield('content')
         </div>
+        <div class="chat-with-fetchai">
+            <img src="{{ asset('svg/message.svg') }}" alt="message">
+            <p>Chat With FetchAi</p>
+        </div>
     </div>
     @include('global.js_support')
     @yield('scripts')

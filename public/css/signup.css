@@ -290,24 +290,21 @@ input::placeholder {
     top: 0;
     width: 1.25rem;
     height: 1.25rem;
-    border: 2px solid #414141;
-    ;
-    /* primary outline */
-    border-radius: 0.25rem;
-    /* rounded corners */
+    border: 1.5px solid #888888;
+    border-radius: 0.35rem;
     background-color: #fff;
     transition: all 0.2s;
 }
 
 /* Checkmark */
 .custom-control-input:checked~.custom-control-label::after {
-    content: "";
+content: "";
     position: absolute;
-    left: 9px;
+    left: 8px;
     top: 2px;
     width: 5px;
     height: 13px;
-    border: solid #414141;
+    border: solid #888888;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }

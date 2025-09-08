@@ -125,9 +125,9 @@
         <div class="appointment_breakdown">
             <div class="appointment_breakdown_header">
                 <h2>Appointments Breakdown</h2>
-                <div class="add-appointment">
+                <div class="add-appointment" id="openAddAppointmentModal" style="cursor: pointer;">
                     <img src="{{ asset('images/add-circle.png') }}" alt="">
-                    <a href="">Add Appointment</a>
+                    <a href="javascript:void(0)">Add Appointment</a>
                 </div>
             </div>
             <div class="appointment_breakdown_table">
@@ -277,6 +277,52 @@
 
         </div>
     </div>
+    <!-- Modal -->
+    <div id="addAppointmentModal" class="appointment-modal">
+        <div class="appointment-modal-content">
+            <div class="modal-header">
+                <h2>Add New Appointments</h2>
+                <span class="close-modal"><img src="{{ asset('svg/close.svg') }}" alt=""></span>
+            </div>
+
+            <form class="appointment-form">
+                <div class="form-grid">
+                    <div class="input-bx">
+                        <input type="text" required="required" />
+                        <span>Client Name</span>
+                    </div>
+
+                    <div class="input-bx">
+                        <input type="text" required="required" />
+                        <span>Pet Name</span>
+                    </div>
+                    <div class="input-bx">
+                        <input type="text" required="required" />
+                        <span>Phone</span>
+                    </div>
+                    <div class="input-bx">
+                        <input type="text" required="required" />
+                        <span>Date & Time</span>
+                        <img src="{{ asset('svg/calendar.svg') }}" alt="">
+                    </div>
+                    <div class="input-bx">
+                        <input type="text" required="required" />
+                        <span>Necessity</span>
+                    </div>
+                    <div class="input-bx">
+                        <input type="text" required="required" />
+                        <span>Appointment With</span>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="modal_btn cancel close-modal" id="closeAddAppointmentModal">Cancel</button>
+                    <button type="submit" class="modal_btn save">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 @endsection
 
 @section('scripts')
@@ -293,7 +339,7 @@
             },
             series: [{
                 name: 'Visits',
-                data: [30, 45, 40, 65, 90, 110, 115, 90, 45, 60, 75, 80]
+                data: [112, 60, 88, 117, 95, 50, 105, 110, 75, 70, 119, 35]
             }],
             plotOptions: {
                 bar: {
@@ -494,6 +540,26 @@
         chart.render();
     </script>
 
+    <script>
+        $(document).ready(function() {
+            // Open modal
+            $("#openAddAppointmentModal").on("click", function() {
+                $("#addAppointmentModal").fadeIn().css("display", "flex");
+            });
+
+            // Close modal when clicking X
+            $(".close-modal").on("click", function() {
+                $("#addAppointmentModal").fadeOut();
+            });
+
+            // Close modal when clicking outside
+            $(window).on("click", function(e) {
+                if ($(e.target).is("#addAppointmentModal")) {
+                    $("#addAppointmentModal").fadeOut();
+                }
+            });
+        });
+    </script>
 
 
 

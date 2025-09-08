@@ -390,35 +390,37 @@
                     enabled: false
                 },
             },
-            series: [{
-                    name: 'New Client',
-                    data: [100, 300, 500, 200, 400, 600, 700, 350, 450, 650, 550, 800],
-                    color: '#EF69DE',
-                    fill: {
-                        type: 'gradient',
-                        gradient: {
-                            shadeIntensity: 1,
-                            opacityFrom: 0.5,
-                            opacityTo: 0.1,
-                            stops: [0, 90, 100]
-                        }
-                    }
-                },
-                {
-                    name: 'Previous Client',
-                    data: [50, 250, 450, 150, 350, 550, 650, 300, 400, 600, 500, 750],
-                    color: '#0076CE',
-                    fill: {
-                        type: 'gradient',
-                        gradient: {
-                            shadeIntensity: 1,
-                            opacityFrom: 0.5,
-                            opacityTo: 0.1,
-                            stops: [0, 90, 100]
-                        }
-                    }
-                }
-            ],
+series: [
+    {
+        name: 'New Client',
+        data: [150, 420, 300, 520, 610, 450, 700, 380, 720, 410, 680, 560],
+        color: '#EF69DE',
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shadeIntensity: 1,
+                opacityFrom: 0.5,
+                opacityTo: 0.1,
+                stops: [0, 90, 100]
+            }
+        }
+    },
+    {
+        name: 'Previous Client',
+        data: [300, 280, 500, 400, 480, 620, 550, 460, 600, 500, 720, 480],
+        color: '#0076CE',
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shadeIntensity: 1,
+                opacityFrom: 0.5,
+                opacityTo: 0.1,
+                stops: [0, 90, 100]
+            }
+        }
+    }
+]
+,
             xaxis: {
                 categories: [
                     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',

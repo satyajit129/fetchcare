@@ -356,7 +356,7 @@
             },
             series: [{
                 name: 'Visitors',
-                data: [750, 900, 1000, 1200, 1800, 1500, 1700, 1300, 1600, 1900, 1400, 2000]
+                data: [720, 880, 760, 1240, 1100, 1650, 1420, 1780, 1330, 1900, 1450, 1720]
             }],
             xaxis: {
                 categories: [
@@ -392,7 +392,7 @@
                 },
             },
             stroke: {
-                curve: 'smooth',
+                curve: 'monotoneCubic',
                 width: 5
             },
             fill: {
