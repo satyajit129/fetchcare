@@ -41,7 +41,7 @@
 
 <script>
     $('.toggleSidebar').on('click', function() {
-    $('#sidebar').toggleClass('collapsed');
-});
-
+        $('#sidebar').toggleClass('collapsed');
+    });
 </script>
+

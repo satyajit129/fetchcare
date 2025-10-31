@@ -419,7 +419,7 @@
                 },
                 y: {
                     formatter: function(val) {
-                        return "$" + val.toLocaleString();
+                        return "" + val.toLocaleString();
                     },
                 },
             },

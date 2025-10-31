@@ -81,7 +81,7 @@
                     <img src="{{ asset('svg/Frame_104.svg') }}" alt="">
                 </div>
                 <div class="card_1__content">
-                    <h6>87</h6>
+                    <h6>87%</h6>
                     <div class="card_progress up">
                         <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
                         <p>6.3%</p>
@@ -106,7 +106,7 @@
         <div class="ad_chart">
             <div class="ad_spent_chart">
                 <div class="ad_spent_header">
-                    <h2>Ad Spent</h2>
+                    <h2>Ad Spend</h2>
                 </div>
                 <div class="ad_spent_body">
                     <div id="lineChart"></div>
@@ -114,7 +114,7 @@
             </div>
             <div class="add_spent_breakdown">
                 <div class="ad_spent_breakdown_header">
-                    <h2>Ads Spent Breakdown</h2>
+                    <h2>Ads Spend Breakdown</h2>
                 </div>
                 <div class="ad_spent_breakdown_body">
                     <div id="barChart"></div>

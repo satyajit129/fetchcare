@@ -95,20 +95,10 @@
                 <div class="content__charts">
                     <div class="client_trands_chart">
                         <div class="client_trands__header">
-                            <h2>Client Trends</h2>
+                            <h2>Client Retention</h2>
                         </div>
                         <div class="client_trands__body">
-                            <div id="chart"></div>
-                        </div>
-                        <div class="client_trands_footer">
-                            <div class="legend-item">
-                                <span class="legend-dot" style="background:#EF69DE;"></span>
-                                <span class="legend_item_label">New Client</span>
-                            </div>
-                            <div class="legend-item">
-                                <span class="legend-dot" style="background:#0076CE;"></span>
-                                <span class="legend_item_label">Previous Client</span>
-                            </div>
+                            <div id="clientRetentionChart"></div>
                         </div>
                     </div>
                     <div class="retention_trends_chart">
@@ -312,9 +302,10 @@
                                 <p class="status-pill active">Active</p>
                             </div>
                             <div class="table-data-cell rating"><span class="star">
-                                <img src="{{ asset('images/star.png') }}" alt="">
-                            </span>
-                            <span>2.0</span></div>
+                                    <img src="{{ asset('images/star.png') }}" alt="">
+                                </span>
+                                <span>2.0</span>
+                            </div>
                             <div class="table-data-cell action_btn">
                                 <button class="view_btn">View</button>
                                 <a href=""><img src="{{ asset('svg/edit.svg') }}" alt=""></a>
@@ -354,10 +345,10 @@
                                 <p class="status-pill active">Active</p>
                             </div>
                             <div class="table-data-cell rating"><span class="star">
-                                <img src="{{ asset('images/star.png') }}" alt="">
-                            </span>
-                            <span>3.0</span>
-                        </div>
+                                    <img src="{{ asset('images/star.png') }}" alt="">
+                                </span>
+                                <span>3.0</span>
+                            </div>
                             <div class="table-data-cell action_btn">
                                 <button class="view_btn">View</button>
                                 <a href=""><img src="{{ asset('svg/edit.svg') }}" alt=""></a>
@@ -378,126 +369,6 @@
 @section('scripts')
     <script src="{{ asset('js/chartjs-plugin-datalabels.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script>
-        var options = {
-            chart: {
-                type: 'area',
-                height: 263,
-                toolbar: {
-                    show: false
-                },
-                zoom: {
-                    enabled: false
-                },
-            },
-series: [
-    {
-        name: 'New Client',
-        data: [150, 420, 300, 520, 610, 450, 700, 380, 720, 410, 680, 560],
-        color: '#EF69DE',
-        fill: {
-            type: 'gradient',
-            gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.5,
-                opacityTo: 0.1,
-                stops: [0, 90, 100]
-            }
-        }
-    },
-    {
-        name: 'Previous Client',
-        data: [300, 280, 500, 400, 480, 620, 550, 460, 600, 500, 720, 480],
-        color: '#0076CE',
-        fill: {
-            type: 'gradient',
-            gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.5,
-                opacityTo: 0.1,
-                stops: [0, 90, 100]
-            }
-        }
-    }
-]
-,
-            xaxis: {
-                categories: [
-                    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-                ],
-                axisTicks: {
-                    show: false
-                },
-                labels: {
-                    trim: false,
-                    style: {
-                        colors: "#646464",
-                        fontSize: "12px",
-                        fontWeight: 400,
-                    }
-                },
-                axisBorder: {
-                    show: false
-                },
-            },
-            yaxis: {
-                min: 0,
-                max: 800,
-                tickAmount: 4,
-                labels: {
-                    style: {
-                        colors: "#646464",
-                        fontSize: "12px",
-                        fontWeight: 400,
-                    }
-                }
-            },
-            stroke: {
-                curve: 'smooth',
-                width: 5
-            },
-            fill: {
-                type: 'gradient',
-                gradient: {
-                    shadeIntensity: 1,
-                    opacityFrom: 0.6,
-                    opacityTo: 0.2,
-                    stops: [0, 90, 100]
-                }
-            },
-            markers: {
-                size: 0
-            },
-            legend: {
-                show: false
-            },
-
-            grid: {
-                borderColor: '#e0e0e0',
-                strokeDashArray: 3,
-            },
-            tooltip: {
-                enabled: true,
-                shared: true,   // ✅ show both series on hover
-                intersect: false, // ✅ allows hover even if you’re not exactly on a point
-                x: {
-                    show: false,
-                },
-                y: {
-                    formatter: function(val) {
-                        return "$" + val.toLocaleString();
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: false
-            }
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-    </script>
 
     <script>
         var options = {
@@ -510,7 +381,7 @@ series: [
             },
             series: [{
                 name: 'Visitors',
-                data: [450, 300, 600, 700]
+                data: [190, 175, 65, 30]
             }],
             xaxis: {
                 categories: ['1st Visit', '2nd Visit', '3rd Visit', 'Loyal'],
@@ -532,7 +403,7 @@ series: [
             },
             yaxis: {
                 min: 0,
-                max: 800,
+                max: 200,
                 tickAmount: 4,
                 labels: {
                     trim: false,
@@ -554,7 +425,7 @@ series: [
             },
             grid: {
                 borderColor: '#e0e0e0',
-                strokeDashArray: 3,
+                strokeDashArray: 5,
                 padding: {
                     bottom: 0
                 }
@@ -575,6 +446,74 @@ series: [
         };
 
         var chart = new ApexCharts(document.querySelector("#barChart"), options);
+        chart.render();
+    </script>
+
+    <script>
+        var options = {
+            chart: {
+                type: 'bar',
+                stacked: true,
+                height: 299,
+                toolbar: {
+                    show: false
+                }
+            },
+            colors: ['#ff7ce3', '#0073e6'],
+            series: [{
+                    name: "New Clients",
+                    data: [350, 460, 230, 520, 300, 380, 600, 580, 400, 480, 350, 650]
+                },
+                {
+                    name: "Previous Clients",
+                    data: [170, 120, 180, 180, 160, 170, 150, 160, 110, 140, 130, 130]
+                }
+            ],
+            xaxis: {
+                categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                axisTicks: {
+                    show: false
+                },
+            },
+            yaxis: {
+                min: 0,
+                max: 800,
+                tickAmount: 4,
+                labels: {
+                    trim: false,
+                    style: {
+                        colors: "#646464",
+                        fontSize: "12px",
+                        fontWeight: 400,
+                    },
+                },
+            },
+            legend: {
+                position: 'bottom',
+                horizontalAlign: 'left',
+                markers: {
+                    shape: 'circle',
+                    size: 4 ,
+                     offsetX: -3
+                }
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 5,
+                    borderRadiusApplication: 'end',
+                    borderRadiusWhenStacked: 'last',
+                    columnWidth: '40%',
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            grid: {
+                strokeDashArray: 5
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#clientRetentionChart"), options);
         chart.render();
     </script>
 

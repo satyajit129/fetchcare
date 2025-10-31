@@ -2,8 +2,9 @@
 
 use App\Http\Controllers\AuthorityController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
-Route::get('/',[AuthorityController::class,'signup'])->name('signup');
+Route::get('/',[AuthorityController::class,'signup']);
 Route::get('/signup',[AuthorityController::class,'signup'])->name('signup');
 Route::post('/register',[AuthorityController::class,'register'])->name('register');
 Route::get('/login',[AuthorityController::class,'login'])->name('login');
@@ -19,4 +20,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/marketing-management', [AuthorityController::class, 'marketingManagement'])->name('marketingManagement');
     Route::get('/fetch-ai', [AuthorityController::class, 'fetchAI'])->name('fetchAI');
     Route::get('/settings', [AuthorityController::class, 'settings'])->name('settings');
+
+    Route::get('/logout', [AuthorityController::class, 'logout'])->name('logout');
+});
+Route::get('/clear-all', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    Artisan::call('optimize');
+
+    return '<h3 style="color:green;">✅ All caches cleared & optimized successfully!</h3>';
 });

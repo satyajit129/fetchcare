@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                             <div class="card_2__footer">
-                                <p>Client Satisfactions</p>
+                                <p>Client Satisfaction</p>
                             </div>
                         </div>
                         <div class="operational_efficiency card_2  background_color_1">

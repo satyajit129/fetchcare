@@ -61,6 +61,8 @@ class AuthorityController extends Controller
             if (Auth::attempt($credentials, $request->filled('remember'))) {
                 $request->session()->regenerate();
                 return redirect()->route('operationalManagement')->with('success', 'Welcome back!');
+            }else{
+                return back()->with('error', 'Invalid credentials. Please check your credentials')->withInput();
             }
             
         } catch (Throwable $th) {
@@ -70,6 +72,16 @@ class AuthorityController extends Controller
             return back()->with('error', $th->getMessage())->withInput();
         }
     }
+    public function logout()
+    {
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        return redirect()->route('login')
+            ->with('success', 'You have been logged out successfully.');
+    }
+
     public function operationalManagement(): View
     {
         return view('pages.operational_management');
@@ -96,7 +108,7 @@ class AuthorityController extends Controller
     }
     public function settings(Request $request): View
     {
-        $form_type = $request->query('form', 'profile'); // default to 'profile'
+        $form_type = $request->query('form', 'profile');
         return view('pages.settings', compact('form_type'));
     }
 }

@@ -1,4 +1,4 @@
-<div class="sticky"  id="sidebar">
+<div class="sticky" id="sidebar">
     <div class="app-logo">
         <img class="app-logo__image" src="{{ asset('images/Logo.png') }}" alt="Logo">
         <img class="app-logo__icon toggleSidebar" src="{{ asset('svg/arrow-circle-left.svg') }}" alt="">
@@ -44,8 +44,9 @@
             </a>
         </li>
         <li class="slide">
-            <a class="side-menu__item has-link {{ Route::is('scheduleManagement') ? 'active' : '' }}" href="{{ route('scheduleManagement') }}">
-                @if(Route::is('scheduleManagement'))
+            <a class="side-menu__item has-link {{ Route::is('scheduleManagement') ? 'active' : '' }}"
+                href="{{ route('scheduleManagement') }}">
+                @if (Route::is('scheduleManagement'))
                     <img src="{{ asset('images/calendar-2_1.png') }}" alt="">
                 @else
                     <img src="{{ asset('images/calendar-2.png') }}" alt="">
@@ -54,8 +55,9 @@
             </a>
         </li>
         <li class="slide">
-            <a class="side-menu__item has-link {{ Route::is('marketingManagement') ? 'active' : '' }}" href="{{ route('marketingManagement') }}">
-                @if(Route::is('marketingManagement'))
+            <a class="side-menu__item has-link {{ Route::is('marketingManagement') ? 'active' : '' }}"
+                href="{{ route('marketingManagement') }}">
+                @if (Route::is('marketingManagement'))
                     <img src="{{ asset('images/trend-up_1.png') }}" alt="">
                 @else
                     <img src="{{ asset('images/trend-up.png') }}" alt="">
@@ -68,21 +70,30 @@
                 <div class="side-menu__item-content {{ Route::is('fetchAI') ? 'active' : '' }}">
                     <img class="icon-default" src="{{ asset('images/fetch-ai-icon.png') }}" alt="">
                     <img class="icon-active" src="{{ asset('images/fetch-ai-icon_1.png') }}" alt="">
-                    
+
                     <span class="side-menu__label">FetchAI</span>
                 </div>
             </a>
         </li>
         <li class="slide">
-            <a class="side-menu__item has-link {{ Route::is('settings') ? 'active' : '' }} " href="{{ route('settings') }}">
+            <a class="side-menu__item has-link {{ Route::is('settings') ? 'active' : '' }} "
+                href="{{ route('settings') }}">
                 @if (Route::is('settings'))
                     <img src="{{ asset('svg/settings_active.svg') }}" alt="">
                 @else
                     <img src="{{ asset('images/setting.png') }}" alt="">
-                    
                 @endif
                 <span class="side-menu__label">Settings</span>
             </a>
         </li>
     </ul>
+   <div class="sidebar-logout">
+    <a href="{{ route('logout') }}" class="logout-btn" 
+       onclick="return confirm('Are you sure you want to log out?');">
+        <img src="{{ asset('images/4421772.png') }}" alt="" class="logout-icon">
+        <span>Logout</span>
+    </a>
+</div>
+
+
 </div>

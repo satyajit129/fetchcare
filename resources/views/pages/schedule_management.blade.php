@@ -54,7 +54,7 @@
                     <img src="{{ asset('svg/Frame_96.svg') }}" alt="">
                 </div>
                 <div class="card_1__content">
-                    <h6>91.6</h6>
+                    <h6>91.6%</h6>
                     <div class="card_progress up">
                         <img src=" {{ asset('svg/arrow-up.svg') }}" alt="up arrow" class="arrow-icon">
                         <p>2.7%</p>
@@ -531,7 +531,7 @@
             },
             tooltip: {
                 y: {
-                    formatter: (val) => val
+                    formatter: (val) => `${val}%`
                 }
             },
         };
