@@ -125,12 +125,111 @@
         <div class="appointment_breakdown">
             <div class="appointment_breakdown_header">
                 <h2>Appointments Breakdown</h2>
-                <div class="add-appointment" id="openAddAppointmentModal" style="cursor: pointer;">
-                    <img src="{{ asset('images/add-circle.png') }}" alt="">
-                    <a href="javascript:void(0)">Add Appointment</a>
+                <div class="appointment_header_right">
+                    <div>
+                        <div class="dropdown">
+                            <button class="dropbtn">
+                                Monthly View <img src="{{ asset('svg/Vector.svg') }}" alt="">
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#">Today</a>
+                                <a href="#">Last 7 Days</a>
+                                <a href="#">Last 30 Days</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-appointment" id="openAddAppointmentModal" style="cursor: pointer;">
+                        <img src="{{ asset('images/add-circle.png') }}" alt="Add Appointment" />
+                        <a href="javascript:void(0)">Add Appointment</a>
+                    </div>
                 </div>
             </div>
-            <div class="appointment_breakdown_table">
+            <div class="appointment_breakdown_filter">
+                <div class="appointment_breakdown_filter_month">
+                    <img src="{{ asset('svg/arrow-square-left.svg') }}" alt="Left Arrow">
+                    <div>
+                        Oct-Nov
+                    </div>
+                    <img src="{{ asset('svg/arrow-square-right.svg') }}" alt="Right Arrow">
+                </div>
+                <div class="appointment_breakdown_filter_right">
+                    <div class="appointment_breakdown_search">
+                        <img src="{{ asset('svg/search-normal.svg') }}" alt="Search">
+                        <input type="text" placeholder="Search anything here">
+                    </div>
+                    <div class="appointment_breakdown_view_options">
+                        <div class="icon-frame calendar-frame">
+                            <img src="{{ asset('svg/calendar.svg') }}" alt="Calendar">
+                        </div>
+                        <div class="icon-frame document-frame">
+                            <img src="{{ asset('svg/document.svg') }}" alt="List View">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment_calendar">
+                <div class="appointment_calendar_header">
+                    <div class="time_zone">
+                        <span>UTC-6</span>
+                    </div>
+                    <div class="appointment_calendar_days">
+                        <div class="appointment_calendar_day active">
+                            <span>Sun</span>
+                            <span>26</span>
+                        </div>
+                        <div class="appointment_calendar_day">
+                            <span>Mon</span>
+                            <span>27</span>
+                        </div>
+                        <div class="appointment_calendar_day">
+                            <span>Tue</span>
+                            <span>28</span>
+                        </div>
+                        <div class="appointment_calendar_day">
+                            <span>Wed</span>
+                            <span>29</span>
+                        </div>
+                        <div class="appointment_calendar_day">
+                            <span>Thu</span>
+                            <span>30</span>
+                        </div>
+                        <div class="appointment_calendar_day">
+                            <span>Fri</span>
+                            <span>31</span>
+                        </div>
+                        <div class="appointment_calendar_day">
+                            <span>Sat</span>
+                            <span>1</span>
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="appointment_calendar_body">
+                    <div class="time_slot">
+                        <div class="date_time_appointment">
+                            <div class="time_slot_cell">10AM</div>
+                            <div>
+                                <div class="appointment_calendar_row">
+                                    <div class="appointment_cell routine">
+                                        <span>Routine health check-up</span><br><span>10AM</span>
+                                    </div>
+                                    <div class="appointment_cell vaccination">
+                                        <span>Dental Checkup</span><br><span>11AM</span>
+                                        <span>Blood Test</span><br><span>11AM</span>
+                                    </div>
+                                    <div class="appointment_cell deworming">
+                                        <span>Eye Checkup</span><br><span>01PM</span>
+                                    </div>
+                                    <div class="appointment_cell vaccination">
+                                        <span>Vaccination</span><br><span>03PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+        <div class="appointment_breakdown_table">
                 <div class="appointment_breakdown_table_header">
 
                     <!-- Header -->
@@ -272,10 +371,10 @@
                 </div>
 
             </div>
-        </div>
-        <div style="height: 2rem;">
+    </div>
+    <div style="height: 2rem;">
 
-        </div>
+    </div>
     </div>
     <!-- Modal -->
     <div id="addAppointmentModal" class="appointment-modal">
@@ -316,7 +415,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="modal_btn cancel close-modal" id="closeAddAppointmentModal">Cancel</button>
+                    <button type="button" class="modal_btn cancel close-modal"
+                        id="closeAddAppointmentModal">Cancel</button>
                     <button type="submit" class="modal_btn save">Save</button>
                 </div>
             </form>
