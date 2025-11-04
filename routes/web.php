@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthorityController;
+use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
@@ -9,6 +10,10 @@ Route::get('/signup',[AuthorityController::class,'signup'])->name('signup');
 Route::post('/register',[AuthorityController::class,'register'])->name('register');
 Route::get('/login',[AuthorityController::class,'login'])->name('login');
 Route::post('/login-request',[AuthorityController::class,'loginRequest'])->name('loginRequest');
+
+
+Route::get('/auth/google', [GoogleController::class, 'redirect'])->name('googleRedirect');
+Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name('google.callback');
 
 
 // Protected routes (only for logged-in users)

@@ -30,11 +30,13 @@
                     <div class="form-box">
                         <h3>Welcome to FetchCare!</h3>
                         <p>Please enter your details to login here</p>
-
-                        <div class="google-btn">
+                        <a href="{{ route('googleRedirect') }}">
+                            <div class="google-btn">
                             <img src="{{ asset('svg/flat-color-icons_google.svg') }}" alt="Google" />
                             <span>Continue with Google</span>
                         </div>
+                        </a>
+                        
 
                         <div class="divider">Or Login With</div>
 
