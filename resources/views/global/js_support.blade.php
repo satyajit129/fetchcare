@@ -45,3 +45,38 @@
     });
 </script>
 
+<script>
+        $(document).ready(function() {
+
+            // Open Chat Box
+            $('.chat-with-fetchai').on('click', function() {
+                const chatBox = $('#chat-box');
+
+                if (chatBox.is(':visible')) {
+                    // Fade out
+                    chatBox.animate({
+                        opacity: 0
+                    }, 200, function() {
+                        chatBox.css('display', 'none');
+                    });
+                } else {
+                    chatBox.css({
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            opacity: 0
+                        })
+                        .animate({
+                            opacity: 1
+                        }, 200);
+                }
+            });
+
+
+            // Close Chat Box
+            $('.chat-close').on('click', function() {
+                $('#chat-box').fadeOut(200);
+            });
+
+        });
+    </script>
+

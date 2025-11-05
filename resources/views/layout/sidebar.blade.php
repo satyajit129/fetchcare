@@ -87,13 +87,11 @@
             </a>
         </li>
     </ul>
-   <div class="sidebar-logout">
-    <a href="{{ route('logout') }}" class="logout-btn" 
-       onclick="return confirm('Are you sure you want to log out?');">
-        <img src="{{ asset('images/4421772.png') }}" alt="" class="logout-icon">
-        <span>Logout</span>
-    </a>
-</div>
-
-
+    <div class="sidebar-logout">
+        <a href="{{ route('logout') }}" class="logout-btn"
+            onclick="return confirm('Are you sure you want to log out?');">
+            <img src="{{ asset('images/4421772.png') }}" alt="" class="logout-icon">
+            <span>Logout</span>
+        </a>
+    </div>
 </div>
