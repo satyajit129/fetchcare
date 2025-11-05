@@ -1802,7 +1802,7 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 19px;
+    /* gap: 19px; */
     height: 63px;
     background: #F2F2F2;
     /* Neutral/50 */
@@ -1829,6 +1829,7 @@ a {
     align-items: center;
     padding: 0;
     flex: 14;
+    /* margin-left: 8px; */
 }
 
 /* Calendar Days Container */
@@ -1881,12 +1882,101 @@ a {
     /* Neutral/400 */
 }
 
+
+/* body */
+.appointment_calendar_body {
+    border-left: 0.5px solid #E7E7E7;
+}
+
+.appointment_row {
+    display: grid;
+    grid-template-columns: 1fr 14fr;
+    /* gap: 8px; */
+}
+
 .time_slot {
-    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+    margin-top: -10px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    /* identical to box height, or 150% */
+    letter-spacing: -0.01em;
+
+    /* Neutral/300 */
+    color: #888888;
 }
-.appointment_calendar_rows {
-    flex: 14;
+.time_slot:last-of-type {
+    border-bottom: 1px solid #E7E7E7;
 }
+
+
+.appointment_schedule {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* 7 columns for 7 slots */
+    border: 0.5px solid #E7E7E7;
+    border-top: none;
+}
+
+.date_time_slot {
+    border-left: 0.5px solid #E7E7E7;
+    /* only left border */
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.date_time_slot:first-child {
+    border-left: none;
+    /* remove border for first column */
+}
+
+.schedule_desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4px 10px;
+    background: #FEECEB;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: -0.01em;
+}
+
+.s-bg-red {
+    background: #FEECEB;
+    color: #F44336;
+}
+
+.s-bg-pink {
+    background: #FDF0FC;
+    color: #EF69DE;
+}
+
+.s-bg-blue {
+    background: #E0F0FF;
+    color: #0076CE;
+}
+
+.s-bg-yellow {
+    background: #FFF6E5;
+    color: #FFA600;
+}
+
+.s-bg-green {
+    background: #E8F3EE;
+    color: #198754;
+}
+.appointment_row .border_bottom {
+
+    border-bottom: 0.5px solid #E7E7E7;
+}
+
 
 
 /* Table Header */

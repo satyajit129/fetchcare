@@ -203,174 +203,367 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="appointment_calendar_body">
-                    <div class="time_slot">
-                        <div class="date_time_appointment">
-                            <div class="time_slot_cell">10AM</div>
-                            <div>
-                                <div class="appointment_calendar_row">
-                                    <div class="appointment_cell routine">
-                                        <span>Routine health check-up</span><br><span>10AM</span>
-                                    </div>
-                                    <div class="appointment_cell vaccination">
-                                        <span>Dental Checkup</span><br><span>11AM</span>
-                                        <span>Blood Test</span><br><span>11AM</span>
-                                    </div>
-                                    <div class="appointment_cell deworming">
-                                        <span>Eye Checkup</span><br><span>01PM</span>
-                                    </div>
-                                    <div class="appointment_cell vaccination">
-                                        <span>Vaccination</span><br><span>03PM</span>
-                                    </div>
+                <div class="appointment_calendar_body">
+                    <div class="appointment_row">
+                        <div class="time_slot"></div>
+                        <div class="appointment_schedule">
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-red">
+                                    <p>Routine health check-ups</p>
+                                    <p>9 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-pink">
+                                    <p>Vaccinations & immunizations</p>
+                                    <p>9 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-blue">
+                                    <p>Deworming & flea/tick prevention</p>
+                                    <p>9 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-pink">
+                                    <p>Microchipping & pet identification
+                                    </p>
+                                    <p>9:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-green">
+                                    <p>Health certificates for travel
+                                    </p>
+                                    <p>9 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-blue">
+                                    <p>Allergy & skin testing
+                                    </p>
+                                    <p>9:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-pink">
+                                    <p>Blood tests & laboratory diagnostics</p>
+                                    <p>9 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-green">
+                                    <p>X-rays & ultrasound imaging
+                                    </p>
+                                    <p>9:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-blue">
+                                    <p>Urinalysis & fecal exams</p>
+                                    <p>9 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-blue">
+                                    <p>Genetic & breed-specific testing
+                                    </p>
+                                    <p>9:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-blue">
+                                    <p>Chronic disease management 9 AM</p>
+                                    <p>9 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-blue">
+                                    <p>Pain management & rehabilitation therapy</p>
+                                    <p>9 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-yellow">
+                                    <p>Emergency & critical care </p>
+                                    <p>9:30 AM</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                    <div class="appointment_row">
+                        <div class="time_slot">10 AM</div>
+                        <div class="appointment_schedule">
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-yellow">
+                                    <p>Spaying & neutering 10 AM</p>
+                                    <p>10 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Soft tissue surgery</p>
+                                    <p>10:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-blue">
+                                    <p>Dental surgery & tooth extractions</p>
+                                    <p>10:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-green">
+                                    <p>Emergency surgical interventions</p>
+                                    <p>10 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Dental cleaning & polishing</p>
+                                    <p>10:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-yellow">
+                                    <p>Dental X-rays</p>
+                                    <p>10 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Gum disease treatment</p>
+                                    <p>10:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot ">
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Oral surgery</p>
+                                    <p>10 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-green">
+                                    <p>Routine health check-ups</p>
+                                    <p>10 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Nutrition & dietary counseling</p>
+                                    <p>10:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Behavior consultation</p>
+                                    <p>10 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Allergy & skin testing</p>
+                                    <p>10:30 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appointment_row">
+                        <div class="time_slot border_bottom">11 AM</div>
+                        <div class="appointment_schedule">
+                            <div class="date_time_slot">
+                                
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Puppy & kitten wellness packages</p>
+                                    <p>11:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-blue">
+                                    <p>Dermatology</p>
+                                    <p>10:30 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-green">
+                                    <p>Cardiology</p>
+                                    <p>11:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-blue">
+                                    <p>Ophthalmology (eye care)</p>
+                                    <p>10 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-pink ">
+                                    <p>Neurology</p>
+                                    <p>11:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-green">
+                                    <p>Bathing & coat care</p>
+                                    <p>10 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Nail trimming & ear cleaning</p>
+                                    <p>11:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot ">
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Tick & flea baths</p>
+                                    <p>10 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-pink ">
+                                    <p>Breed-specific grooming styles</p>
+                                    <p>11:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-pink">
+                                    <p>Short-term & long-term boarding</p>
+                                    <p>10 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Playtime & socialization</p>
+                                    <p>11:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="date_time_slot">
+                                <div class="schedule_desc s-bg-blue ">
+                                    <p>Individual and group exercise sessions</p>
+                                    <p>10 AM</p>
+                                </div>
+                                <div class="schedule_desc s-bg-green ">
+                                    <p>Herbal & natural medicine</p>
+                                    <p>11:30 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="appointment_breakdown_table">
-                <div class="appointment_breakdown_table_header">
+        {{-- <div class="appointment_breakdown_table">
+            <div class="appointment_breakdown_table_header">
 
-                    <!-- Header -->
-                    <div class="appointments-row appointment_breakdown_header-row">
-                        <div class="appointments-cell">Client</div>
-                        <div class="appointments-cell">Pet Name</div>
-                        <div class="appointments-cell">Vet Name</div>
-                        <div class="appointments-cell">Booked Date</div>
-                        <div class="appointments-cell">Visit Date/Time</div>
-                        <div class="appointments-cell">Clinic Name</div>
-                        <div class="appointments-cell">Status</div>
-                        <div class="appointments-cell">Source</div>
-                        <div class="appointments-cell">Action</div>
+                <!-- Header -->
+                <div class="appointments-row appointment_breakdown_header-row">
+                    <div class="appointments-cell">Client</div>
+                    <div class="appointments-cell">Pet Name</div>
+                    <div class="appointments-cell">Vet Name</div>
+                    <div class="appointments-cell">Booked Date</div>
+                    <div class="appointments-cell">Visit Date/Time</div>
+                    <div class="appointments-cell">Clinic Name</div>
+                    <div class="appointments-cell">Status</div>
+                    <div class="appointments-cell">Source</div>
+                    <div class="appointments-cell">Action</div>
+                </div>
+            </div>
+            <div class="appointment_breakdown_body">
+
+                <!-- Rows -->
+                <div class="appointments-row">
+                    <div class="appointments-cell">Mitchel</div>
+                    <div class="appointments-cell">Oliver</div>
+                    <div class="appointments-cell">Dr. Lee</div>
+                    <div class="appointments-cell">Consultation</div>
+                    <div class="appointments-cell">
+                        Aug 14, 2025
+                        <p>10:00 AM</p>
+                    </div>
+                    <div class="appointments-cell">Newtown Clinic</div>
+                    <div class="appointments-cell">
+                        <p class="appointments-status progress">In Progress</p>
+                    </div>
+                    <div class="appointments-cell rating">Online</div>
+                    <div class="appointments-cell appointments-actions">
+                        <button class="appointments-view-btn">View</button>
+                        <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
                     </div>
                 </div>
-                <div class="appointment_breakdown_body">
 
-                    <!-- Rows -->
-                    <div class="appointments-row">
-                        <div class="appointments-cell">Mitchel</div>
-                        <div class="appointments-cell">Oliver</div>
-                        <div class="appointments-cell">Dr. Lee</div>
-                        <div class="appointments-cell">Consultation</div>
-                        <div class="appointments-cell">
-                            Aug 14, 2025
-                            <p>10:00 AM</p>
-                        </div>
-                        <div class="appointments-cell">Newtown Clinic</div>
-                        <div class="appointments-cell">
-                            <p class="appointments-status progress">In Progress</p>
-                        </div>
-                        <div class="appointments-cell rating">Online</div>
-                        <div class="appointments-cell appointments-actions">
-                            <button class="appointments-view-btn">View</button>
-                            <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
-                        </div>
+                <div class="appointments-row">
+                    <div class="appointments-cell">Samuel</div>
+                    <div class="appointments-cell">Max</div>
+                    <div class="appointments-cell">Dr. Smith</div>
+                    <div class="appointments-cell">Consultation</div>
+                    <div class="appointments-cell">
+                        Aug 14, 2025
+                        <p>10:30 AM</p>
                     </div>
-
-                    <div class="appointments-row">
-                        <div class="appointments-cell">Samuel</div>
-                        <div class="appointments-cell">Max</div>
-                        <div class="appointments-cell">Dr. Smith</div>
-                        <div class="appointments-cell">Consultation</div>
-                        <div class="appointments-cell">
-                            Aug 14, 2025
-                            <p>10:30 AM</p>
-                        </div>
-                        <div class="appointments-cell">Uptown Clinic</div>
-                        <div class="appointments-cell">
-                            <p class="appointments-status active">Active</p>
-                        </div>
-                        <div class="appointments-cell rating">Online</div>
-                        <div class="appointments-cell appointments-actions">
-                            <button class="appointments-view-btn">View</button>
-                            <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
-                        </div>
+                    <div class="appointments-cell">Uptown Clinic</div>
+                    <div class="appointments-cell">
+                        <p class="appointments-status active">Active</p>
                     </div>
-
-                    <div class="appointments-row">
-                        <div class="appointments-cell">Jake</div>
-                        <div class="appointments-cell">Kai</div>
-                        <div class="appointments-cell">Dr. Johnson</div>
-                        <div class="appointments-cell">Surgery</div>
-                        <div class="appointments-cell">
-                            Aug 14, 2025
-                            <p>11:00 AM</p>
-                        </div>
-                        <div class="appointments-cell">Uptown Clinic</div>
-                        <div class="appointments-cell">
-                            <p class="appointments-status active">Active</p>
-                        </div>
-                        <div class="appointments-cell rating">Phone</div>
-                        <div class="appointments-cell appointments-actions">
-                            <button class="appointments-view-btn">View</button>
-                            <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
-                        </div>
+                    <div class="appointments-cell rating">Online</div>
+                    <div class="appointments-cell appointments-actions">
+                        <button class="appointments-view-btn">View</button>
+                        <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
                     </div>
+                </div>
 
-                    <div class="appointments-row">
-                        <div class="appointments-cell">Skyler</div>
-                        <div class="appointments-cell">Makai</div>
-                        <div class="appointments-cell">Dr. Lee</div>
-                        <div class="appointments-cell">Vaccination</div>
-                        <div class="appointments-cell">
-                            Aug 14, 2025
-                            <p>11:30 AM</p>
-                        </div>
-                        <div class="appointments-cell">Oldtown Clinic</div>
-                        <div class="appointments-cell">
-                            <p class="appointments-status cancelled">Cancelled</p>
-                        </div>
-                        <div class="appointments-cell rating">Online</div>
-                        <div class="appointments-cell appointments-actions">
-                            <button class="appointments-view-btn">View</button>
-                            <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
-                        </div>
+                <div class="appointments-row">
+                    <div class="appointments-cell">Jake</div>
+                    <div class="appointments-cell">Kai</div>
+                    <div class="appointments-cell">Dr. Johnson</div>
+                    <div class="appointments-cell">Surgery</div>
+                    <div class="appointments-cell">
+                        Aug 14, 2025
+                        <p>11:00 AM</p>
                     </div>
-
-                    <div class="appointments-row">
-                        <div class="appointments-cell">Olivia</div>
-                        <div class="appointments-cell">Larry</div>
-                        <div class="appointments-cell">Dr. Johnson</div>
-                        <div class="appointments-cell">Check Up</div>
-                        <div class="appointments-cell">
-                            Aug 14, 2025
-                            <p>12:00 AM</p>
-                        </div>
-                        <div class="appointments-cell">Downtown Clinic</div>
-                        <div class="appointments-cell">
-                            <p class="appointments-status active">Active</p>
-                        </div>
-                        <div class="appointments-cell rating">Online</div>
-                        <div class="appointments-cell appointments-actions">
-                            <button class="appointments-view-btn">View</button>
-                            <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
-                        </div>
+                    <div class="appointments-cell">Uptown Clinic</div>
+                    <div class="appointments-cell">
+                        <p class="appointments-status active">Active</p>
                     </div>
-
-                    <div class="appointments-row">
-                        <div class="appointments-cell">Stephen</div>
-                        <div class="appointments-cell">Jack</div>
-                        <div class="appointments-cell">Dr. Samuel</div>
-                        <div class="appointments-cell">Surgery</div>
-                        <div class="appointments-cell">
-                            Aug 14, 2025
-                            <p>12:30 AM</p>
-                        </div>
-                        <div class="appointments-cell">Newtown Clinic</div>
-                        <div class="appointments-cell">
-                            <p class="appointments-status missed">Missed</p>
-                        </div>
-                        <div class="appointments-cell rating">Phone</div>
-                        <div class="appointments-cell appointments-actions">
-                            <button class="appointments-view-btn">View</button>
-                            <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
-                        </div>
+                    <div class="appointments-cell rating">Phone</div>
+                    <div class="appointments-cell appointments-actions">
+                        <button class="appointments-view-btn">View</button>
+                        <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
                     </div>
+                </div>
 
+                <div class="appointments-row">
+                    <div class="appointments-cell">Skyler</div>
+                    <div class="appointments-cell">Makai</div>
+                    <div class="appointments-cell">Dr. Lee</div>
+                    <div class="appointments-cell">Vaccination</div>
+                    <div class="appointments-cell">
+                        Aug 14, 2025
+                        <p>11:30 AM</p>
+                    </div>
+                    <div class="appointments-cell">Oldtown Clinic</div>
+                    <div class="appointments-cell">
+                        <p class="appointments-status cancelled">Cancelled</p>
+                    </div>
+                    <div class="appointments-cell rating">Online</div>
+                    <div class="appointments-cell appointments-actions">
+                        <button class="appointments-view-btn">View</button>
+                        <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
+                    </div>
+                </div>
+
+                <div class="appointments-row">
+                    <div class="appointments-cell">Olivia</div>
+                    <div class="appointments-cell">Larry</div>
+                    <div class="appointments-cell">Dr. Johnson</div>
+                    <div class="appointments-cell">Check Up</div>
+                    <div class="appointments-cell">
+                        Aug 14, 2025
+                        <p>12:00 AM</p>
+                    </div>
+                    <div class="appointments-cell">Downtown Clinic</div>
+                    <div class="appointments-cell">
+                        <p class="appointments-status active">Active</p>
+                    </div>
+                    <div class="appointments-cell rating">Online</div>
+                    <div class="appointments-cell appointments-actions">
+                        <button class="appointments-view-btn">View</button>
+                        <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
+                    </div>
+                </div>
+
+                <div class="appointments-row">
+                    <div class="appointments-cell">Stephen</div>
+                    <div class="appointments-cell">Jack</div>
+                    <div class="appointments-cell">Dr. Samuel</div>
+                    <div class="appointments-cell">Surgery</div>
+                    <div class="appointments-cell">
+                        Aug 14, 2025
+                        <p>12:30 AM</p>
+                    </div>
+                    <div class="appointments-cell">Newtown Clinic</div>
+                    <div class="appointments-cell">
+                        <p class="appointments-status missed">Missed</p>
+                    </div>
+                    <div class="appointments-cell rating">Phone</div>
+                    <div class="appointments-cell appointments-actions">
+                        <button class="appointments-view-btn">View</button>
+                        <img src="{{ asset('svg/Frame_100.svg') }}" alt="">
+                    </div>
                 </div>
 
             </div>
+
+        </div> --}}
     </div>
     <div style="height: 2rem;">
 
